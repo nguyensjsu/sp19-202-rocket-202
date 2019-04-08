@@ -3,8 +3,8 @@
 ## Han Wang
 
 ### Finished Last Week 
--Task1: Thinking  about the subject of team project and providing thoughts to my team members.
--Task2:  Had the first team meeting to have a brainstorming session to come up with below:
+- Task1: Thinking  about the subject of team project and providing thoughts to my team members.
+- Task2:  Had the first team meeting to have a brainstorming session to come up with below:
    - project subject: a interactive application for accounting
    - base functions and six base screens to show
    - APP screen style
