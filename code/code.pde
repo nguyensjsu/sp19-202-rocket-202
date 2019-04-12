@@ -1,7 +1,15 @@
+AppProxy proxy;
+
 void setup(){
-   size(600,600) ;
+   size(400,700) ;
+   proxy = new AppProxy();
 }
 
 void draw(){
-  background(122);
+  proxy.display();
+  
+  if(mousePressed){
+     proxy.touch(); 
+  }
+  
 }
