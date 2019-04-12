@@ -53,7 +53,7 @@ public class Tools {
 
     }
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        Tools tool = new Tools();
         /* getDate test case */
 //        System.out.println(tool.getDate("1554891010"));
@@ -72,6 +72,6 @@ public class Tools {
 //        tool.CSVWriter("money/test.csv",false, s);
 
 
-    }
+//    }
 
 }

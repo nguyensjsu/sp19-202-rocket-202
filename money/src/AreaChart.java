@@ -5,7 +5,7 @@
  * Email: wing.yumin@gmail.com
  */
 public class AreaChart implements IChartStrategy{
-    
+
 
     @Override
     public void calculateTotaldata() {
