@@ -1,0 +1,176 @@
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ * Created by Wing Yu on 2019/4/11 18:59).
+ * Blog: http://www.wingyu.org/
+ * GitHub: https://github.com/wing324
+ * Email: wing.yumin@gmail.com
+ */
+public class PieChart implements IChartStrategy{
+    private Tools tools = new Tools();
+    private ArrayList<String> csvData = tools.CSVReader("../record.csv");
+    private ArrayList<String> pieData = new ArrayList<String>();
+    private String timePeriod;
+    private BigDecimal totalFood = new BigDecimal(0.00);
+    private BigDecimal totalShopping = new BigDecimal(0.00);
+    private BigDecimal totalEntertainment = new BigDecimal(0.00);
+    private BigDecimal totalHealth = new BigDecimal(0.00);
+    private BigDecimal totalHousehold = new BigDecimal(0.00);
+    private BigDecimal totalTransportation = new BigDecimal(0.00);
+    private BigDecimal totalInsurance = new BigDecimal(0.00);
+    private BigDecimal totalOthers = new BigDecimal(0.00);
+    private BigDecimal totalSalary = new BigDecimal(0.00);
+    private BigDecimal totalRedpacket = new BigDecimal(0.00);
+    private BigDecimal totalRefund = new BigDecimal(0.00);
+    private BigDecimal totalCash = new BigDecimal(0.00);
+    private BigDecimal totalRewards = new BigDecimal(0.00);
+
+    public PieChart(String timePeriod) {
+        this.timePeriod = timePeriod;
+    }
+
+    public void calculateTotaldata(){
+        for(String line: csvData){
+            String[] field = line.split(",");
+            field[0] = tools.getDate(field[0]);
+            if(field[0].substring(0,7).equals(timePeriod)){
+                if(field[1].equals("FOOD")){
+                    totalFood.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("SHOPPING")){
+                    totalShopping.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("ENTERTAINMENT")){
+                    totalEntertainment.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("HEALTH")){
+                    totalHealth.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("HOUSEHOLD")){
+                    totalHousehold.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("TRANSPORTATION")){
+                    totalTransportation.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("INSURANCE")){
+                    totalInsurance.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("OTHERS")){
+                    totalOthers.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("SALARY")){
+                    totalSalary.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("RED_PACKET")){
+                    totalRedpacket.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("REFUND")){
+                    totalRefund.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("CASH")){
+                    totalCash.add(new BigDecimal(field[2]));
+                }
+                if(field[1].equals("REWARDS")){
+                    totalRewards.add(new BigDecimal(field[2]));
+                }
+            }
+        }
+    }
+
+    @Override
+    public void writeData(String filename) {
+        if(totalFood.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("FOOD");
+            pieData.add(totalFood.toString());
+            tools.CSVWriter(filename, false, pieData );
+            pieData.clear();
+        }
+        if(totalShopping.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("SHOPPING");
+            pieData.add(totalShopping.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalEntertainment.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("ENTERTAINMENT");
+            pieData.add(totalEntertainment.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalHealth.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("HEALTH");
+            pieData.add(totalHealth.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalHousehold.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("HOUSEHOLD");
+            pieData.add(totalHousehold.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalTransportation.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("TRANSPORTATION");
+            pieData.add(totalTransportation.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalInsurance.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("INSURANCE");
+            pieData.add(totalInsurance.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalOthers.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("OTHERS");
+            pieData.add(totalOthers.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalSalary.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("SALARY");
+            pieData.add(totalSalary.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalRedpacket.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("RED_PACKET");
+            pieData.add(totalRedpacket.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalRefund.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("REFUND");
+            pieData.add(totalRefund.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalCash.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("CASH");
+            pieData.add(totalCash.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+        if(totalRewards.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("REWARDS");
+            pieData.add(totalRewards.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+    }
+}

@@ -1,10 +1,6 @@
-package PACKAGE_NAME;
+import java.util.Map;
 
-/**
- * Created by Wing Yu on 2019/4/11 10:01).
- * Blog: http://www.wingyu.org/
- * GitHub: https://github.com/wing324
- * Email: wing.yumin@gmail.com
- */
 public interface IChartStrategy {
+    void calculateTotaldata();
+    void writeData(String filename);
 }
