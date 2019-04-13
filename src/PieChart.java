@@ -1,6 +1,5 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * Created by Wing Yu on 2019/4/11 18:59).
@@ -10,7 +9,7 @@ import java.util.Iterator;
  */
 public class PieChart implements IChartStrategy{
     private Tools tools = new Tools();
-    private ArrayList<String> csvData = tools.CSVReader("../record.csv");
+    private ArrayList<String> csvData = tools.CSVReader("record.csv");
     private ArrayList<String> pieData = new ArrayList<String>();
     private String timePeriod;
     private BigDecimal totalFood = new BigDecimal(0.00);

@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 public class AreaChart implements IChartStrategy{
 
     private Tools tools = new Tools();
-    private ArrayList<String> csvData = tools.CSVReader("../record.csv");
+    private ArrayList<String> csvData = tools.CSVReader("record.csv");
     private float[] totalIncome = new float[]{0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f};
     private float[] totalOutcome = new float[]{0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f};
     private float[] totalBalance = new float[]{0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f,0.00f};
