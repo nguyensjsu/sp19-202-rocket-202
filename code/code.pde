@@ -7,9 +7,14 @@ void setup(){
 
 void draw(){
   proxy.display();
-  
-  if(mousePressed){
-     proxy.touch(); 
   }
   
+void mouseClicked(){
+	proxy.touch();
+}
+
+void mouseDragged(){
+	proxy.drag();
+}
+
 }
