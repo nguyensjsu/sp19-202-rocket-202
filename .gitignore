@@ -40,5 +40,4 @@ gradle-app.setting
 
 out
 *.iml
-money/*.iml
 .idea/
