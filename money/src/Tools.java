@@ -55,23 +55,23 @@ public class Tools {
 
 //    public static void main(String[] args) {
 //        Tools tool = new Tools();
-        /* getDate test case */
-//        System.out.println(tool.getDate("1554891010"));
-
-        /* CSVReader test case */
-//        ArrayList<String> csv = tool.CSVReader("money/record.csv");
-//        for(int i=0; i < csv.size(); i++){
-//            System.out.println(csv.get(i));
-//        }
-
-        /* CSVWriter test case */
-//        ArrayList<String> s = new ArrayList<String>();
+//        /* getDate test case */
+////        System.out.println(tool.getDate("1554891010"));
+//
+//        /* CSVReader test case */
+////        ArrayList<String> csv = tool.CSVReader("money/record.csv");
+////        for(int i=0; i < csv.size(); i++){
+////            System.out.println(csv.get(i));
+////        }
+//
+//        /* CSVWriter test case */
+//       ArrayList<String> s = new ArrayList<String>();
 //        s.add("Paul");
 //        s.add("202");
 //        s.add("Rocket");
 //        tool.CSVWriter("money/test.csv",false, s);
-
-
+//
+//
 //    }
 
 }
