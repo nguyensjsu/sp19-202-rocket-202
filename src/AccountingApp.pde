@@ -4,9 +4,9 @@ PImage keyPadImage;
 
 
 void setup() {
-  size(240, 480);
-  kp = new KeyPad(0, 240, 240, 240);
-  ot = new OutputText(120, 60, 120, 80);
+  size(380, 680);
+  kp = new KeyPad(0, 420, 380, 260);
+  ot = new OutputText(190, 100, 250, 150);
   
   kp.attach(ot);
 }
@@ -16,7 +16,7 @@ void draw() {
   fill(0);
   
   keyPadImage = loadImage("keypad.jpeg");
-  image(keyPadImage, 0, 240, 240, 240);
+  image(keyPadImage, 0, 420, 380, 260);
   
   ot.showUp();
 }
