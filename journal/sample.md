@@ -23,9 +23,31 @@
 
 ### Time Spend
 
-- Task1: 1 hrs
+- Task1: 1 hr
 - Task2: 2.5 hrs
 
-## Name
+# Week 2 Scrum Report
 
-....
+## Han Wang
+
+### Finished Last Week
+- Task1: Had the second team meeting to discuss about:
+  - everyone's own task and the role of XP Core Values
+  - main object and their data type of Account class and Record class
+  - AccountType Enum and RecordType Enum
+  - use .csv data file to store data and read data
+  - three members who in charge of implementing the common functions(Keypad--HanWang, Frame--XingchenKang, AppProxy--ShiyanCai)
+- Task2: Study the functions of processing and the examples to find a method to attach java function with images.
+- Task3: Design the solution for Keypad, write codes to implement Keypad functions in processing.
+  - get an image of phone keypad and modify it to adapt to my solution.
+  - complete keypad functions using Observer design pattern:
+    - KeyPad will notify observers with the key that user clicks
+    - KeyPad will calculate the result and also notify it to observers
+    - initialize a screen which can help engr. test the KeyPad
+
+### Planned Next Week
+### Time Spend
+
+- Task1: 1 hr
+- Task2: 3 hrs
+- Task3: 12 hrs
