@@ -1,0 +1,11 @@
+class KeyPadLogin{
+	PImage[][][] num = new PImage[3][3][2];
+	int[] ind = {0,1,2};
+	int n = 1;
+	for(int i : ind){
+		for(int j : ind){
+			num[i][j][0] = loadImage("img/num"+Integer.toString(n)+".png");
+			num[i][j][1] = loadImage("img/num"+Integer.toString(n)+".png");
+		}
+	}
+}
