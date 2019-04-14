@@ -43,7 +43,7 @@
   - complete keypad functions using Observer design pattern:
     - KeyPad will notify observers with the key that user clicks
     - KeyPad will calculate the result and also notify it to observers
-    - initialize a screen which can help engr. test the KeyPad
+    - initialize a screen which can help user test the KeyPad
 
 ### Planned Next Week
 ### Time Spend
