@@ -1,7 +1,7 @@
 /**
  * App login proxy
  */
-public class AppProxy implements IAuthObserver{
+public class AppProxy implements IAuthObserver, IProxy{
   boolean authenticated;
   IProxy login;
   IProxy app;
@@ -10,6 +10,7 @@ public class AppProxy implements IAuthObserver{
     authenticated = false;
     login = new LoginScreen();
 	app = new AppController();
+	((IAuthSubject)login).addObserver(this);
     
   }
   
@@ -33,14 +34,14 @@ public class AppProxy implements IAuthObserver{
 	* drag method
 	*/ 
   public void drag(){
-	  if(authenticated) app.drag();
+	 if(authenticated) app.drag();
   }
   
   /**
 	* observer event
 	* update authentication state
 	*/ 
-  public loginUpdate(){
+  public void loginUpdate(){
 	  authenticated = true;
   }
 }

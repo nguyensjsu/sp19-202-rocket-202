@@ -6,15 +6,15 @@ void setup(){
 }
 
 void draw(){
+  background(240);
   proxy.display();
   }
   
 void mouseClicked(){
+  println("clicked: ", mouseX, "  ", mouseY);
 	proxy.touch();
 }
 
 void mouseDragged(){
 	proxy.drag();
-}
-
 }

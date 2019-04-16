@@ -10,5 +10,5 @@ interface IMenuCommand{
 	/**
 	* set receiver
 	*/ 
-	void setReciver(IMenuReciver target);
+	void setReciver(IMenuReceiver target);
 }

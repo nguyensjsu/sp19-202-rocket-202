@@ -1,5 +1,5 @@
 /**
- * Login proxy interface
+ * Access proxy interface
  */ 
 interface IProxy{
 	/**

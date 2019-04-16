@@ -63,7 +63,7 @@ public class AppController implements IProxy{
 		// set receiver
 		setFlow.setReceiver(goFlow);
 		setChart.setReceiver(goChart);
-		setProperty..setReceiver(goProperty);
+		setProperty.setReceiver(goProperty);
 	}
 	
 	/**

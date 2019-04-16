@@ -1,5 +1,5 @@
 /**
- * Display chain component interface
+ * Display component interface
  */ 
 interface IDisplayComponent{
 	/**
@@ -7,8 +7,4 @@ interface IDisplayComponent{
 	*/ 
   void display();
 	
-	/**
-	* add next display chain component
-	*/ 
-  void addNext(IDisplayComponent next);
 }
