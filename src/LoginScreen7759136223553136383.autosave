@@ -1,0 +1,110 @@
+/**
+ * Login screen class
+ */ 
+public class LoginScreen implements IProxy, IAuthSubject, IKeyPadLoginObserver{
+	private KeyPadLogin kp;
+	private IAuthObserver observer;
+	private PinSet current;
+	private String passcode;
+	private String temp;
+	
+	private PinSet ls;
+	private PinSet cs;
+	private PinSet ss;
+	private PinSet es;
+
+    public LoginScreen(){
+      kp = new KeyPadLogin();
+	  
+	  ls = new LoginState();
+	  cs = new CheckState();
+	  ss = new ResetState();
+	  es = new ReenterState();
+	  chain = ls;
+	  
+	  ls.setNext(kp);
+	  cs.setNext(kp);
+	  ss.setNext(kp);
+	  es.setNext(kp);
+    }
+    
+	/**
+	* display method 
+	*/ 
+    public void display(){
+      current.display();
+    }
+	
+    /**
+	* touch method
+	*/ 
+    public void touch(){
+      chain.touch();
+    }
+	
+    /**
+  * drag method
+  */ 
+    public void drag(){
+
+    }
+    
+	/**
+	* Add observer to subject
+	*/ 
+	public void addObserver(IAuthObserver au){
+		observer = au;
+	}
+	
+	/**
+	* notify observer
+	*/ 
+	public void notifyObserver(){
+		observer.loginUpdate();
+	}
+	
+	public void setState(PinSet s){
+		current = s;
+	}
+	
+	public PinSet returnLogin(){
+		return ls;
+	}
+	
+	public PinSet returnCheck(){
+		return cs;
+	}
+	
+	public PinSet returnReset(){
+		return ss;
+	}
+	
+	public PinSet returnReenter(){
+		return es;
+	}
+	
+	public boolean check(String str){
+		if (str.equals(passcode)) return true;
+		else return false;
+	}
+	
+	public void addShock(){
+		kp.addShock();
+	}
+	
+	public void setTemp(String str){
+		temp = str;
+	}
+	
+	public boolean checkTemp(String str){
+		if(!temp.isEmpty() && temp.equals(str)){
+			passcode = temp;
+			return false;
+		}
+		else return false;
+	}
+	
+	public void updateEvent(String str){
+		current.update(str);
+	}
+}
