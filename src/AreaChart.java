@@ -43,17 +43,17 @@ public class AreaChart implements IChartStrategy{
             areaData.add(timePeriod);
             areaData.add("FALSE");
             areaData.add(String.valueOf(totalIncome[i]));
-            tools.CSVWriter(filename, true, areaData);
+            tools.CSVWriter(filename, areaData);
             areaData.clear();
             areaData.add(timePeriod);
             areaData.add("TRUE");
             areaData.add(String.valueOf(totalOutcome[i]));
-            tools.CSVWriter(filename, true, areaData);
+            tools.CSVWriter(filename, areaData);
             areaData.clear();
             areaData.add(timePeriod);
             areaData.add("BALANCE");
             areaData.add(String.valueOf(totalBalance[i]));
-            tools.CSVWriter(filename, true, areaData);
+            tools.CSVWriter(filename, areaData);
         }
 
 

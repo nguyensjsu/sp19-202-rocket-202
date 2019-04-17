@@ -37,20 +37,27 @@ public class Tools {
     }
 
     /* Write record to CSV */
-    public void CSVWriter(String filename, boolean append, ArrayList<String> fields){
-        try{
+    public void CSVWriter(String filename, ArrayList<String> fields) {
+        try {
             File csv = new File(filename);
-            if(!csv.exists()){
+            if (!csv.exists()) {
                 csv.createNewFile();
             }
-            BufferedWriter bw = new BufferedWriter(new FileWriter(csv, append));
-            bw.write(String.join(",",fields));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(csv, true));
+            bw.write(String.join(",", fields));
             bw.newLine();
             bw.close();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    /* Delete File */
+    public void deleteCSV(String filename){
+        File file = new File(filename);
+        if(file.exists()){
+            file.delete();
+        }
     }
 
 //    public static void main(String[] args) {
@@ -70,6 +77,9 @@ public class Tools {
 //        s.add("202");
 //        s.add("Rocket");
 //        tool.CSVWriter("src/record/test.csv",false, s);
+
+        /* Delete CSV File */
+//        tool.deleteCSV("src/record/PieChartForOutcome.csv");
 //    }
 
 }

@@ -7,8 +7,7 @@ public class PieChart implements IChartStrategy{
     private ArrayList<String> pieData = new ArrayList<String>();
     /* timePeriod example: "2019-04"*/
     private String timePeriod;
-    /* typeDetails is TRUE / FALSE */
-    private String typeDetails;
+    private boolean type;
     private BigDecimal totalFood = new BigDecimal("0.00");
     private BigDecimal totalShopping = new BigDecimal("0.00");
     private BigDecimal totalEntertainment = new BigDecimal("0.00");
@@ -26,11 +25,6 @@ public class PieChart implements IChartStrategy{
 
     public PieChart(String timePeriod, boolean type) {
         this.timePeriod = timePeriod;
-        if(type){
-            typeDetails = "TRUE" ;
-        } else {
-            typeDetails = "FALSE" ;
-        }
     }
 
     @Override
@@ -39,52 +33,53 @@ public class PieChart implements IChartStrategy{
             String[] field = line.split(",");
             field[0] = tools.getDate(field[0]);
             if(field[0].substring(0,7).equals(timePeriod)){
-                if(typeDetails.equals("TRUE") && field[1].equals("TRUE")){
+                if(type && field[1].equals("TRUE")){
                     if(field[2].equals("FOOD")){
-//                        totalFood.add(new BigDecimal(field[3]));
-                        totalFood.add(new BigDecimal("19.99"));
+                        totalFood = totalFood.add(new BigDecimal(field[3]));
                         System.out.println(totalFood);
                     }
                     if(field[2].equals("SHOPPING")){
-                        totalShopping.add(new BigDecimal(field[3]));
+                        totalShopping = totalShopping.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("ENTERTAINMENT")){
-                        totalEntertainment.add(new BigDecimal(field[3]));
+                        totalEntertainment = totalEntertainment.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("HEALTH")){
-                        totalHealth.add(new BigDecimal(field[3]));
+                        totalHealth = totalHealth.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("HOUSEHOLD")){
-                        totalHousehold.add(new BigDecimal(field[3]));
+                        totalHousehold = totalHousehold.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("TRANSPORTATION")){
-                        totalTransportation.add(new BigDecimal(field[3]));
+                        totalTransportation = totalTransportation.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("INSURANCE")){
-                        totalInsurance.add(new BigDecimal(field[3]));
+                        totalInsurance = totalInsurance.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("OTHERS")){
-                        totalOutcomeOthers.add(new BigDecimal(field[3]));
+                        totalOutcomeOthers = totalOutcomeOthers.add(new BigDecimal(field[3]));
                     }
-                } else {
+                } else if(!type && field[1].equals("FALSE")){
                     if(field[2].equals("SALARY")){
-                        totalSalary.add(new BigDecimal(field[3]));
+                        totalSalary = totalSalary.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("RED_PACKET")){
-                        totalRedpacket.add(new BigDecimal(field[3]));
+                        totalRedpacket = totalRedpacket.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("REFUND")){
-                        totalRefund.add(new BigDecimal(field[3]));
+                        totalRefund = totalRefund.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("CASH")){
-                        totalCash.add(new BigDecimal(field[3]));
+                        totalCash = totalCash.add(new BigDecimal(field[3]));
                     }
                     if(field[2].equals("REWARDS")){
-                        totalRewards.add(new BigDecimal(field[3]));
+                        totalRewards = totalRewards.add(new BigDecimal(field[3]));
                     }
                     if(field[1].equals("FALSE") && field[2].equals("OTHERS")){
-                        totalIncomeOthers.add(new BigDecimal(field[3]));
+                        totalIncomeOthers = totalIncomeOthers.add(new BigDecimal(field[3]));
                     }
+                } else {
+                    /* Nothing to do */
                 }
             }
         }
@@ -92,88 +87,89 @@ public class PieChart implements IChartStrategy{
 
     @Override
     public void writeData(String filename) {
+        tools.deleteCSV(filename);
         if(totalFood.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("FOOD");
             pieData.add(totalFood.toString());
-            tools.CSVWriter(filename, false, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalShopping.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("SHOPPING");
             pieData.add(totalShopping.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalEntertainment.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("ENTERTAINMENT");
             pieData.add(totalEntertainment.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalHealth.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("HEALTH");
             pieData.add(totalHealth.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalHousehold.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("HOUSEHOLD");
             pieData.add(totalHousehold.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalTransportation.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("TRANSPORTATION");
             pieData.add(totalTransportation.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalInsurance.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("INSURANCE");
             pieData.add(totalInsurance.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalSalary.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("SALARY");
             pieData.add(totalSalary.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalRedpacket.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("RED_PACKET");
             pieData.add(totalRedpacket.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalRefund.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("REFUND");
             pieData.add(totalRefund.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalCash.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("CASH");
             pieData.add(totalCash.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
         if(totalRewards.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("REWARDS");
             pieData.add(totalRewards.toString());
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
 
@@ -185,7 +181,7 @@ public class PieChart implements IChartStrategy{
             } else {
                 pieData.add(totalIncomeOthers.toString());
             }
-            tools.CSVWriter(filename, true, pieData );
+            tools.CSVWriter(filename, pieData );
             pieData.clear();
         }
     }
