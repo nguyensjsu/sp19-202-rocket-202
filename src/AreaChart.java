@@ -28,9 +28,9 @@ public class AreaChart implements IChartStrategy{
             String monthField = field[0].substring(5,7);
             if(field[0].substring(0,4).equals(yearPeriod)){
                 Float money = Float.parseFloat(field[3]);
-                if(field[1].equals("INCOME")){
+                if(field[1].equals("FALSE")){
                     switchMonth(monthField, money, totalIncome);
-                } else if(field[1].equals("OUTCOME")) {
+                } else if(field[1].equals("TRUE")) {
                     switchMonth(monthField, money, totalOutcome);
                 } else {
                     System.out.println("The INCOME/OUTCOME type can not match.");
@@ -47,12 +47,12 @@ public class AreaChart implements IChartStrategy{
         for(int i=0; i < 12; i++){
             String timePeriod = yearPeriod + "-" + i;
             areaData.add(timePeriod);
-            areaData.add("INCOME");
+            areaData.add("FALSE");
             areaData.add(String.valueOf(totalIncome[i]));
             tools.CSVWriter(filename, true, areaData);
             areaData.clear();
             areaData.add(timePeriod);
-            areaData.add("OUTCOME");
+            areaData.add("TRUE");
             areaData.add(String.valueOf(totalOutcome[i]));
             tools.CSVWriter(filename, true, areaData);
             areaData.clear();

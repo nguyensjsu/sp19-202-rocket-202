@@ -19,7 +19,8 @@ public class PieChart implements IChartStrategy{
     private BigDecimal totalHousehold = new BigDecimal(0.00);
     private BigDecimal totalTransportation = new BigDecimal(0.00);
     private BigDecimal totalInsurance = new BigDecimal(0.00);
-    private BigDecimal totalOthers = new BigDecimal(0.00);
+    private BigDecimal totalIncomeOthers = new BigDecimal(0.00);
+    private BigDecimal totalOutcomeOthers = new BigDecimal(0.00);
     private BigDecimal totalSalary = new BigDecimal(0.00);
     private BigDecimal totalRedpacket = new BigDecimal(0.00);
     private BigDecimal totalRefund = new BigDecimal(0.00);
@@ -36,43 +37,47 @@ public class PieChart implements IChartStrategy{
             field[0] = tools.getDate(field[0]);
             if(field[0].substring(0,7).equals(timePeriod)){
                 if(field[2].equals("FOOD")){
-                    totalFood.add(new BigDecimal(field[2]));
+                    totalFood.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("SHOPPING")){
-                    totalShopping.add(new BigDecimal(field[2]));
+                    totalShopping.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("ENTERTAINMENT")){
-                    totalEntertainment.add(new BigDecimal(field[2]));
+                    totalEntertainment.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("HEALTH")){
-                    totalHealth.add(new BigDecimal(field[2]));
+                    totalHealth.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("HOUSEHOLD")){
-                    totalHousehold.add(new BigDecimal(field[2]));
+                    totalHousehold.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("TRANSPORTATION")){
-                    totalTransportation.add(new BigDecimal(field[2]));
+                    totalTransportation.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("INSURANCE")){
-                    totalInsurance.add(new BigDecimal(field[2]));
-                }
-                if(field[2].equals("OTHERS")){
-                    totalOthers.add(new BigDecimal(field[2]));
+                    totalInsurance.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("SALARY")){
-                    totalSalary.add(new BigDecimal(field[2]));
+                    totalSalary.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("RED_PACKET")){
-                    totalRedpacket.add(new BigDecimal(field[2]));
+                    totalRedpacket.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("REFUND")){
-                    totalRefund.add(new BigDecimal(field[2]));
+                    totalRefund.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("CASH")){
-                    totalCash.add(new BigDecimal(field[2]));
+                    totalCash.add(new BigDecimal(field[3]));
                 }
                 if(field[2].equals("REWARDS")){
-                    totalRewards.add(new BigDecimal(field[2]));
+                    totalRewards.add(new BigDecimal(field[3]));
+                }
+                if(field[2].equals("OTHERS")){
+                    if(field[1].equals("TRUE")){
+                        totalOutcomeOthers.add(new BigDecimal(field[3]));
+                    } else {
+                        totalIncomeOthers.add(new BigDecimal(field[3]));
+                    }
                 }
             }
         }
@@ -129,13 +134,6 @@ public class PieChart implements IChartStrategy{
             tools.CSVWriter(filename, true, pieData );
             pieData.clear();
         }
-        if(totalOthers.compareTo(BigDecimal.ZERO)>0){
-            pieData.add(timePeriod);
-            pieData.add("OTHERS");
-            pieData.add(totalOthers.toString());
-            tools.CSVWriter(filename, true, pieData );
-            pieData.clear();
-        }
         if(totalSalary.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("SALARY");
@@ -168,6 +166,18 @@ public class PieChart implements IChartStrategy{
             pieData.add(timePeriod);
             pieData.add("REWARDS");
             pieData.add(totalRewards.toString());
+            tools.CSVWriter(filename, true, pieData );
+            pieData.clear();
+        }
+
+        if(totalOutcomeOthers.compareTo(BigDecimal.ZERO)>0 || totalIncomeOthers.compareTo(BigDecimal.ZERO)>0){
+            pieData.add(timePeriod);
+            pieData.add("OTHERS");
+            if(totalOutcomeOthers.compareTo(BigDecimal.ZERO)>0){
+                pieData.add(totalOutcomeOthers.toString());
+            } else {
+                pieData.add(totalIncomeOthers.toString());
+            }
             tools.CSVWriter(filename, true, pieData );
             pieData.clear();
         }
