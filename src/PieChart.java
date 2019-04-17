@@ -7,8 +7,8 @@ public class PieChart implements IChartStrategy{
     private ArrayList<String> pieData = new ArrayList<String>();
     /* timePeriod example: "2019-04"*/
     private String timePeriod;
-    /* type is "true" or "false", TRUE is "OUTCOME", false is "INCOME" */
-    private boolean type;
+    /* typeDetails is TRUE / FALSE */
+    private String typeDetails;
     private BigDecimal totalFood = new BigDecimal("0.00");
     private BigDecimal totalShopping = new BigDecimal("0.00");
     private BigDecimal totalEntertainment = new BigDecimal("0.00");
@@ -26,7 +26,11 @@ public class PieChart implements IChartStrategy{
 
     public PieChart(String timePeriod, boolean type) {
         this.timePeriod = timePeriod;
-        this.type = type;
+        if(type){
+            typeDetails = "TRUE" ;
+        } else {
+            typeDetails = "FALSE" ;
+        }
     }
 
     @Override
@@ -35,10 +39,10 @@ public class PieChart implements IChartStrategy{
             String[] field = line.split(",");
             field[0] = tools.getDate(field[0]);
             if(field[0].substring(0,7).equals(timePeriod)){
-                if(type){
+                if(typeDetails.equals("TRUE") && field[1].equals("TRUE")){
                     if(field[2].equals("FOOD")){
-                        totalFood.add(new BigDecimal(field[3]));
-//                        totalFood.add(new BigDecimal("19.99"));
+//                        totalFood.add(new BigDecimal(field[3]));
+                        totalFood.add(new BigDecimal("19.99"));
                         System.out.println(totalFood);
                     }
                     if(field[2].equals("SHOPPING")){
@@ -59,7 +63,7 @@ public class PieChart implements IChartStrategy{
                     if(field[2].equals("INSURANCE")){
                         totalInsurance.add(new BigDecimal(field[3]));
                     }
-                    if(field[1].equals("TRUE") && field[2].equals("OTHERS")){
+                    if(field[2].equals("OTHERS")){
                         totalOutcomeOthers.add(new BigDecimal(field[3]));
                     }
                 } else {
