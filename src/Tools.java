@@ -59,7 +59,7 @@ public class Tools {
 //        System.out.println(tool.getDate("1554891010"));
 //
 //        /* CSVReader test case */
-//        ArrayList<String> csv = tool.CSVReader("money/record.csv");
+//        ArrayList<String> csv = tool.CSVReader("src/record/record.csv");
 //        for(int i=0; i < csv.size(); i++){
 //            System.out.println(csv.get(i));
 //        }
@@ -69,9 +69,7 @@ public class Tools {
 //        s.add("Paul");
 //        s.add("202");
 //        s.add("Rocket");
-//        tool.CSVWriter("money/test.csv",false, s);
-//
-//
+//        tool.CSVWriter("src/record/test.csv",false, s);
 //    }
 
 }

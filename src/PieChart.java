@@ -3,26 +3,30 @@ import java.util.ArrayList;
 
 public class PieChart implements IChartStrategy{
     private Tools tools = new Tools();
-    private ArrayList<String> csvData = tools.CSVReader("record.csv");
+    private ArrayList<String> csvData = tools.CSVReader("src/record/record.csv");
     private ArrayList<String> pieData = new ArrayList<String>();
+    /* timePeriod example: "2019-04"*/
     private String timePeriod;
-    private BigDecimal totalFood = new BigDecimal(0.00);
-    private BigDecimal totalShopping = new BigDecimal(0.00);
-    private BigDecimal totalEntertainment = new BigDecimal(0.00);
-    private BigDecimal totalHealth = new BigDecimal(0.00);
-    private BigDecimal totalHousehold = new BigDecimal(0.00);
-    private BigDecimal totalTransportation = new BigDecimal(0.00);
-    private BigDecimal totalInsurance = new BigDecimal(0.00);
-    private BigDecimal totalIncomeOthers = new BigDecimal(0.00);
-    private BigDecimal totalOutcomeOthers = new BigDecimal(0.00);
-    private BigDecimal totalSalary = new BigDecimal(0.00);
-    private BigDecimal totalRedpacket = new BigDecimal(0.00);
-    private BigDecimal totalRefund = new BigDecimal(0.00);
-    private BigDecimal totalCash = new BigDecimal(0.00);
-    private BigDecimal totalRewards = new BigDecimal(0.00);
+    /* type is "true" or "false", TRUE is "OUTCOME", false is "INCOME" */
+    private boolean type;
+    private BigDecimal totalFood = new BigDecimal("0.00");
+    private BigDecimal totalShopping = new BigDecimal("0.00");
+    private BigDecimal totalEntertainment = new BigDecimal("0.00");
+    private BigDecimal totalHealth = new BigDecimal("0.00");
+    private BigDecimal totalHousehold = new BigDecimal("0.00");
+    private BigDecimal totalTransportation = new BigDecimal("0.00");
+    private BigDecimal totalInsurance = new BigDecimal("0.00");
+    private BigDecimal totalIncomeOthers = new BigDecimal("0.00");
+    private BigDecimal totalOutcomeOthers = new BigDecimal("0.00");
+    private BigDecimal totalSalary = new BigDecimal("0.00");
+    private BigDecimal totalRedpacket = new BigDecimal("0.00");
+    private BigDecimal totalRefund = new BigDecimal("0.00");
+    private BigDecimal totalCash = new BigDecimal("0.00");
+    private BigDecimal totalRewards = new BigDecimal("0.00");
 
-    public PieChart(String timePeriod) {
+    public PieChart(String timePeriod, boolean type) {
         this.timePeriod = timePeriod;
+        this.type = type;
     }
 
     @Override
@@ -31,46 +35,50 @@ public class PieChart implements IChartStrategy{
             String[] field = line.split(",");
             field[0] = tools.getDate(field[0]);
             if(field[0].substring(0,7).equals(timePeriod)){
-                if(field[2].equals("FOOD")){
-                    totalFood.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("SHOPPING")){
-                    totalShopping.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("ENTERTAINMENT")){
-                    totalEntertainment.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("HEALTH")){
-                    totalHealth.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("HOUSEHOLD")){
-                    totalHousehold.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("TRANSPORTATION")){
-                    totalTransportation.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("INSURANCE")){
-                    totalInsurance.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("SALARY")){
-                    totalSalary.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("RED_PACKET")){
-                    totalRedpacket.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("REFUND")){
-                    totalRefund.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("CASH")){
-                    totalCash.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("REWARDS")){
-                    totalRewards.add(new BigDecimal(field[3]));
-                }
-                if(field[2].equals("OTHERS")){
-                    if(field[1].equals("TRUE")){
+                if(type){
+                    if(field[2].equals("FOOD")){
+                        totalFood.add(new BigDecimal(field[3]));
+//                        totalFood.add(new BigDecimal("19.99"));
+                        System.out.println(totalFood);
+                    }
+                    if(field[2].equals("SHOPPING")){
+                        totalShopping.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("ENTERTAINMENT")){
+                        totalEntertainment.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("HEALTH")){
+                        totalHealth.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("HOUSEHOLD")){
+                        totalHousehold.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("TRANSPORTATION")){
+                        totalTransportation.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("INSURANCE")){
+                        totalInsurance.add(new BigDecimal(field[3]));
+                    }
+                    if(field[1].equals("TRUE") && field[2].equals("OTHERS")){
                         totalOutcomeOthers.add(new BigDecimal(field[3]));
-                    } else {
+                    }
+                } else {
+                    if(field[2].equals("SALARY")){
+                        totalSalary.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("RED_PACKET")){
+                        totalRedpacket.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("REFUND")){
+                        totalRefund.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("CASH")){
+                        totalCash.add(new BigDecimal(field[3]));
+                    }
+                    if(field[2].equals("REWARDS")){
+                        totalRewards.add(new BigDecimal(field[3]));
+                    }
+                    if(field[1].equals("FALSE") && field[2].equals("OTHERS")){
                         totalIncomeOthers.add(new BigDecimal(field[3]));
                     }
                 }
