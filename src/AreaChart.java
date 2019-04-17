@@ -1,11 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Created by Wing Yu on 2019/4/11 23:11).
- * Blog: http://www.wingyu.org/
- * GitHub: https://github.com/wing324
- * Email: wing.yumin@gmail.com
- */
 public class AreaChart implements IChartStrategy{
 
     private Tools tools = new Tools();

@@ -1,12 +1,6 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-/**
- * Created by Wing Yu on 2019/4/11 18:59).
- * Blog: http://www.wingyu.org/
- * GitHub: https://github.com/wing324
- * Email: wing.yumin@gmail.com
- */
 public class PieChart implements IChartStrategy{
     private Tools tools = new Tools();
     private ArrayList<String> csvData = tools.CSVReader("record.csv");
@@ -31,6 +25,7 @@ public class PieChart implements IChartStrategy{
         this.timePeriod = timePeriod;
     }
 
+    @Override
     public void calculateTotaldata(){
         for(String line: csvData){
             String[] field = line.split(",");
