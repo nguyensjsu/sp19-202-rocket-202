@@ -25,6 +25,7 @@ public class PieChart implements IChartStrategy{
 
     public PieChart(String timePeriod, boolean type) {
         this.timePeriod = timePeriod;
+        this.type = type ;
     }
 
     @Override
@@ -36,7 +37,6 @@ public class PieChart implements IChartStrategy{
                 if(type && field[1].equals("TRUE")){
                     if(field[2].equals("FOOD")){
                         totalFood = totalFood.add(new BigDecimal(field[3]));
-                        System.out.println(totalFood);
                     }
                     if(field[2].equals("SHOPPING")){
                         totalShopping = totalShopping.add(new BigDecimal(field[3]));
@@ -59,7 +59,8 @@ public class PieChart implements IChartStrategy{
                     if(field[2].equals("OTHERS")){
                         totalOutcomeOthers = totalOutcomeOthers.add(new BigDecimal(field[3]));
                     }
-                } else if(!type && field[1].equals("FALSE")){
+                }
+                if(!type && field[1].equals("FALSE")){
                     if(field[2].equals("SALARY")){
                         totalSalary = totalSalary.add(new BigDecimal(field[3]));
                     }
@@ -75,11 +76,9 @@ public class PieChart implements IChartStrategy{
                     if(field[2].equals("REWARDS")){
                         totalRewards = totalRewards.add(new BigDecimal(field[3]));
                     }
-                    if(field[1].equals("FALSE") && field[2].equals("OTHERS")){
+                    if(field[2].equals("OTHERS")){
                         totalIncomeOthers = totalIncomeOthers.add(new BigDecimal(field[3]));
                     }
-                } else {
-                    /* Nothing to do */
                 }
             }
         }
@@ -88,6 +87,21 @@ public class PieChart implements IChartStrategy{
     @Override
     public void writeData(String filename) {
         tools.deleteCSV(filename);
+        System.out.println("totalFood: " + totalFood);
+        System.out.println("totalShopping: " + totalShopping);
+        System.out.println("totalEntertainment: " + totalEntertainment);
+        System.out.println("totalHealth: " + totalHealth);
+        System.out.println("totalHousehold: " + totalHousehold);
+        System.out.println("totalTransportation: " + totalTransportation);
+        System.out.println("totalInsurance: " + totalInsurance);
+        System.out.println("totalOutcomeOthers: " + totalOutcomeOthers);
+        System.out.println("totalSalary: " + totalSalary);
+        System.out.println("totalRedpacket: " + totalRedpacket);
+        System.out.println("totalRefund: " + totalRefund);
+        System.out.println("totalCash: " + totalCash);
+        System.out.println("totalRewards: " + totalRewards);
+        System.out.println("totalIncomeOthers: " + totalIncomeOthers);
+
         if(totalFood.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("FOOD");

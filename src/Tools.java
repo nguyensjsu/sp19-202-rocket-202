@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 import java.io.BufferedWriter;
@@ -9,6 +10,8 @@ import java.io.File;
 import java.io.FileWriter;
 
 public class Tools {
+
+    Calendar cal = Calendar.getInstance();
 
     /* Convert unix_timestamp to "YYYY-MM-dd"*/
     public String getDate(String unix_timestamp){
@@ -19,6 +22,16 @@ public class Tools {
         sdf.setTimeZone(TimeZone.getTimeZone("GMT-7"));
         /* Return String type Date format*/
         return sdf.format(date);
+    }
+
+    /* Get current Year */
+    public String getCurrentYear(){
+        return String.valueOf(cal.get(Calendar.YEAR));
+    }
+
+    /* Get current Month */
+    public int getCurrentMonth(){
+        return cal.get(Calendar.MONTH )+1;
     }
 
     /* Return CSV record as Array */
