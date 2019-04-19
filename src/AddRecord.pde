@@ -1,6 +1,8 @@
 class AddRecordScreen implements IDisplayComponent{
     private static AddRecordScreen screen;
+    private Keypad kp;
     private AddRecordScreen() {
+    	kp = new Keypad(0, 300, 380, 380);
     }
     
     public static AddRecordScreen getScreen() {
@@ -11,7 +13,7 @@ class AddRecordScreen implements IDisplayComponent{
     }
     
     public void display() {
-    	
+    	size(380, 680);
     }
     
     public void addSubComponent(IDisplayComponent c) {
