@@ -87,4 +87,6 @@ public abstract class PinSet implements IDisplayComponent, ITouchEventHandler{
 	private void cancel(){
 		
 	}
+
+  public void addSubComponent(){}
 }

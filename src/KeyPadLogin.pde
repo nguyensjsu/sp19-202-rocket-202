@@ -126,4 +126,6 @@ class KeyPadLogin implements IKeyPadLoginSubject, ITouchEventHandler, IDisplayCo
 	public void reduceShock(){
 		shock = shock*9/10*-1;
 	}
+
+  public void addSubComponent(){}
 }
