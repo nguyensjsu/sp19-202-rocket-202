@@ -1,7 +1,7 @@
 AppProxy proxy;
 
 void setup(){
-   size(400,700) ;
+   size(380, 680);
    proxy = new AppProxy();
 }
 

@@ -1,0 +1,16 @@
+AppController app;
+PImage image;
+
+void setup() {
+  size(380, 680);
+  app = new AppController();
+  //loadImage()
+}
+
+void draw() {
+  app.display();
+}
+
+void mouseClicked() {
+  app.touch(mouseX,mouseY);
+}
