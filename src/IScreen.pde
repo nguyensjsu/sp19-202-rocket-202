@@ -3,6 +3,9 @@ interface IScreen {
     // touch event
     void touch();
 
+    // drag event
+    void drag();
+
     // draw of screen
     void display();
 
@@ -12,6 +15,9 @@ interface IScreen {
     // set reference for frame
     void setFrame(IFrame frame);
 
+    // get frame reference
+    IFrame getFrame();
+
     // remove current screen from frame
     void freeFrame();
 
@@ -20,7 +26,4 @@ interface IScreen {
 
     // jump to previous screen.
     void prev();
-
-    // if this screen include a menubar
-    boolean hasMenu();
 }

@@ -16,9 +16,15 @@ public class AppController implements IProxy{
 	public AppController(){
 		//initial
 		// !!!TODO: change to real screen
-		myFlows = new Screen();
-		account = new Screen();
-		chart = new Screen();
+		myFlows = new MenuScreen(new Screen(){
+			String name() { return "MyFlows"; }
+		});
+		account = new MenuScreen(new Screen(){
+			String name(){ return "AccountScreen"; }
+		});
+		chart = new MenuScreen( new Screen() {
+			String name(){ return "ChartScreen"; }
+		});;
 		addRecord = new AddRecordScreen();
 
 		frame = new Frame(myFlows);

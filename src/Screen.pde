@@ -9,14 +9,15 @@ public class Screen implements IScreen, IDisplayComponent {
     }
 
     public void touch() {
-        System.out.println(mouseX + " " + mouseY);
+        //System.out.println(mouseX + " " + mouseY);
         if (chain != null) {
             chain.touch();
         }
     }
 
     public String name() {
-        return (this.getClass().getName()).split("\\.")[1] ;
+        //System.out.println(this.getClass().getName());
+        return (this.getClass().getName()).split("\\$")[1] ;
     }
 
     // override if needed
@@ -31,12 +32,17 @@ public class Screen implements IScreen, IDisplayComponent {
         this.frame = frame;
     }
 
+    public IFrame getFrame() {
+        return frame;
+    }
+
     public void freeFrame() {
         frame = null;
     }
     // to be override
     public void next() {}
     public void prev() {}
+    public void drag() {}
 
     public void addSubComponent(IDisplayComponent c) {
         components.add(c);
@@ -46,10 +52,5 @@ public class Screen implements IScreen, IDisplayComponent {
             ITouchEventHandler prev = (ITouchEventHandler)components.get(components.size() - 2);
             prev.setNext((ITouchEventHandler)c);
         }
-    }
-
-    // to be override.
-    public boolean hasMenu() {
-        return true;
     }
 }

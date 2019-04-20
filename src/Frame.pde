@@ -7,6 +7,7 @@ public class Frame implements IFrame {
 
     public Frame(IScreen init){
         current = init;
+        current.setFrame(this);
     }
 
 
@@ -35,7 +36,7 @@ public class Frame implements IFrame {
 
     // Drag Event.
     public void drag() {
-
+        current.drag();
     }
 
     // Jump to previous page.

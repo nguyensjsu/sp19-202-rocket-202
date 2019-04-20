@@ -18,6 +18,9 @@ public interface IFrame {
     // Jump to next page.
     void next();
 
+    // Execute cmd.
+    void cmd(String c);
+
     // Display screen name.
     String screen();
 
