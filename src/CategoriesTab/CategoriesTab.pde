@@ -17,26 +17,6 @@ void setup(){
   List monthList = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12");
   List categories = Arrays.asList("Payment","Income");
   
-  // create Tab
-  Tab tab1 = cp5.getTab("default")
-     .activateEvent(true)
-     .setLabel("Categories")
-     .setPosition(0,0)
-     .setSize(190,40)
-     .setHeight(40)
-     .setId(1)
-     ;
-   tab1.getCaptionLabel().setFont(font);
-    
-  Tab tab2 = cp5.addTab("Trend")
-      .activateEvent(true)
-      .setPosition(190,0)
-      .setSize(190,40)
-      .setHeight(40)
-      .setId(2)
-      ;
-  tab2.getCaptionLabel().setFont(font);
-  
   // create a scollable list
   cp5.addScrollableList("2019")
     .setPosition(55,50)
