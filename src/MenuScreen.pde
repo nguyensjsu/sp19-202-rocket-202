@@ -17,7 +17,6 @@ public class MenuScreen implements IScreen {
     // touch event
     public void touch() {
         IFrame frame = screen.getFrame();
-        // add touch menu
         if (mouseY > 600) {
             if (mouseX < 127) {
                 frame.cmd("account");
@@ -29,7 +28,6 @@ public class MenuScreen implements IScreen {
                 frame.cmd("chart");
                 System.out.println("Chart");
             }
-            System.out.println(mouseX + " " + mouseY);
         } else {
             screen.touch();
         }

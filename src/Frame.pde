@@ -13,6 +13,7 @@ public class Frame implements IFrame {
 
     // Set current screen.
     public void setCurrentScreen(IScreen s) {
+        System.out.println("setting screen to " + s.name());
         if (current != null) {
             current.freeFrame();
         }
@@ -30,6 +31,7 @@ public class Frame implements IFrame {
     // Handle touch event.
     public void touch() {
         if (current != null) {
+            System.out.println("Frame: touch " + mouseX + "," + mouseY);
             current.touch();
         }
     }

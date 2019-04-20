@@ -22,10 +22,10 @@ public class Screen implements IScreen, IDisplayComponent {
 
     // override if needed
     public void display() {
+        background(255);
         for (IDisplayComponent c: components) {
             c.display();
         }
-
     }
 
     public void setFrame(IFrame frame) {

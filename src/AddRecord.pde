@@ -1,16 +1,14 @@
 class AddRecordScreen extends Screen{
 
     private KeyPad kp;
+    private OutputText ot;
+
     public AddRecordScreen() {
-
-    	kp = new KeyPad(0, 300, 380, 380);
-    }
-
-    public void display() {
-    	size(380, 680);
-    }
-
-    public void addSubComponent(IDisplayComponent c) {
+        ot = new OutputText(190, 100, 250, 150);
+        kp = new KeyPad(0, 400, 380, 280);
+        kp.attach(ot);
+        addSubComponent(kp);
+        addSubComponent(ot);
     }
 
 }
