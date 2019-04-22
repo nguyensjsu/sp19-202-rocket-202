@@ -4,9 +4,9 @@ import java.util.ArrayList;
 public class PieChartCSV implements IChartCSVStrategy{
     private Tools tools = new Tools();
     /* Processing */
-//    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/record.csv");
+    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/record.csv");
     /* Java */
-    private ArrayList<String> csvData = tools.CSVReader("src/data/record.csv");
+    //private ArrayList<String> csvData = tools.CSVReader("src/data/record.csv");
     private ArrayList<String> pieData = new ArrayList<String>();
     /* timePeriod example: "2019-04"*/
     private String timePeriod;

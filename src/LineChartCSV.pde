@@ -4,9 +4,9 @@ import java.util.ArrayList;
 public class LineChartCSV implements IChartCSVStrategy{
     private Tools tools = new Tools();
     /* Processing */
-//    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/record.csv");
+    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/record.csv");
     /* Java */
-    private ArrayList<String> csvData = tools.CSVReader("src/data/record.csv");
+    //private ArrayList<String> csvData = tools.CSVReader("src/data/record.csv");
     private BigDecimal initialData = new BigDecimal("0.00");
     private BigDecimal[] totalIncome = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};
     private BigDecimal[] totalOutcome = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};

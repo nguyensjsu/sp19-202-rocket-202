@@ -39,6 +39,6 @@ void setup(){
   }
 
   void draw(){
-  background(255,250,250);
+  //background(255,250,250);
   pieChart.display();
 }

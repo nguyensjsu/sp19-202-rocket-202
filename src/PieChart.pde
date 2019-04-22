@@ -6,7 +6,9 @@ class PieChart{
   ControlFont font;
   Chart pieChart;
   ArrayList<String> dataSet;
-  Tools tools = new Tools();
+  float[] dataSets;
+  String[] fieldSets;
+  String type;
 
   public PieChart(ControlP5 cp5){
     this.cp5 = cp5;
@@ -22,7 +24,7 @@ class PieChart{
 
 
     // create a scollable list
-    cp5.addScrollableList("2019")
+     cp5.addScrollableList("2019")
       .setPosition(55,50)
       .setSize(70,100)
       .setBarHeight(40)
@@ -54,41 +56,53 @@ class PieChart{
       .setType(ScrollableList.DROPDOWN)
       .setOpen(false)
       ;
+      
+      
 
     // Create my Pie Chart
     pieChart = createPieChart("Payment Pie Chart");
-
-    pieChart.getColor().setBackground(color(255, 100));
+    getDataSet();
+    //pieChart.getColor().setBackground(color(255, 100));
     pieChart.addDataSet("payment");
-    pieChart.setColors("payment", color(244, 89, 66),color(217, 65, 244));
-    float[] f = {0.76, 0.24, 0.39, 0.18, 0.20}; //<>//
-    pieChart.setData("payment", f);
+    //pieChart.setColors("payment", color(244, 89, 66)); //<>//
+    pieChart.setData("payment", dataSets);
     pieChart.setStrokeWeight(200);
+    
   }
+  
+  void dropdown() {
+  /* request the selected item based on index n */
+  int n = (int) cp5.get(ScrollableList.class, "Payment").getValue();
+  println(n, cp5.get(ScrollableList.class, "Payment").getItem(n));
+  
+}
 
     public Chart createPieChart(String pieChartName){
       return cp5.addChart(pieChartName)
                          .setPosition(90,160)
                          .setSize(200,200)
-                         .setView(Chart.PIE);
+                         .setView(Chart.PIE)
+                         .setLabelVisible(true)
+                         .setColorCaptionLabel(color(40));
     }
     
     public void getDataSet(){
-      String outputPath = dataPath("")+"/PieChartFoPayment.csv";
+      String outputPath = dataPath("")+"/PieChartForPayment.csv";
       ContextCSVChart contextCSVChart = new ContextCSVChart(new PieChartCSV("2019-04",true));
       contextCSVChart.excuteCSVStrategy(outputPath);
-      dataSet = tools.CSVReader(outputPath);
+      dataSets = contextCSVChart.getDataSet(outputPath);
+      fieldSets = contextCSVChart.getFieldSet(outputPath);
       
     }
 
     public void display(){
-    background(255,250,250);
+    background(255,255,255);
+    println(cp5.get(ScrollableList.class, "Payment").getValue());
     // unshift: add data from left to right (first in)
-    pieChart.unshift("payment", 0.76);
-    pieChart.unshift("payment", 0.24);
-    pieChart.unshift("payment", 0.39);
-    pieChart.unshift("payment", 0.18);
-    pieChart.unshift("payment", 0.20);
+    for(int i=0; i<dataSets.length; i++){
+      pieChart.setColors("payment", color(25*i, 255, 255), color(255, i, 255));
+      pieChart.unshift("payment", dataSets[i]);
+    }
   }
 
 
