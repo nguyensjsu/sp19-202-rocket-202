@@ -1,9 +1,12 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class PieChart implements IChartStrategy{
+public class PieChartCSV implements IChartCSVStrategy{
     private Tools tools = new Tools();
-    private ArrayList<String> csvData = tools.CSVReader("src/record/record.csv");
+    /* Processing */
+//    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/record.csv");
+    /* Java */
+    private ArrayList<String> csvData = tools.CSVReader("src/data/record.csv");
     private ArrayList<String> pieData = new ArrayList<String>();
     /* timePeriod example: "2019-04"*/
     private String timePeriod;
@@ -23,7 +26,8 @@ public class PieChart implements IChartStrategy{
     private BigDecimal totalCash = new BigDecimal("0.00");
     private BigDecimal totalRewards = new BigDecimal("0.00");
 
-    public PieChart(String timePeriod, boolean type) {
+    /* timePeriod like "2019-04", type is true as payment, type is false as income */
+    public PieChartCSV(String timePeriod, boolean type) {
         this.timePeriod = timePeriod;
         this.type = type ;
     }
@@ -87,20 +91,20 @@ public class PieChart implements IChartStrategy{
     @Override
     public void writeData(String filename) {
         tools.deleteCSV(filename);
-        System.out.println("totalFood: " + totalFood);
-        System.out.println("totalShopping: " + totalShopping);
-        System.out.println("totalEntertainment: " + totalEntertainment);
-        System.out.println("totalHealth: " + totalHealth);
-        System.out.println("totalHousehold: " + totalHousehold);
-        System.out.println("totalTransportation: " + totalTransportation);
-        System.out.println("totalInsurance: " + totalInsurance);
-        System.out.println("totalOutcomeOthers: " + totalOutcomeOthers);
-        System.out.println("totalSalary: " + totalSalary);
-        System.out.println("totalRedpacket: " + totalRedpacket);
-        System.out.println("totalRefund: " + totalRefund);
-        System.out.println("totalCash: " + totalCash);
-        System.out.println("totalRewards: " + totalRewards);
-        System.out.println("totalIncomeOthers: " + totalIncomeOthers);
+//        System.out.println("totalFood: " + totalFood);
+//        System.out.println("totalShopping: " + totalShopping);
+//        System.out.println("totalEntertainment: " + totalEntertainment);
+//        System.out.println("totalHealth: " + totalHealth);
+//        System.out.println("totalHousehold: " + totalHousehold);
+//        System.out.println("totalTransportation: " + totalTransportation);
+//        System.out.println("totalInsurance: " + totalInsurance);
+//        System.out.println("totalOutcomeOthers: " + totalOutcomeOthers);
+//        System.out.println("totalSalary: " + totalSalary);
+//        System.out.println("totalRedpacket: " + totalRedpacket);
+//        System.out.println("totalRefund: " + totalRefund);
+//        System.out.println("totalCash: " + totalCash);
+//        System.out.println("totalRewards: " + totalRewards);
+//        System.out.println("totalIncomeOthers: " + totalIncomeOthers);
 
         if(totalFood.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
@@ -199,4 +203,17 @@ public class PieChart implements IChartStrategy{
             pieData.clear();
         }
     }
+
+//    public float[] getDataSet(String filename){
+//        ArrayList<String> dataSets = tools.CSVReader(filename);
+//        float[] DataSetFloat = new float[dataSets.size()];
+//        BigDecimal dataSum = BigDecimal.ZERO;
+//        for(int i=0; i<dataSets.size(); i++){
+//            dataSum = dataSum.add(new BigDecimal(dataSets.get(i)));
+//        }
+//        for(int i=0; i<dataSets.size(); i++){
+//            float[i] =
+//        }
+//
+//    }
 }

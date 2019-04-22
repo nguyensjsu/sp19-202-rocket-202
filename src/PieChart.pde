@@ -4,9 +4,12 @@ import java.util.*;
 class PieChart{
   ControlP5 cp5;
   ControlFont font;
-  Chart paymentPieChart;
+  Chart pieChart;
+  ArrayList<String> dataSet;
+  Tools tools = new Tools();
 
   public PieChart(ControlP5 cp5){
+    this.cp5 = cp5;
 
     // setup Tab font size
     PFont pfont = createFont("arial",16);
@@ -53,26 +56,39 @@ class PieChart{
       ;
 
     // Create my Pie Chart
-    paymentPieChart = cp5.addChart("Payment Pie Chart")
+    pieChart = createPieChart("Payment Pie Chart");
+
+    pieChart.getColor().setBackground(color(255, 100));
+    pieChart.addDataSet("payment");
+    pieChart.setColors("payment", color(244, 89, 66),color(217, 65, 244));
+    float[] f = {0.76, 0.24, 0.39, 0.18, 0.20}; //<>//
+    pieChart.setData("payment", f);
+    pieChart.setStrokeWeight(200);
+  }
+
+    public Chart createPieChart(String pieChartName){
+      return cp5.addChart(pieChartName)
                          .setPosition(90,160)
                          .setSize(200,200)
-                         //.setRange(-20,20)
                          .setView(Chart.PIE);
-
-   paymentPieChart.getColor().setBackground(color(255, 100));
-   paymentPieChart.addDataSet("world");
-   paymentPieChart.setColors("world", color(244, 89, 66),color(217, 65, 244));
-   paymentPieChart.setData("world", new float[10]);
-   paymentPieChart.setStrokeWeight(3);
-  }
+    }
+    
+    public void getDataSet(){
+      String outputPath = dataPath("")+"/PieChartFoPayment.csv";
+      ContextCSVChart contextCSVChart = new ContextCSVChart(new PieChartCSV("2019-04",true));
+      contextCSVChart.excuteCSVStrategy(outputPath);
+      dataSet = tools.CSVReader(outputPath);
+      
+    }
 
     public void display(){
     background(255,250,250);
     // unshift: add data from left to right (first in)
-    paymentPieChart.unshift("world", 100);
-
-    // push: add data from right to left (last in)
-    //paymentPieChart.push("earth", (sin(frameCount*0.1)*10));
+    pieChart.unshift("payment", 0.76);
+    pieChart.unshift("payment", 0.24);
+    pieChart.unshift("payment", 0.39);
+    pieChart.unshift("payment", 0.18);
+    pieChart.unshift("payment", 0.20);
   }
 
 

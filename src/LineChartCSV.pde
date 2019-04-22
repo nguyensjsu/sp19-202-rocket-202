@@ -1,9 +1,12 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class LineChart implements IChartStrategy{
+public class LineChartCSV implements IChartCSVStrategy{
     private Tools tools = new Tools();
-    private ArrayList<String> csvData = tools.CSVReader("src/record/record.csv");
+    /* Processing */
+//    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/record.csv");
+    /* Java */
+    private ArrayList<String> csvData = tools.CSVReader("src/data/record.csv");
     private BigDecimal initialData = new BigDecimal("0.00");
     private BigDecimal[] totalIncome = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};
     private BigDecimal[] totalOutcome = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};
@@ -13,7 +16,7 @@ public class LineChart implements IChartStrategy{
     private String yearPeriod;
 
 
-    public LineChart(String yearPeriod) {
+    public LineChartCSV(String yearPeriod) {
         this.yearPeriod = yearPeriod;
     }
 
@@ -58,7 +61,7 @@ public class LineChart implements IChartStrategy{
             tools.CSVWriter(filename, lineData);
             lineData.clear();
             lineData.add(timePeriod);
-            lineData.add("OUTCOME");
+            lineData.add("PAYMENT");
             lineData.add(String.valueOf(totalOutcome[i]));
             tools.CSVWriter(filename, lineData);
             lineData.clear();
