@@ -14,6 +14,7 @@ class OutputText implements IKeyPadObserver, ITouchEventHandler, IDisplayCompone
   }
 
   public void display() {
+    fill(50);
     if(result == "")
       result = "0.00";
 
