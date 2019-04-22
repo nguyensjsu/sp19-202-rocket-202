@@ -204,16 +204,7 @@ public class PieChartCSV implements IChartCSVStrategy{
         }
     }
 
-//    public float[] getDataSet(String filename){
-//        ArrayList<String> dataSets = tools.CSVReader(filename);
-//        float[] DataSetFloat = new float[dataSets.size()];
-//        BigDecimal dataSum = BigDecimal.ZERO;
-//        for(int i=0; i<dataSets.size(); i++){
-//            dataSum = dataSum.add(new BigDecimal(dataSets.get(i)));
-//        }
-//        for(int i=0; i<dataSets.size(); i++){
-//            float[i] =
-//        }
-//
-//    }
+
+
+
 }
