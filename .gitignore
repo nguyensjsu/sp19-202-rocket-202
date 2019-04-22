@@ -1,3 +1,6 @@
+.autosave
+.gitignore
+src.pde
 # Compiled class file
 *.class
 

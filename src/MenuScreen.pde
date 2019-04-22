@@ -40,6 +40,7 @@ public class MenuScreen implements IScreen {
     // draw of screen
     public void display() {
         screen.display();
+        imageMode("CORNER");
         image(img, 0, 600, 380, 80);
     }
 

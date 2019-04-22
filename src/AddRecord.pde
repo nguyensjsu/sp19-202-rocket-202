@@ -7,8 +7,8 @@ class AddRecordScreen extends Screen{
         ot = new OutputText(190, 100, 250, 150);
         kp = new KeyPad(0, 400, 380, 280);
         kp.attach(ot);
-        addSubComponent(kp);
         addSubComponent(ot);
+        addSubComponent(kp);
     }
 
 }
