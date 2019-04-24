@@ -3,6 +3,8 @@ public class Screen implements IScreen, IDisplayComponent {
     private ArrayList<IDisplayComponent> components = new ArrayList<IDisplayComponent>();
     private ITouchEventHandler chain;
     protected IFrame frame;
+    private IScreen prevScreen;
+    private IScreen nextScreen;
 
     public Screen() {
 
@@ -22,7 +24,7 @@ public class Screen implements IScreen, IDisplayComponent {
 
     // override if needed
     public void display() {
-        //background(255);
+        background(255);
         for (IDisplayComponent c: components) {
             c.display();
         }
@@ -40,9 +42,27 @@ public class Screen implements IScreen, IDisplayComponent {
         frame = null;
     }
     // to be override
-    public void next() {}
-    public void prev() {}
     public void drag() {}
+
+    public void next() {
+        if (nextScreen != null) {
+            frame.setCurrentScreen(nextScreen);
+        }
+    }
+
+    public void prev() {
+        if (prevScreen != null) {
+            frame.setCurrentScreen(prevScreen);
+        }
+    }
+
+    public void setNext(IScreen s) {
+        nextScreen = s;
+    }
+
+    public void setPrev(IScreen s) {
+        prevScreen = s;
+    }
 
     public void addSubComponent(IDisplayComponent c) {
         components.add(c);

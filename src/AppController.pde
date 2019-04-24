@@ -8,6 +8,7 @@ public class AppController implements IProxy{
 	IScreen account;
 	IScreen chart;
 	IScreen addRecord;
+	IScreen chooseAccount;
 
 	IMenuCommand setFlow;
 	IMenuCommand setAccount;
@@ -26,6 +27,13 @@ public class AppController implements IProxy{
 			String name(){ return "ChartScreen"; }
 		});;
 		addRecord = new AddRecordScreen();
+		chooseAccount = new ChooseAccountScreen();
+
+		addRecord.setPrev(myFlows);
+		myFlows.setNext(addRecord);
+
+		addRecord.setNext(chooseAccount);
+		chooseAccount.setPrev(addRecord);
 
 		frame = new Frame(myFlows);
 
@@ -43,7 +51,7 @@ public class AppController implements IProxy{
 		frame.touch();
 	};
 
-   /**
+    /**
 	* display method
 	*/
 	public void display(){
@@ -69,6 +77,7 @@ public class AppController implements IProxy{
 			public void doAction() {
 				// !!!TODO: Change Name of Flow Scrren
 				if (frame.screen().equals("MyFlows")) {
+					((AddRecordScreen)addRecord).reset();
 					frame.setCurrentScreen(addRecord);
 				} else {
 					frame.setCurrentScreen(myFlows);
@@ -89,7 +98,7 @@ public class AppController implements IProxy{
 		});
 	}
 
-	/**a
+	/**
 	* set screen flow command invoker
 	*/
 	private void setInvoker(){
