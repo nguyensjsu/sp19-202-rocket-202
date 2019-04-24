@@ -40,7 +40,7 @@ public class MenuScreen implements IScreen {
     // draw of screen
     public void display() {
         screen.display();
-        imageMode("CORNER");
+        imageMode(CORNER);
         image(img, 0, 600, 380, 80);
     }
 
@@ -71,6 +71,14 @@ public class MenuScreen implements IScreen {
     // jump to previous screen.
     public void prev() {
         screen.prev();
+    }
+
+    public void setNext(IScreen s) {
+        screen.setNext(s);
+    }
+
+    public void setPrev(IScreen s) {
+        screen.setPrev(s);
     }
 
 }

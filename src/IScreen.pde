@@ -26,4 +26,10 @@ interface IScreen {
 
     // jump to previous screen.
     void prev();
+
+    // set next screen
+    void setNext(IScreen s);
+
+    // set previous screen
+    void setPrev(IScreen s);
 }
