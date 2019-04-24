@@ -1,3 +1,4 @@
+/*
 AppController app;
 void setup() {
     size(380, 680);
@@ -17,8 +18,9 @@ void mouseClicked(){
 void mouseDragged(){
     app.drag();
 }
+*/
 
-/**
+
 AppProxy proxy;
 
 
@@ -28,9 +30,9 @@ void setup(){
 }
 
 void draw(){
-  background(240);
+  //background(240);
   proxy.display();
-  }
+}
 
 void mouseClicked(){
   println("clicked: ", mouseX, "  ", mouseY);
@@ -40,5 +42,3 @@ void mouseClicked(){
 void mouseDragged(){
 	proxy.drag();
 }
-
-*/

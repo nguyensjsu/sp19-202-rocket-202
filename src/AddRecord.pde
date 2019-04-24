@@ -1,3 +1,6 @@
+import java.util.Date;
+import java.text.*;
+
 class AddRecordScreen extends Screen implements IRadioButtonObserver {
 
     private KeyPad kp;
@@ -5,53 +8,39 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver {
     private OutputText ot;
     private RadioButton rb;
     private Tags tags;
+    private Date date;
+    private SimpleDateFormat df;
 
     public AddRecordScreen() {
         rb = new RadioButton();
-        co = new CurrentOption();
+        co = new CurrentOption("FOOD");
         ot = new OutputText(360, 90, 250, 150);
-        tags = new Tags(co);
+        tags = new Tags((ITagsObserver)co);
         kp = new KeyPad(0, 430, 380, 250);
         kp.attach(ot);
         rb.attach(this);
         rb.attach(tags);
+        rb.attach(co);
         addSubComponent(rb);
         addSubComponent(co);
         addSubComponent(ot);
         addSubComponent(tags);
         addSubComponent(kp);
+        date = new Date();
+        df = new SimpleDateFormat("MM-dd");
     }
 
     public void display() {
         super.display();
-
-
-        line(0, 380, 380, 380);
-        //fill(255);
-        /*
+        line(0, 390, 380, 390);
         fill(255);
-        rectMode(CORNER);
         stroke(0,0,247);
-        rect(100, 10, 90, 30, 10, 0, 0, 10);
+        rectMode(CORNER);
+        rect(20, 395, 80, 30, 10, 10, 10, 10);
         fill(0,0,247);
-        rect(190, 10, 90, 30, 0, 10,10,0);
-
-        textAlign(LEFT);
         textSize(15);
-        fill(0,0,247);
-        text("Expense", 117, 30);
-        fill(255);
-        text("Income", 210, 30);
-        fill(60);
-        line(0, 50, 380, 50);
-        line(0, 350, 380, 350);
-
-        //stoke(60);
-        //rect(330, 15, 20, 20);
-        stroke(40, 40, 62);
-        line(339, 18, 353, 32);
-        line(339, 32, 353, 18);
-        */
+        textAlign(CENTER, CENTER);
+        text(df.format(date), 60, 408);
     }
 
     public void toggleExpense() {}

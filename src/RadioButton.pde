@@ -109,4 +109,8 @@ public class RadioButton implements IDisplayComponent, ITouchEventHandler {
             }
         }
     }
+
+    public boolean getType() {
+        return radioOption;
+    }
 }
