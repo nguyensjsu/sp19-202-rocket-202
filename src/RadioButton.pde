@@ -20,19 +20,15 @@ public class RadioButton implements IDisplayComponent, ITouchEventHandler {
     public void touch() {
         if (mouseY < 50) {
             if (isToggleExpense()) {
-                if (!radioOption) {
-                    // switch to expense
-                    System.out.println("toggle to expense");
-                    radioOption = true;
-                    notify("expense");
-                }
+                // switch to expense
+                System.out.println("toggle to expense");
+                radioOption = true;
+                notify("expense");
             } else if (isToggleIncome()) {
-                if (radioOption) {
-                    // switch to income
-                    System.out.println("toggle to income");
-                    radioOption = false;
-                    notify("income");
-                }
+                // switch to income
+                System.out.println("toggle to income");
+                radioOption = false;
+                notify("income");
             } else if (isCancel()) {
                 System.out.println("cancel");
                 radioOption = true;
@@ -60,24 +56,36 @@ public class RadioButton implements IDisplayComponent, ITouchEventHandler {
         }
     }
 
+    /**
+     * indicate whether touch trigger toggle to expense.
+     * @return Boolean result.
+     */
     private boolean isToggleExpense() {
         if (mouseY > 10 && mouseY < 40) {
             if (mouseX > 100 && mouseX < 190) {
-                return true;
+                return !radioOption;
             }
         }
         return false;
     }
 
+    /**
+     * indicate whether touch trigger toggle to income.
+     * @return Boolean result.
+     */
     private boolean isToggleIncome() {
         if (isWithinRangeY()) {
             if (mouseX > 190 && mouseX < 280) {
-                return true;
+                return radioOption;
             }
         }
         return false;
     }
 
+    /**
+     * indicate whether touch is within Y range.
+     * @return Boolean result.
+     */
     private boolean isWithinRangeY() {
         if (mouseY > 10 && mouseY < 40) {
             return true;
@@ -85,6 +93,10 @@ public class RadioButton implements IDisplayComponent, ITouchEventHandler {
         return false;
     }
 
+    /**
+     * indicate whether touch trigger cancel.
+     * @return Boolean result.
+     */
     private boolean isCancel() {
         if (mouseY > 18 && mouseY < 32 && mouseX > 339 && mouseX < 353) {
             return true;
@@ -112,5 +124,9 @@ public class RadioButton implements IDisplayComponent, ITouchEventHandler {
 
     public boolean getType() {
         return radioOption;
+    }
+
+    public void reset() {
+        radioOption = true;
     }
 }

@@ -185,6 +185,7 @@ class KeyPad implements ITouchEventHandler, IKeyPadSubject, IDisplayComponent {
       numberStr2 = "";
       dotClicked = false;
       decimalDigits = 0;
+      lastSignal = "+";
     }
     if(k.matches("^[0-9]")) {
       if(dotClicked == true && decimalDigits == 2)
@@ -221,6 +222,19 @@ class KeyPad implements ITouchEventHandler, IKeyPadSubject, IDisplayComponent {
     }
 
     return res;
+  }
+
+  /**
+   * reset keypad to initial status.
+   */
+  public void reset() {
+    lastKey = "";
+    numberStr1 = "";
+    numberStr2 = "";
+    dotClicked = false;
+    decimalDigits = 0;
+    lastSignal = "+";
+    notifyObservers();
   }
 
 }

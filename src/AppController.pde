@@ -28,6 +28,10 @@ public class AppController implements IProxy{
 		});;
 		addRecord = new AddRecordScreen();
 		chooseAccount = new ChooseAccountScreen();
+
+		addRecord.setPrev(myFlows);
+		myFlows.setNext(addRecord);
+
 		addRecord.setNext(chooseAccount);
 		chooseAccount.setPrev(addRecord);
 
@@ -73,6 +77,7 @@ public class AppController implements IProxy{
 			public void doAction() {
 				// !!!TODO: Change Name of Flow Scrren
 				if (frame.screen().equals("MyFlows")) {
+					((AddRecordScreen)addRecord).reset();
 					frame.setCurrentScreen(addRecord);
 				} else {
 					frame.setCurrentScreen(myFlows);

@@ -26,6 +26,11 @@ public class CurrentOption implements ITouchEventHandler, IDisplayComponent, ITa
         text = option;
     }
 
+    /**
+     * get current option.
+     * replace "-" with " " for RED_PACKET
+     * @return String current opiton.
+     */
     public String getOption() {
         return text.replace(" ", "_");
     }
@@ -53,6 +58,10 @@ public class CurrentOption implements ITouchEventHandler, IDisplayComponent, ITa
         nextHandler = next;
     }
 
+    /**
+     * touch Event for certain tag.
+     * @param  String name  Tag Name.
+     */
     public void touchTag(String name) {
         if (images.containsKey(name)) {
             img = (PImage)images.get(name);
@@ -62,10 +71,16 @@ public class CurrentOption implements ITouchEventHandler, IDisplayComponent, ITa
         }
     }
 
+    /**
+     * execute when switch to expense.
+     */
     public void toggleExpense() {
         touchTag("FOOD");
     }
 
+    /**
+     * execute when switch to income.
+     */
     public void toggleIncome() {
         touchTag("SALARY");
     }

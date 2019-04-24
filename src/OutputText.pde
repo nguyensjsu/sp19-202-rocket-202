@@ -43,4 +43,8 @@ class OutputText implements IKeyPadObserver, ITouchEventHandler, IDisplayCompone
     this.result = result;
   }
 
+  public String getText() {
+    return result;
+  }
+
 }

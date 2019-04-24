@@ -39,4 +39,44 @@ class Account {
     public void changeBalance(double amount, char operator) {
     }
 
+    /**
+     * change balance.
+     * @param  double amount       change amount
+     */
+    public void change(double amount) {
+        balance += amount;
+    }
+
+    /**
+     * get ID of the account
+     * @return {String} Account ID
+     */
+    public String getID() {
+        return uuid;
+    }
+
+    /**
+     * get balance of the account
+     * @return {double} Account Balance
+     */
+    public double getBalance() {
+        return balance;
+    }
+
+    /**
+     * get type of the account
+     * @return {String} Account Type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * Convert a Account to String
+     * @return String Account String
+     */
+    public String toString() {
+        return String.format("%s,%s,%.2f", uuid, type, balance);
+    }
+
 }

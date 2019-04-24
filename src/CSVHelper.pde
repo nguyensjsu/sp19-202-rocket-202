@@ -2,7 +2,7 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
 
-public final class CSVHelper {
+public static class CSVHelper {
 
     /**
      * Read CSV File And Return An ArrayList of Accounts
@@ -12,7 +12,7 @@ public final class CSVHelper {
      */
     public static ArrayList<String> readFile(String fileName) {
 
-        ArrayList<String> results = new ArrayList<>();
+        ArrayList<String> results = new ArrayList<String>();
         BufferedReader br = null;
         String line = "";
 
