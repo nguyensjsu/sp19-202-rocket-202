@@ -19,12 +19,8 @@ class OutputText implements IKeyPadObserver, ITouchEventHandler, IDisplayCompone
       result = "0.00";
 
     textSize(32);
-    textAlign(CENTER);
-    text(result, x1, y1);
-
-    textSize(10);
     textAlign(RIGHT);
-    text(lastKey, x2, y2);
+    text(result, x1, y1);
   }
 
 

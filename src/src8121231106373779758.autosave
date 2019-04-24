@@ -1,0 +1,59 @@
+//PImage img;
+
+//void setup() {
+//  size(380, 680);
+//  img = loadImage("img/menu_chart.png");
+//}
+
+//void draw(){
+//  line(0,0,100,100);
+//  image(img, 0, 600, 380, 80); 
+//}
+
+
+
+AppController app;
+void setup() {
+    size(380, 680);
+    app = new AppController();
+}
+
+void draw(){
+    background(255);
+    app.display();
+}
+
+void mouseClicked(){
+    println("clicked: ", mouseX, "  ", mouseY);
+    app.touch();
+}
+
+void mouseDragged(){
+    app.drag();
+}
+
+
+
+//AppProxy proxy;
+//PImage timg;
+
+//void setup(){
+//   size(380, 680);
+//   proxy = new AppProxy();
+//   timg = loadImage("img/menu_chart.png");
+//}
+
+//void draw(){
+//  background(240);
+//  proxy.display();
+//  //image(timg, 0, 600, 380, 80);
+//  }
+
+//void mouseClicked(){
+//  println("clicked: ", mouseX, "  ", mouseY);
+//	proxy.touch();
+//}
+
+//void mouseDragged(){
+//	proxy.drag();
+//}
