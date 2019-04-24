@@ -1,9 +1,11 @@
 public class ChooseAccountScreen extends Screen {
     private boolean firstTime = true;
+
     public ChooseAccountScreen() {
     }
 
     public void display() {
+
         if (firstTime) {
             fill(60, 50);
             noStroke();

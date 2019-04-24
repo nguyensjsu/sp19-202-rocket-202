@@ -1,6 +1,5 @@
 import java.util.Date;
 import java.text.*;
-import java.io.File;
 
 class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAreaObserver, IKeyPadObserver {
 
@@ -24,6 +23,7 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
         co = new CurrentOption("FOOD");
         ot = new OutputText(360, 90, 250, 150);
         tags = new Tags((ITagsObserver)co);
+
         aa = new AccountArea(accList.get(0));
         kp = new KeyPad(0, 430, 380, 250);
         kp.attach(this);
@@ -79,7 +79,6 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
             fill(255);
             text("Amount can't be 0.", 189, 233);
         }
-
     }
 
     public void toggleExpense() {}

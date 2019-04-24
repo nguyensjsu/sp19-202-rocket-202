@@ -82,6 +82,7 @@ public class RadioButton implements IDisplayComponent, ITouchEventHandler {
         return false;
     }
 
+
     /**
      * indicate whether touch is within Y range.
      * @return Boolean result.

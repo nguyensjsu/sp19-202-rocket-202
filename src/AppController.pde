@@ -51,7 +51,7 @@ public class AppController implements IProxy{
 		frame.touch();
 	};
 
-   /**
+    /**
 	* display method
 	*/
 	public void display(){
@@ -98,7 +98,7 @@ public class AppController implements IProxy{
 		});
 	}
 
-	/**a
+	/**
 	* set screen flow command invoker
 	*/
 	private void setInvoker(){
