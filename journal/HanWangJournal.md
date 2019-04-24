@@ -19,6 +19,9 @@
 - According to my own assignment, to design and complete the Use Story.
 - Building UI and annimation on processing
 
+### XP core value--Courage
+- In the meeting, I 
+
 ### Problems
 
 ### Time Spend
