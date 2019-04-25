@@ -1,39 +1,11 @@
 import controlP5.*;
 import java.util.*;
 
-ControlP5 cp5;
-ControlFont font;
-ContextChart contextChart;
+ChartScreen chartScreen;
 
 void setup(){
   size(380, 680);
-  cp5 = new ControlP5(this);
-  contextChart = new ContextChart(new PieChart(cp5));
-
-  // setup Tab font size
-  PFont pfont = createFont("arial",16);
-  font = new ControlFont(pfont);
-
-  // create Tab
-    Tab tab1 = cp5.getTab("default")
-       .activateEvent(true)
-       .setLabel("Categories")
-       .setPosition(0,0)
-       .setSize(190,40)
-       .setHeight(40)
-       .setId(1)
-       ;
-     tab1.getCaptionLabel().setFont(font);
-
-    Tab tab2 = cp5.addTab("Trend")
-        .activateEvent(true)
-        .setPosition(190,0)
-        .setSize(190,40)
-        .setHeight(40)
-        .setId(2)
-        ;
-    tab2.getCaptionLabel().setFont(font);
-
+  chartScreen = new ChartScreen(this);
   }
   
 //      void payment(int n) {
@@ -44,18 +16,18 @@ void setup(){
 
   void draw(){
   //background(255,250,250);
-  contextChart.display();
+  chartScreen.display();
   //pieChart.display();
   //lineChart.display();
 }
 
-void controlEvent(ControlEvent theControlEvent) {
-  if (theControlEvent.isTab()) {
-    //println("got an event from tab : "+theControlEvent.getTab().getName()+" with id "+theControlEvent.getTab().getId());
-    if(theControlEvent.getTab().getId()==1){
-      contextChart = new ContextChart(new PieChart(cp5));
-    } else if(theControlEvent.getTab().getId()==2){
-      contextChart = new ContextChart(new LineChart(this,cp5));
-    }
-  }
-}
+//void controlEvent(ControlEvent theControlEvent) {
+//  if (theControlEvent.isTab()) {
+//    //println("got an event from tab : "+theControlEvent.getTab().getName()+" with id "+theControlEvent.getTab().getId());
+//    if(theControlEvent.getTab().getId()==1){
+//      contextChart = new ContextChart(new PieChart(cp5));
+//    } else if(theControlEvent.getTab().getId()==2){
+//      contextChart = new ContextChart(new LineChart(this,cp5));
+//    }
+//  }
+//}

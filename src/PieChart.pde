@@ -11,19 +11,16 @@ class PieChart implements IChartStrategy{
   String type;
 
   public PieChart(ControlP5 cp5){
-    this.cp5 = cp5;
-
+    this.cp5 = cp5;     //<>//
     // setup Tab font size
     PFont pfont = createFont("arial",16);
     font = new ControlFont(pfont);
-
     // setup Scollable List for Year and Month
     List yearList = Arrays.asList("2019","2018","2017","2016","2015","2014","2013","2012","2011","2010");
     List monthList = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12");
     List categories = Arrays.asList("Payment","Income");
-
-
-    // create a scollable list
+    
+    // create pieChart scollable list
      cp5.addScrollableList("pieChartYear")
       .setPosition(55,50)
       .setLabel("2019")
@@ -57,8 +54,8 @@ class PieChart implements IChartStrategy{
       .setFont(font)
       .setType(ScrollableList.DROPDOWN)
       .setOpen(false)
-      ; //<>//
-    
+      ;
+
     // Create my Pie Chart
     pieChart = createPieChart("Payment Pie Chart");
     
@@ -115,6 +112,7 @@ class PieChart implements IChartStrategy{
       pieChart.unshift("payment", dataSets[i]);
     }
   }
+
 
 
 

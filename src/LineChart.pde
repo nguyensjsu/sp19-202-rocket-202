@@ -16,16 +16,14 @@ class LineChart implements IChartStrategy{
 
   public LineChart(PApplet papplet, ControlP5 cp5){
     this.cp5 = cp5;
-    papplet.stroke(0);
 
     // setup Tab font size
     PFont pfont = createFont("arial",16);
     font = new ControlFont(pfont);
 
-    // setup Scollable List for Year
     List yearList = Arrays.asList("2019","2018","2017","2016","2015","2014","2013","2012","2011","2010");
 
-    // create a scollable list
+     // create LineChart scollable list
      cp5.addScrollableList("lineChartYear")
       .setPosition(160,50)
       .setSize(70,100)
@@ -102,11 +100,6 @@ class LineChart implements IChartStrategy{
    
   }
   
-//  void payment(int n) {
-//  /* request the selected item based on index n */
-//  String out = cp5.get(ScrollableList.class, "payment").getItem(n).get("value").toString();
-//  System.out.println(out);
-//}
 
 
 }
