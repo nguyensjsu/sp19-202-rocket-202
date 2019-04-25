@@ -3,14 +3,11 @@ import java.util.*;
 
 ControlP5 cp5;
 ControlFont font;
-PieChart pieChart;
-LineChart lineChart;
+ContextChart contextChart;
 
 void setup(){
   size(380, 680);
   cp5 = new ControlP5(this);
-  //pieChart = new PieChart(cp5);
-  lineChart = new LineChart(this,cp5);
 
   // setup Tab font size
   PFont pfont = createFont("arial",16);
@@ -36,7 +33,6 @@ void setup(){
         ;
     tab2.getCaptionLabel().setFont(font);
 
-
   }
   
 //      void payment(int n) {
@@ -47,6 +43,18 @@ void setup(){
 
   void draw(){
   //background(255,250,250);
+  contextChart.display();
   //pieChart.display();
-  lineChart.display();
+  //lineChart.display();
+}
+
+void controlEvent(ControlEvent theControlEvent) {
+  if (theControlEvent.isTab()) {
+    //println("got an event from tab : "+theControlEvent.getTab().getName()+" with id "+theControlEvent.getTab().getId());
+    if(theControlEvent.getTab().getId()==1){
+      contextChart = new ContextChart(new PieChart(cp5));
+    } else if(theControlEvent.getTab().getId()==2){
+      contextChart = new ContextChart(new LineChart(this,cp5));
+    }
+  }
 }

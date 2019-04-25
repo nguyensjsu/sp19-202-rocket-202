@@ -2,7 +2,7 @@ import controlP5.*;
 import java.util.*;
 import org.gicentre.utils.stat.*;
 
-class LineChart{
+class LineChart implements IChartStrategy{
   ControlP5 cp5;
   ControlFont font;
   XYChart lineChartPayment;

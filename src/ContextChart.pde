@@ -5,8 +5,8 @@ public class ContextChart {
         this.chartStrategy = chartStrategy;
     }
 
-    public void excuteStrategy(String filename){
-        chartStrategy.calculateTotaldata();
-        chartStrategy.writeData(filename);
+    public void display(){
+        chartStrategy.display();
     }
+    
 }
