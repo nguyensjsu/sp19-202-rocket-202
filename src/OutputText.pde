@@ -1,4 +1,4 @@
-class OutputText implements IDisplayComponent {
+class OutputText implements IDisplayComponent, ITouchEventHandler, IDisplayComponent {
 
     private int x;
     private int y;
