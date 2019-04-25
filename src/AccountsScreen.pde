@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-class AccountsScreen extends Screen implements IDisplayComponent, ITouchEventHandler, IAddAccountObserver {
+class AccountsScreen extends Screen implements IAddAccountObserver {
 
     PImage headImage;
     PImage totalImage;
@@ -13,7 +13,7 @@ class AccountsScreen extends Screen implements IDisplayComponent, ITouchEventHan
     private ArrayList<Account> accountList;
     private DecimalFormat df = new DecimalFormat("0.00");
     // FIXME: Using relative path doesn't work. Cannot find this file
-    private String accountsCSVFile = "data/accounts.csv";
+    private String accountsCSVFile = dataPath("accounts.csv");
 
     public AccountsScreen() {
 
@@ -60,11 +60,11 @@ class AccountsScreen extends Screen implements IDisplayComponent, ITouchEventHan
     public void touch() {
 
         if(mouseY >= getAddAccountYStart() && mouseY < (getAddAccountYStart() + 60)) {
+            next();
+            // AddAcountType addAcountType = new AddAcountType(this);
+            // addAcountType.setPrev(this);
 
-            AddAcountType addAcountType = new AddAcountType(this);
-            addAcountType.setPrev(this);
-
-            frame.setCurrentScreen(addAcountType);
+            // frame.setCurrentScreen(addAcountType);
 
         }
 
@@ -155,14 +155,6 @@ class AccountsScreen extends Screen implements IDisplayComponent, ITouchEventHan
         accountList.add(account);
 
         CSVHelper.appendFile(accountsCSVFile, account.toString());
-
-    }
-
-    public void addSubComponent(IDisplayComponent c) {
-
-    }
-
-    public void setNext(ITouchEventHandler next) {
 
     }
 

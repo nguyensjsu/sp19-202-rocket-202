@@ -4,11 +4,12 @@
 public class AppController implements IProxy{
 	IFrame frame;
 
-	IScreen myFlows;
-	IScreen account;
-	IScreen chart;
+	MenuScreen myFlows;
+	MenuScreen account;
+	MenuScreen chart;
 	IScreen addRecord;
 	IScreen chooseAccount;
+	IScreen addAccountType;
 
 	IMenuCommand setFlow;
 	IMenuCommand setAccount;
@@ -20,9 +21,12 @@ public class AppController implements IProxy{
 		myFlows = new MenuScreen(new Screen(){
 			String name() { return "MyFlows"; }
 		});
-		account = new MenuScreen(new Screen(){
-			String name(){ return "AccountScreen"; }
-		});
+		account = new MenuScreen(new AccountsScreen());
+		addAccountType = new AddAccountType((AccountsScreen)account.getInnerScreen());
+
+		account.setNext(addAccountType);
+		addAccountType.setPrev(account);
+
 		chart = new MenuScreen( new Screen() {
 			String name(){ return "ChartScreen"; }
 		});;
