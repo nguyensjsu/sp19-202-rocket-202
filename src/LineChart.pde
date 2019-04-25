@@ -26,9 +26,10 @@ class LineChart implements IChartStrategy{
     List yearList = Arrays.asList("2019","2018","2017","2016","2015","2014","2013","2012","2011","2010");
 
     // create a scollable list
-     cp5.addScrollableList("2019")
+     cp5.addScrollableList("lineChartYear")
       .setPosition(160,50)
       .setSize(70,100)
+      .setLabel("2019")
       .setBarHeight(40)
       .setItemHeight(30)
       .addItems(yearList)

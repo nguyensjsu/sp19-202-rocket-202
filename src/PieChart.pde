@@ -24,8 +24,9 @@ class PieChart implements IChartStrategy{
 
 
     // create a scollable list
-     cp5.addScrollableList("2019")
+     cp5.addScrollableList("pieChartYear")
       .setPosition(55,50)
+      .setLabel("2019")
       .setSize(70,100)
       .setBarHeight(40)
       .setItemHeight(30)
@@ -35,9 +36,10 @@ class PieChart implements IChartStrategy{
       .setOpen(false)
       ;
 
-    cp5.addScrollableList("4")
+    cp5.addScrollableList("pieChartMonth")
       .setPosition(135,50)
       .setSize(50,100)
+      .setLabel("4")
       .setBarHeight(40)
       .setItemHeight(30)
       .addItems(monthList)

@@ -8,6 +8,7 @@ ContextChart contextChart;
 void setup(){
   size(380, 680);
   cp5 = new ControlP5(this);
+  contextChart = new ContextChart(new PieChart(cp5));
 
   // setup Tab font size
   PFont pfont = createFont("arial",16);
