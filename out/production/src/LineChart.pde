@@ -1,12 +1,9 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class LineChartCSV implements IChartCSVStrategy{
+public class LineChart implements IChartStrategy{
     private Tools tools = new Tools();
-    /* Processing */
-    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/records.csv");
-    /* Java */
-    //private ArrayList<String> csvData = tools.CSVReader("src/data/records.csv");
+    private ArrayList<String> csvData = tools.CSVReader("src/record/record.csv");
     private BigDecimal initialData = new BigDecimal("0.00");
     private BigDecimal[] totalIncome = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};
     private BigDecimal[] totalOutcome = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};
@@ -16,7 +13,7 @@ public class LineChartCSV implements IChartCSVStrategy{
     private String yearPeriod;
 
 
-    public LineChartCSV(String yearPeriod) {
+    public LineChart(String yearPeriod) {
         this.yearPeriod = yearPeriod;
     }
 
@@ -24,7 +21,7 @@ public class LineChartCSV implements IChartCSVStrategy{
     public void calculateTotaldata() {
         for(String line : csvData){
             String[] field = line.split(",");
-            field[0] = tools.getDate(field[0].trim());
+            field[0] = tools.getDate(field[0]);
             String monthField = field[0].substring(5,7);
             if(field[0].substring(0,4).equals(yearPeriod)){
                 BigDecimal money = new BigDecimal(field[3]);
@@ -61,7 +58,7 @@ public class LineChartCSV implements IChartCSVStrategy{
             tools.CSVWriter(filename, lineData);
             lineData.clear();
             lineData.add(timePeriod);
-            lineData.add("PAYMENT");
+            lineData.add("OUTCOME");
             lineData.add(String.valueOf(totalOutcome[i]));
             tools.CSVWriter(filename, lineData);
             lineData.clear();

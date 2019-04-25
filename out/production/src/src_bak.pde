@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import controlP5.*;
 import java.util.*;
 
@@ -8,6 +9,7 @@ PieChart pieChart;
 void setup(){
   size(380, 680);
   cp5 = new ControlP5(this);
+  cp5.printPublicMethodsFor(Chart.class);
   pieChart = new PieChart(cp5);
 
   // setup Tab font size
@@ -36,14 +38,53 @@ void setup(){
 
 
   }
-  
-//      void payment(int n) {
-//  /* request the selected item based on index n */
-//  String out = cp5.get(ScrollableList.class, "payment").getItem(n).get("value").toString();
-//  System.out.println(out);
-//}
 
   void draw(){
   //background(255,250,250);
   pieChart.display();
+=======
+/*
+AppController app;
+void setup() {
+    size(380, 680);
+    app = new AppController();
+}
+
+void draw(){
+    background(255);
+    app.display();
+}
+
+void mouseClicked(){
+    println("clicked: ", mouseX, "  ", mouseY);
+    app.touch();
+}
+
+void mouseDragged(){
+    app.drag();
+}
+*/
+
+
+AppProxy proxy;
+
+
+void setup(){
+   size(380, 680);
+   proxy = new AppProxy();
+}
+
+void draw(){
+  //background(240);
+  proxy.display();
+}
+
+void mouseClicked(){
+  println("clicked: ", mouseX, "  ", mouseY);
+	proxy.touch();
+}
+
+void mouseDragged(){
+	proxy.drag();
+>>>>>>> master
 }

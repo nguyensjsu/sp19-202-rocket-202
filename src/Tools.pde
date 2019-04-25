@@ -16,7 +16,7 @@ public class Tools {
     /* Convert unix_timestamp to "YYYY-MM-dd"*/
     public String getDate(String unix_timestamp){
         Long long_timestamp = Long.parseLong(unix_timestamp);
-        Date date = new Date(long_timestamp*1000L);
+        Date date = new Date(long_timestamp);
         /* Format Date */
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         sdf.setTimeZone(TimeZone.getTimeZone("GMT-7"));
@@ -43,6 +43,7 @@ public class Tools {
             while((line=reader.readLine())!=null){
                 csvContent.add(line) ;
             }
+            reader.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

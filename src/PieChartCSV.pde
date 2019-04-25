@@ -4,9 +4,9 @@ import java.util.ArrayList;
 public class PieChartCSV implements IChartCSVStrategy{
     private Tools tools = new Tools();
     /* Processing */
-    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/record.csv");
+    private ArrayList<String> csvData = tools.CSVReader(dataPath("")+"/records.csv");
     /* Java */
-    //private ArrayList<String> csvData = tools.CSVReader("src/data/record.csv");
+    //private ArrayList<String> csvData = tools.CSVReader("src/data/records.csv");
     private ArrayList<String> pieData = new ArrayList<String>();
     /* timePeriod example: "2019-04"*/
     private String timePeriod;
@@ -36,7 +36,7 @@ public class PieChartCSV implements IChartCSVStrategy{
     public void calculateTotaldata(){
         for(String line: csvData){
             String[] field = line.split(",");
-            field[0] = tools.getDate(field[0]);
+            field[0] = tools.getDate(field[0].trim());
             if(field[0].substring(0,7).equals(timePeriod)){
                 if(type && field[1].equals("TRUE")){
                     if(field[2].equals("FOOD")){

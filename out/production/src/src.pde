@@ -8,6 +8,7 @@ PieChart pieChart;
 void setup(){
   size(380, 680);
   cp5 = new ControlP5(this);
+  cp5.printPublicMethodsFor(Chart.class);
   pieChart = new PieChart(cp5);
 
   // setup Tab font size
@@ -36,12 +37,6 @@ void setup(){
 
 
   }
-  
-//      void payment(int n) {
-//  /* request the selected item based on index n */
-//  String out = cp5.get(ScrollableList.class, "payment").getItem(n).get("value").toString();
-//  System.out.println(out);
-//}
 
   void draw(){
   //background(255,250,250);
