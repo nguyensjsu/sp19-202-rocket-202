@@ -30,6 +30,8 @@ class AccountsScreen extends Screen implements IDisplayComponent, ITouchEventHan
 
     public void display() {
 
+        accountList = parseCSVContents(CSVHelper.readFile(accountsCSVFile));
+
         background(245);
 
         image(headImage, 0, 0, 380, 60);
