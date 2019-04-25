@@ -21,7 +21,7 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
         accList.loadFromFile();
         rb = new RadioButton();
         co = new CurrentOption("FOOD");
-        ot = new OutputText(360, 90, 250, 150);
+        ot = new OutputText(360, 90, 32);
         tags = new Tags((ITagsObserver)co);
 
         aa = new AccountArea(accList.get(0));
