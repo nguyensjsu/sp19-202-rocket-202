@@ -27,13 +27,17 @@ public class ContextCSVChart {
     public float[] getDataSet(String filename){
         ArrayList<String> dataSets = tools.CSVReader(filename);
         float[] dataSetFloat = new float[dataSets.size()];
-        BigDecimal dataSum = BigDecimal.ZERO;
+        //BigDecimal dataSum = BigDecimal.ZERO;
         for(int i=0; i<dataSets.size(); i++){
-            dataSum = dataSum.add(new BigDecimal(dataSets.get(i).split(",")[2]));
+            dataSetFloat[i] = new BigDecimal(dataSets.get(i).split(",")[2]).floatValue();
         }
-        for(int i=0; i<dataSets.size(); i++){
-            dataSetFloat[i] = new BigDecimal(dataSets.get(i).split(",")[2]).divide(dataSum,2).floatValue();
-        }
+        
+        //for(int i=0; i<dataSets.size(); i++){
+        //    dataSum = dataSum.add(new BigDecimal(dataSets.get(i).split(",")[2]));
+        //}
+        //for(int i=0; i<dataSets.size(); i++){
+        //    dataSetFloat[i] = new BigDecimal(dataSets.get(i).split(",")[2]).divide(dataSum,2).floatValue();
+        //}
         return dataSetFloat;
     }
 }

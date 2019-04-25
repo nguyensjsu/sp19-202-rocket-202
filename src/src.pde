@@ -4,11 +4,13 @@ import java.util.*;
 ControlP5 cp5;
 ControlFont font;
 PieChart pieChart;
+LineChart lineChart;
 
 void setup(){
   size(380, 680);
   cp5 = new ControlP5(this);
   pieChart = new PieChart(cp5);
+  //lineChart = new LineChart(this,cp5);
 
   // setup Tab font size
   PFont pfont = createFont("arial",16);
@@ -46,4 +48,5 @@ void setup(){
   void draw(){
   //background(255,250,250);
   pieChart.display();
+  //lineChart.display();
 }

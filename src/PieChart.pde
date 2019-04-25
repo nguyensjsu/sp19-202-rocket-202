@@ -5,7 +5,7 @@ class PieChart{
   ControlP5 cp5;
   ControlFont font;
   Chart pieChart;
-  ArrayList<String> dataSet;
+  //ArrayList<String> dataSet;
   float[] dataSets;
   String[] fieldSets;
   String type;
@@ -68,6 +68,7 @@ class PieChart{
                          .setSize(200,200)
                          .setView(Chart.PIE)
                          .setLabelVisible(true)
+                         .setStrokeWeight(200)
                          .setColorCaptionLabel(color(40));
     }
     
@@ -87,7 +88,16 @@ class PieChart{
       contextCSVChart.excuteCSVStrategy(outputPath);
       dataSets = contextCSVChart.getDataSet(outputPath);
       fieldSets = contextCSVChart.getFieldSet(outputPath);
-      
+      float[] dataSetFloat = new float[dataSets.length];
+      BigDecimal dataSum = BigDecimal.ZERO;
+        
+        for(int i=0; i<dataSets.length; i++){
+            dataSum = dataSum.add(new BigDecimal(dataSets[i]));
+        }
+        for(int i=0; i<dataSets.length; i++){
+            dataSetFloat[i] = new BigDecimal(dataSets[i]).divide(dataSum,2).floatValue();
+        }
+      dataSets = dataSetFloat;
     }
 
   void display(){
@@ -98,18 +108,12 @@ class PieChart{
     pieChart.addDataSet("payment");
     //pieChart.setColors("payment", color(244, 89, 66));
     pieChart.setData("payment", dataSets);
-    pieChart.setStrokeWeight(200);
     for(int i=0; i<dataSets.length; i++){
       pieChart.setColors("payment", color(25*i, 255, 255), color(255, i, 255));
       pieChart.unshift("payment", dataSets[i]);
     }
   }
-  
-//  void payment(int n) {
-//  /* request the selected item based on index n */
-//  String out = cp5.get(ScrollableList.class, "payment").getItem(n).get("value").toString();
-//  System.out.println(out);
-//}
+
 
 
 }
