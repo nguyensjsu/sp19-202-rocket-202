@@ -21,7 +21,8 @@ public static class CSVHelper {
             br = new BufferedReader(new FileReader(fileName));
 
             while((line = br.readLine()) != null) {
-                results.add(line);
+                if(line.trim() != "")
+                    results.add(line);
             }
 
         } catch (FileNotFoundException e) {
