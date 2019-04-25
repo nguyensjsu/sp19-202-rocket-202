@@ -1,4 +1,4 @@
-class AddAcountType extends Screen implements IDisplayComponent, ITouchEventHandler {
+class AddAccountType extends Screen {
 
     PImage headImage;
     PImage addCardImage;
@@ -6,9 +6,8 @@ class AddAcountType extends Screen implements IDisplayComponent, ITouchEventHand
     PImage addPaypalImage;
 
     private AccountsScreen accountsScreen;
-    private IScreen prev;
 
-    public AddAcountType(AccountsScreen accountsScreen) {
+    public AddAccountType(AccountsScreen accountsScreen) {
 
         this.accountsScreen = accountsScreen;
 
@@ -20,9 +19,7 @@ class AddAcountType extends Screen implements IDisplayComponent, ITouchEventHand
     }
 
     public void display() {
-
         background(245);
-
         image(headImage, 0, 0, 380, 60);
 
         textSize(12);
@@ -39,7 +36,7 @@ class AddAcountType extends Screen implements IDisplayComponent, ITouchEventHand
     public void touch() {
 
         if(isBack()) {
-            this.prev();
+            prev();
             return;
         }
 
@@ -49,8 +46,7 @@ class AddAcountType extends Screen implements IDisplayComponent, ITouchEventHand
 
             AddAccountBalance addAccountBalance = new AddAccountBalance(accountType);
             addAccountBalance.setPrev(this);
-            addAccountBalance.setNext((IScreen)accountsScreen);
-            
+
             addAccountBalance.attachAddAccountObserver(accountsScreen);
 
             OutputText inputAmountText = new OutputText(240, 130, 45);
@@ -58,7 +54,7 @@ class AddAcountType extends Screen implements IDisplayComponent, ITouchEventHand
 
             KeyPad keyPad = new KeyPad(0, 400, 380, 280);
             addAccountBalance.addSubComponent(keyPad);
-            
+
             keyPad.attach(inputAmountText);
             keyPad.attach(addAccountBalance);
 
@@ -82,28 +78,7 @@ class AddAcountType extends Screen implements IDisplayComponent, ITouchEventHand
 
     private boolean isBack() {
 
-        return mouseX >= 8 && mouseX <= 20 && mouseY >= 25 && mouseY <= 45;
-
-    }
-
-    public void setPrev(IScreen prev) {
-
-        this.prev = prev;
-
-    }
-
-    public void prev() {
-
-        if(prev != null)
-            frame.setCurrentScreen(prev);
-
-    }
-
-    public void addSubComponent(IDisplayComponent c) {
-
-    }
-
-    public void setNext(ITouchEventHandler next) {
+        return mouseX >= 0 && mouseX <= 40 && mouseY >= 0 && mouseY <= 50;
 
     }
 }

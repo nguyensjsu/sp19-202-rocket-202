@@ -99,10 +99,7 @@ public class RadioButton implements IDisplayComponent, ITouchEventHandler {
      * @return Boolean result.
      */
     private boolean isCancel() {
-        if (mouseY > 18 && mouseY < 32 && mouseX > 339 && mouseX < 353) {
-            return true;
-        }
-        return false;
+        return mouseY > 10 && mouseY < 40 && mouseX > 330 && mouseX < 360;
     }
 
     public void addSubComponent(IDisplayComponent c) {};

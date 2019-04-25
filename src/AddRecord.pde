@@ -119,9 +119,7 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
 
         // append record
         String record = date.getTime() + "," + (rb.getType() ? "TRUE":"FALSE") + "," + co.getOption() + "," + ot.getText() + "," + acc.getID();
-        String[] records = loadStrings(filePath);
-        String[] records_new = append(records, record);
-        saveStrings(filePath, records_new);
+        CSVHelper.appendFile(dataPath("records.csv"), record);
         System.out.println(record);
 
         // navigate

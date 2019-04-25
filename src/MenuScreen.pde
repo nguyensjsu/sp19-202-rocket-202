@@ -4,13 +4,21 @@ public class MenuScreen implements IScreen {
 
     public MenuScreen(IScreen s) {
         screen = s;
-        if (s.name().equals("AccountScreen")) {
+        if (s.name().equals("AccountsScreen")) {
             img = loadImage("img/menu_asset.png");
         } else if (s.name().equals("MyFlows")) {
             img = loadImage("img/menu_trans.png");
         } else if (s.name().equals("ChartScreen")) {
             img = loadImage("img/menu_chart.png");
         }
+    }
+
+    /**
+     * get inner screen.
+     * @return IScreen inner screen.
+     */
+    public IScreen getInnerScreen() {
+        return this.screen;
     }
 
 

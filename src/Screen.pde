@@ -1,7 +1,7 @@
 
 public class Screen implements IScreen, IDisplayComponent {
-    private ArrayList<IDisplayComponent> components = new ArrayList<IDisplayComponent>();
-    private ITouchEventHandler chain;
+    protected ArrayList<IDisplayComponent> components = new ArrayList<IDisplayComponent>();
+    protected ITouchEventHandler chain;
     protected IFrame frame;
     protected IScreen prevScreen;
     protected IScreen nextScreen;
