@@ -3,8 +3,8 @@ public class Screen implements IScreen, IDisplayComponent {
     private ArrayList<IDisplayComponent> components = new ArrayList<IDisplayComponent>();
     private ITouchEventHandler chain;
     protected IFrame frame;
-    private IScreen prevScreen;
-    private IScreen nextScreen;
+    protected IScreen prevScreen;
+    protected IScreen nextScreen;
 
     public Screen() {
 

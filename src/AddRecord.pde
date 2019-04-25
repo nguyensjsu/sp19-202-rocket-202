@@ -24,7 +24,7 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
         ot = new OutputText(360, 90, 32);
         tags = new Tags((ITagsObserver)co);
 
-        aa = new AccountArea(accList.get(0));
+        aa = new AccountArea(accList);
         kp = new KeyPad(0, 430, 380, 250);
         kp.attach(this);
         kp.attach(ot);
@@ -50,7 +50,6 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
         co.toggleExpense();
         kp.reset();
         accList.loadFromFile();
-        aa.setAccount(accList.get(0));
         msgCounter = 0;
         date = new Date();
     }
@@ -93,6 +92,8 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
      * when touch AccountArea, jump to ChooseAccount Screen.
      */
     public void chooseAccount() {
+        ChooseAccountScreen caScreen = (ChooseAccountScreen)nextScreen;
+        caScreen.setAccountList(accList);
         next();
     }
 
@@ -111,13 +112,13 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
      */
     public void createRecord() {
         // change account
-        Account acc = aa.getAccount();
+        Account acc = accList.getSelected();
         double amount = Double.parseDouble(ot.getText());
         acc.change(rb.getType() ? -amount : amount);
         accList.saveToFile();
 
         // append record
-        String record = date.getTime() + "," + (rb.getType() ? "TRUE":"FALSE") + "," + co.getOption() + "," + ot.getText() + "," + aa.getID();
+        String record = date.getTime() + "," + (rb.getType() ? "TRUE":"FALSE") + "," + co.getOption() + "," + ot.getText() + "," + acc.getID();
         String[] records = loadStrings(filePath);
         String[] records_new = append(records, record);
         saveStrings(filePath, records_new);
