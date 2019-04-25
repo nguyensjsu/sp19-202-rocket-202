@@ -1,50 +1,56 @@
-class OutputText implements IKeyPadObserver, ITouchEventHandler, IDisplayComponent {
+class OutputText implements IDisplayComponent {
 
-  private int x1, y1, x2, y2;
+    private int x;
+    private int y;
+    private int textSize;
+    private String result = "";
+    private String lastKey = "";
+    private ITouchEventHandler nextHandler;
 
-  private String result = "";
-  private String lastKey = "";
-  private ITouchEventHandler nextHandler;
+    public OutputText(int x, int y, int textSize) {
 
-  public OutputText(int x1, int y1, int x2, int y2) {
-    this.x1 = x1;
-    this.y1 = y1;
-    this.x2 = x2;
-    this.y2 = y2;
-  }
+        this.x = x;
+        this.y = y;
+        this.textSize = textSize;
 
-  public void display() {
-    fill(50);
-    if(result == "")
-      result = "0.00";
+    }
 
-    textSize(32);
-    textAlign(RIGHT);
-    text(result, x1, y1);
-  }
+    public void display() {
+
+        fill(50);
+        if(result == "")
+            result = "0.00";
+
+        textSize(textSize);
+        textAlign(RIGHT);
+        text(result, x, y);
+
+    }
 
 
-  void touch(){
-      if (nextHandler != null) {
-          nextHandler.touch();
-      }
-  };
+    void touch(){
+        if (nextHandler != null) {
+            nextHandler.touch();
+        }
+    }
 
-   /**
-  * set next touch event handler
-  */
-   void setNext(ITouchEventHandler next){
-      nextHandler = next;
-   };
-  public void addSubComponent(IDisplayComponent c) {}
+    /**
+     * set next touch event handler
+     */
+    void setNext(ITouchEventHandler next){
+        nextHandler = next;
+    }
 
-  public void keyEventUpdate(String lastKey, String result) {
-    this.lastKey = lastKey;
-    this.result = result;
-  }
+    public void addSubComponent(IDisplayComponent c) {}
 
-  public String getText() {
-    return result;
-  }
+    public void keyEventUpdate(String lastKey, String result) {
+        this.lastKey = lastKey;
+        this.result = result;
+    }
+
+    public String getText() {
+        return result;
+    }
+
 
 }
