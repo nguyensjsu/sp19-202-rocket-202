@@ -1,3 +1,3 @@
-public class DisplayDecorator implements Composite {
+public class DisplayDecorator implements IDisplayComponent {
     
 }

@@ -1,3 +1,4 @@
-public class MyFlows {
+public class MyFlows extends Screen{
     
+
 }
