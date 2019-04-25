@@ -5,29 +5,11 @@ public class AccountArea implements ITouchEventHandler, IDisplayComponent {
 
     private IAccountAreaObserver observer;
     private ITouchEventHandler nextHandler;
-    private Account account;
+    private AccountList list;
 
-    public AccountArea(Account acc) {
-        account = acc;
+    public AccountArea(AccountList l) {
+        list = l;
     }
-
-    /**
-     * set account.
-     * @param String account Account Type.
-     */
-    public void setAccount(Account acc) {
-        account = acc;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-
-    public String getID() {
-        return account.getID();
-    }
-
 
     /**
      * display current screen.
@@ -40,7 +22,7 @@ public class AccountArea implements ITouchEventHandler, IDisplayComponent {
         fill(0,0,247);
         textSize(15);
         textAlign(CENTER, CENTER);
-        text(account.getType(), 160, 408);
+        text(list.getSelected().getType(), 160, 408);
     }
 
     /**
