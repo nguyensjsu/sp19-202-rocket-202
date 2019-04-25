@@ -1,6 +1,4 @@
-.autosave
-.gitignore
-src.pde
+
 # Compiled class file
 *.class
 
@@ -10,9 +8,6 @@ src.pde
 # BlueJ files
 *.ctxt
 
-# eclipse files
-*.classpath
-*.project
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -48,4 +43,4 @@ gradle-app.setting
 out
 *.iml
 .idea/
-/bin/
+

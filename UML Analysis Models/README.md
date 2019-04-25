@@ -8,12 +8,6 @@
 
 # Team Project Repo 
 
-## Team Name
-
-## Team Members
-
-* [Name](url_to_your_github_repo)
-
 ## Project Name
 
 ## Project Description
@@ -24,4 +18,3 @@
 
 ### Project Dashboard
 
-### Individual Contributions

@@ -8,20 +8,4 @@
 
 # Team Project Repo 
 
-## Team Name
 
-## Team Members
-
-* [Name](url_to_your_github_repo)
-
-## Project Name
-
-## Project Description
-
-## Project Progress
-
-### Burndown Map
-
-### Project Dashboard
-
-### Individual Contributions
