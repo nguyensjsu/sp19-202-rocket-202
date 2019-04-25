@@ -54,6 +54,8 @@ class KeyPad implements ITouchEventHandler, IKeyPadSubject, IDisplayComponent {
     this.lastKey = getKey(x, y);
     System.out.println(lastKey);
     notifyObservers();
+
+    // TODO: Reset if lastKey is "S"
   }
 
   public void setNext(ITouchEventHandler next) {
@@ -180,7 +182,7 @@ class KeyPad implements ITouchEventHandler, IKeyPadSubject, IDisplayComponent {
       dotClicked = false;
       decimalDigits = 0;
     }
-    if(k == "C" || k == "S") {
+    if(k == "C") {
       numberStr1 = "";
       numberStr2 = "";
       dotClicked = false;
