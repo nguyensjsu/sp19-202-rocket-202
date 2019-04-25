@@ -39,6 +39,7 @@ public class AccountList {
         accounts.clear();
         String[] accLines = loadStrings(filePath);
         for(String line: accLines) {
+            System.out.println(line);
             accounts.add(readFromString(line));
         };
     }
