@@ -106,7 +106,7 @@ class PieChart implements IChartStrategy{
     public void showBottomList(){
       //showList.singleList(400, "Test", "Test", "Test");
       for(int i=0; i< fieldSets.length; i++){
-        showList.singleList(400+30*i, fieldSets[i],  String.valueOf(dataSetFloat[i]*100).substring(0,4)+"%", String.valueOf(dataSets[i]));
+        showList.singleList(400+30*i+20*i, fieldSets[i],  String.valueOf(dataSetFloat[i]*100).substring(0,4)+"%", String.valueOf(dataSets[i]));
       }
       
     }
