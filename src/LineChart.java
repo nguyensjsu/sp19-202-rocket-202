@@ -16,8 +16,7 @@ public class LineChart implements IChartStrategy{
     public LineChart(String yearPeriod) {
         this.yearPeriod = yearPeriod;
     }
-
-    @Override
+    
     public void calculateTotaldata() {
         for(String line : csvData){
             String[] field = line.split(",");
@@ -38,7 +37,6 @@ public class LineChart implements IChartStrategy{
         calculateTotalBalance();
     }
 
-    @Override
     public void writeData(String filename) {
         tools.deleteCSV(filename);
         int len = 0;

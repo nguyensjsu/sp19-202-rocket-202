@@ -55,6 +55,14 @@ class PieChartExpense implements IChartStrategy{
     pieChart = createPieChart("Expense Pie Chart");
     
   }
+  
+      public void hide(){
+      pieChart.hide();
+    }
+    
+    public void show(){
+      pieChart.show();
+    }
 
     public Chart createPieChart(String pieChartName){
       return cp5.addChart(pieChartName)
@@ -97,7 +105,7 @@ class PieChartExpense implements IChartStrategy{
     }
 
   void display(){
-    background(255,255,255); 
+    background(255); 
     image(img,0,0);
     // set data for pie chart
     getDataSet();

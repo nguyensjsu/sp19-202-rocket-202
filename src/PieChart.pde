@@ -1,7 +1,7 @@
 import controlP5.*;
 import java.util.*;
 
-class PieChart implements IChartStrategy{
+class PieChart{
   ControlP5 cp5;
   ControlFont font;
   Chart pieChart;
