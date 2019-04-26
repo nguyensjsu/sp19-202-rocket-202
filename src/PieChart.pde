@@ -9,6 +9,7 @@ class PieChart implements IChartStrategy{
   //ArrayList<String> dataSet;
   float[] dataSets;
   String[] fieldSets;
+  float[] dataSetFloat;
   String type;
 
   public PieChart(PApplet papplet,ControlP5 cp5){
@@ -90,7 +91,7 @@ class PieChart implements IChartStrategy{
       contextCSVChart.excuteCSVStrategy(outputPath);
       dataSets = contextCSVChart.getDataSet(outputPath);
       fieldSets = contextCSVChart.getFieldSet(outputPath);
-      float[] dataSetFloat = new float[dataSets.length];
+      dataSetFloat = new float[dataSets.length];
       BigDecimal dataSum = BigDecimal.ZERO;
         
         for(int i=0; i<dataSets.length; i++){
@@ -98,24 +99,31 @@ class PieChart implements IChartStrategy{
         }
         for(int i=0; i<dataSets.length; i++){
             dataSetFloat[i] = new BigDecimal(dataSets[i]).divide(dataSum,2).floatValue();
+            System.out.println(dataSetFloat[i]*100);
         }
-      dataSets = dataSetFloat;
+    }
+    
+    public void showBottomList(){
+      //showList.singleList(400, "Test", "Test", "Test");
+      for(int i=0; i< fieldSets.length; i++){
+        showList.singleList(400+30*i, fieldSets[i],  String.valueOf(dataSetFloat[i]*100).substring(0,4)+"%", String.valueOf(dataSets[i]));
+      }
+      
     }
 
   void display(){
     background(255,255,255);  
-    //print("Pie Chart");
     // set data for pie chart
     getDataSet();
     //pieChart.getColor().setBackground(color(255, 100));
     pieChart.addDataSet("payment");
     //pieChart.setColors("payment", color(244, 89, 66));
-    pieChart.setData("payment", dataSets);
-    for(int i=0; i<dataSets.length; i++){
+    pieChart.setData("payment", dataSetFloat);
+    for(int i=0; i<dataSetFloat.length; i++){
       pieChart.setColors("payment", color(25*i, 255, 255), color(255, i, 255));
-      pieChart.unshift("payment", dataSets[i]);
     }
-    showList.singleList(400, "Test", 244, 89, 66);
+    showBottomList();
+    
   }
 
 
