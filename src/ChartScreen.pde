@@ -22,7 +22,33 @@ public ChartScreen(PApplet papplet){
   PFont pfont = createFont("arial",16);
   font = new ControlFont(pfont);
 
-  // create Tab
+  //// create Tab
+  //  Tab tab1 = cp5.getTab("default")
+  //     .activateEvent(true)
+  //     .setLabel("Categories")
+  //     .setPosition(0,0)
+  //     .setSize(width/2,40)
+  //     .setHeight(40)
+  //     .setId(1)
+  //     ;
+  //   tab1.getCaptionLabel().setFont(font);
+
+  //  Tab tab2 = cp5.addTab("Trend")
+  //      .activateEvent(true)
+  //      .setPosition(width/2,0)
+  //      .setSize(width/2,40)
+  //      .setHeight(40)
+  //      .setId(2)
+  //      ;
+  //  tab2.getCaptionLabel().setFont(font);
+    
+  //     // setup Tab font size;
+  //  font = new ControlFont(pfont);
+   
+  }
+
+  public void display(){
+    // create Tab
     Tab tab1 = cp5.getTab("default")
        .activateEvent(true)
        .setLabel("Categories")
@@ -43,11 +69,7 @@ public ChartScreen(PApplet papplet){
     tab2.getCaptionLabel().setFont(font);
     
        // setup Tab font size;
-    font = new ControlFont(pfont);
-   
-  }
-
-  public void display(){
+    
     
     currentChart.display();
   }

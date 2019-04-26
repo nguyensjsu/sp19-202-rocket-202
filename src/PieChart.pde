@@ -99,7 +99,7 @@ class PieChart implements IChartStrategy{
         }
         for(int i=0; i<dataSets.length; i++){
             dataSetFloat[i] = new BigDecimal(dataSets[i]).divide(dataSum,2).floatValue();
-            System.out.println(dataSetFloat[i]*100);
+            //System.out.println(dataSetFloat[i]*100);
         }
     }
     
