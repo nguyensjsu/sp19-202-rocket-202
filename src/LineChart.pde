@@ -23,20 +23,20 @@ class LineChart implements IChartStrategy{
     PFont pfont = createFont("arial",16);
     font = new ControlFont(pfont);
 
-    List yearList = Arrays.asList("2019","2018","2017","2016","2015","2014","2013","2012","2011","2010");
+    //List yearList = Arrays.asList("2019","2018","2017","2016","2015","2014","2013","2012","2011","2010");
 
-     // create LineChart scollable list
-     cp5.addScrollableList("lineChartYear")
-      .setPosition(160,650)
-      .setSize(70,100)
-      .setLabel("2019")
-      .setBarHeight(40)
-      .setItemHeight(30)
-      .addItems(yearList)
-      .setFont(font)
-      .setType(ScrollableList.DROPDOWN)
-      .setOpen(false)
-      ;
+     //// create LineChart scollable list
+     //cp5.addScrollableList("lineChartYear")
+     // .setPosition(160,650)
+     // .setSize(70,100)
+     // .setLabel("2019")
+     // .setBarHeight(40)
+     // .setItemHeight(30)
+     // .addItems(yearList)
+     // .setFont(font)
+     // .setType(ScrollableList.DROPDOWN)
+     // .setOpen(false)
+     // ;
       
     // Both x and y data set here.  
       lineChartPayment = new XYChart(papplet);

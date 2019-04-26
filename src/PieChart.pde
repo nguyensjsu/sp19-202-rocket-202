@@ -5,6 +5,7 @@ class PieChart implements IChartStrategy{
   ControlP5 cp5;
   ControlFont font;
   Chart pieChart;
+  ShowList showList = new ShowList();
   //ArrayList<String> dataSet;
   float[] dataSets;
   String[] fieldSets;
@@ -60,6 +61,7 @@ class PieChart implements IChartStrategy{
     // Create my Pie Chart
     pieChart = createPieChart("Payment Pie Chart");
     
+    
   }
 
     public Chart createPieChart(String pieChartName){
@@ -113,6 +115,7 @@ class PieChart implements IChartStrategy{
       pieChart.setColors("payment", color(25*i, 255, 255), color(255, i, 255));
       pieChart.unshift("payment", dataSets[i]);
     }
+    showList.singleList(400, "Test", 244, 89, 66);
   }
 
 
