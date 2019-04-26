@@ -1,32 +1,9 @@
-/*
-AppController app;
-void setup() {
-    size(380, 680);
-    app = new AppController();
-}
-
-void draw(){
-    background(255);
-    app.display();
-}
-
-void mouseClicked(){
-    println("clicked: ", mouseX, "  ", mouseY);
-    app.touch();
-}
-
-void mouseDragged(){
-    app.drag();
-}
-*/
-
-
 AppProxy proxy;
 
 
 void setup(){
    size(380, 680);
-   proxy = new AppProxy();
+   proxy = new AppProxy(this);
 }
 
 void draw(){

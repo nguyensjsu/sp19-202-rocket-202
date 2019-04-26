@@ -2,20 +2,20 @@
  * Application Controller after login
  */
 public class AppController implements IProxy{
-	IFrame frame;
+	private PApplet papplet;
+	private IFrame frame;
+	private MenuScreen myFlows;
+	private MenuScreen account;
+	private MenuScreen chart;
+	private IScreen addRecord;
+	private IScreen chooseAccount;
+	private IScreen addAccountType;
+	private IMenuCommand setFlow;
+	private IMenuCommand setAccount;
+	private IMenuCommand setChart;
 
-	MenuScreen myFlows;
-	MenuScreen account;
-	MenuScreen chart;
-	IScreen addRecord;
-	IScreen chooseAccount;
-	IScreen addAccountType;
-
-	IMenuCommand setFlow;
-	IMenuCommand setAccount;
-	IMenuCommand setChart;
-
-	public AppController(){
+	public AppController(PApplet p){
+		papplet = p;
 		//initial
 		// !!!TODO: change to real screen
 		myFlows = new MenuScreen(new Screen(){
