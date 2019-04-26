@@ -6,13 +6,17 @@ public class ChartScreen{
 
 ControlP5 cp5;
 ControlFont font;
-ContextChart contextChart;
+ContextChart currentChart;
+ContextChart pieChart;
+ContextChart lineChart;
 PApplet papplet;
 
 public ChartScreen(PApplet papplet){
   this.papplet = papplet;
   cp5 = new ControlP5(papplet);
-  contextChart = new ContextChart(new PieChart(cp5));
+  pieChart = new ContextChart(new PieChart(papplet, cp5));
+  lineChart = new ContextChart(new LineChart(papplet,cp5));
+  currentChart = pieChart;
 
   // setup Tab font size
   PFont pfont = createFont("arial",16);
@@ -23,7 +27,7 @@ public ChartScreen(PApplet papplet){
        .activateEvent(true)
        .setLabel("Categories")
        .setPosition(0,0)
-       .setSize(190,40)
+       .setSize(width/2,40)
        .setHeight(40)
        .setId(1)
        ;
@@ -31,8 +35,8 @@ public ChartScreen(PApplet papplet){
 
     Tab tab2 = cp5.addTab("Trend")
         .activateEvent(true)
-        .setPosition(190,0)
-        .setSize(190,40)
+        .setPosition(width/2,0)
+        .setSize(width/2,40)
         .setHeight(40)
         .setId(2)
         ;
@@ -42,40 +46,35 @@ public ChartScreen(PApplet papplet){
     font = new ControlFont(pfont);
    
   }
-  
-//      void payment(int n) {
-//  /* request the selected item based on index n */
-//  String out = cp5.get(ScrollableList.class, "payment").getItem(n).get("value").toString();
-//  System.out.println(out);
-//}
-
-//  void draw(){
-//  //background(255,250,250);
-//  contextChart.display();
-//  //pieChart.display();
-//  //lineChart.display();
-//}
 
   public void display(){
-    contextChart.display();
+    
+    currentChart.display();
   }
 
   public void touch(){
-
+    if(mouseY<=40){
+       if(mouseX<width/2)  currentChart = pieChart;
+       else currentChart = lineChart;
+    }
   }
 
   public void drag(){
 
   }
   
-  void controlEvent(ControlEvent theControlEvent) {
-  if (theControlEvent.isTab()) {
-    //println("got an event from tab : "+theControlEvent.getTab().getName()+" with id "+theControlEvent.getTab().getId());
-    if(theControlEvent.getTab().getId()==1){
-      contextChart = new ContextChart(new PieChart(cp5));
-    } else if(theControlEvent.getTab().getId()==2){
-      contextChart = new ContextChart(new LineChart(papplet,cp5));
-    }
-  }
-}
+  
+  
+  //void controlEvent(ControlEvent theControlEvent) {
+  //if (theControlEvent.isTab()) {
+  //  //println("got an event from tab : "+theControlEvent.getTab().getName()+" with id "+theControlEvent.getTab().getId());
+  //  if(theControlEvent.getTab().getId()==1){
+  //    print(theControlEvent.getTab().getId());
+  //    currentChart = new ContextChart(pieChart);
+  //  } else if(theControlEvent.getTab().getId()==2){
+  //     print(theControlEvent.getTab().getId());
+  //    currentChart = new ContextChart(lineChart);
+  //  }
+  //  }
+  //}
 }

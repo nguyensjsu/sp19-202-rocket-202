@@ -5,6 +5,7 @@ import org.gicentre.utils.stat.*;
 class LineChart implements IChartStrategy{
   ControlP5 cp5;
   ControlFont font;
+  PApplet papplet;
   XYChart lineChartPayment;
   XYChart lineChartIncome;
   XYChart lineChartBalance;
@@ -15,8 +16,9 @@ class LineChart implements IChartStrategy{
   int count=0;
 
   public LineChart(PApplet papplet, ControlP5 cp5){
-    this.cp5 = cp5;
-
+    this.cp5 = new ControlP5(papplet);
+   // this.cp5 = cp5;
+    this.papplet = papplet;
     // setup Tab font size
     PFont pfont = createFont("arial",16);
     font = new ControlFont(pfont);
@@ -25,7 +27,7 @@ class LineChart implements IChartStrategy{
 
      // create LineChart scollable list
      cp5.addScrollableList("lineChartYear")
-      .setPosition(160,50)
+      .setPosition(160,650)
       .setSize(70,100)
       .setLabel("2019")
       .setBarHeight(40)
@@ -94,6 +96,8 @@ class LineChart implements IChartStrategy{
   void display(){
     background(255,255,255);  
     textSize(9);
+    //print("Line Chart");
+        
     lineChartPayment.draw(20,130,width-30,height-300);
     lineChartIncome.draw(70,105,width-30,height-300);
     lineChartBalance.draw(70,105,width-30,height-300);

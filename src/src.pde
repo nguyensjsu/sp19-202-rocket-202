@@ -21,13 +21,20 @@ void setup(){
   //lineChart.display();
 }
 
+  void mouseClicked(){
+    print("clicked");
+    chartScreen.touch();
+    }
+
 //void controlEvent(ControlEvent theControlEvent) {
 //  if (theControlEvent.isTab()) {
 //    //println("got an event from tab : "+theControlEvent.getTab().getName()+" with id "+theControlEvent.getTab().getId());
 //    if(theControlEvent.getTab().getId()==1){
-//      contextChart = new ContextChart(new PieChart(cp5));
+//       print(theControlEvent.getTab().getId());
+//      //contextChart = new ContextChart(new PieChart(cp5));
 //    } else if(theControlEvent.getTab().getId()==2){
-//      contextChart = new ContextChart(new LineChart(this,cp5));
+//      print(theControlEvent.getTab().getId());
+//      //contextChart = new ContextChart(new LineChart(this,cp5));
 //    }
 //  }
 //}

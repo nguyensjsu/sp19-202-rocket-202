@@ -10,8 +10,9 @@ class PieChart implements IChartStrategy{
   String[] fieldSets;
   String type;
 
-  public PieChart(ControlP5 cp5){
-    this.cp5 = cp5;     //<>//
+  public PieChart(PApplet papplet,ControlP5 cp5){
+    this.cp5 = cp5;    //<>//
+    //this.cp5 = new ControlP5(papplet);
     // setup Tab font size
     PFont pfont = createFont("arial",16);
     font = new ControlFont(pfont);
@@ -100,7 +101,8 @@ class PieChart implements IChartStrategy{
     }
 
   void display(){
-    background(255,255,255);        
+    background(255,255,255);  
+    //print("Pie Chart");
     // set data for pie chart
     getDataSet();
     //pieChart.getColor().setBackground(color(255, 100));
