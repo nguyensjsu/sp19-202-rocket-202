@@ -1,7 +1,7 @@
 import controlP5.*;
 import java.util.*;
 
-public class ChartScreen{
+public class ChartScreen extends Screen{
   
 
 ControlP5 cp5;

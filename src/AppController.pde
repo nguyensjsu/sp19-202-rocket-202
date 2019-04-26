@@ -27,7 +27,7 @@ public class AppController implements IProxy{
 		account.setNext(addAccountType);
 		addAccountType.setPrev(account);
 
-		chart = new MenuScreen( new Screen() {
+		chart = new MenuScreen( new ChartScreen(p) {
 			String name(){ return "ChartScreen"; }
 		});;
 		addRecord = new AddRecordScreen();
