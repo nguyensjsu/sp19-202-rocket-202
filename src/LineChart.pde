@@ -9,6 +9,7 @@ class LineChart implements IChartStrategy{
   XYChart lineChartPayment;
   XYChart lineChartIncome;
   XYChart lineChartBalance;
+  PImage img;
   //ArrayList<String> dataSet;
   float[] yAxis = new float[]{0,0,0,0,0,0,0,0,0,0,0,0};
   float[] dataSets;
@@ -19,6 +20,7 @@ class LineChart implements IChartStrategy{
     this.cp5 = new ControlP5(papplet);
    // this.cp5 = cp5;
     this.papplet = papplet;
+    img = loadImage("img/chart_monthly.png");
     // setup Tab font size
     PFont pfont = createFont("arial",16);
     font = new ControlFont(pfont);
@@ -94,7 +96,8 @@ class LineChart implements IChartStrategy{
     }
 
   void display(){
-    background(255,255,255);  
+    background(255,255,255); 
+    image(img,0,0);  
     textSize(9);
     //print("Line Chart");
         
