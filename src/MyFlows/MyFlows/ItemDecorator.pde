@@ -1,8 +1,8 @@
-
+import java.math.BigDecimal;
 
 public class ItemDecorator implements IFlowItem, IDisplayComponent, ITouchEventHandler
 {
-    private FlowItem item;
+    FlowItem item;
     
     public ItemDecorator(FlowItem items){
         item = items;

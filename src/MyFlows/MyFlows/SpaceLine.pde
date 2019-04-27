@@ -17,7 +17,10 @@ public class SpaceLine implements IDisplayComponent,ITouchEventHandler
        nextHandler = next;
     };
    
-    public void display(){};
+    public void display(){
+        stroke(220);
+        line(190, 0, 190, 600);
+    };
 
     public void addSubComponent(IDisplayComponent c){};
 }
