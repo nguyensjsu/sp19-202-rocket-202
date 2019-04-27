@@ -32,7 +32,7 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
         return f;
     };
     
-    public boolean outcome(){
+    public boolean expense(){
         if (flowDetail[0].equals("TRUE")){
             return true ;
         } else{

@@ -7,7 +7,7 @@ public class DayHeader implements IHeaderStrategy
 {
     private String currentDay;
     private float dayIncome;
-    private float dayOutcome;
+    private float dayExpense;
     
     public DayHeader(String day){
         currentDay = day;
@@ -17,8 +17,8 @@ public class DayHeader implements IHeaderStrategy
         dayIncome = income;
     }
     
-    public void setOutcome(float outcome){
-        dayOutcome = outcome;
+    public void setExpense(float expense){
+        dayExpense = expense;
     }
     
     public void draw(){

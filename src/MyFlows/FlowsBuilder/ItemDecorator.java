@@ -20,8 +20,8 @@ public class ItemDecorator implements IFlowItem, IDisplayComponent, ITouchEventH
         return item.value();
     };
     
-    public boolean outcome(){
-        return item.outcome();
+    public boolean expense(){
+        return item.expense();
     };
     
     public void touch(){

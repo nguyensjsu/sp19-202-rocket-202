@@ -8,7 +8,7 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
     private MonthFlowReader reader;
     private IFlowObserver ob;
     private float incomeTol;
-    private float outcomeTol;
+    private float expenseTol;
     private String month;
   //  private Map<String, ArrayList<String>> incomeTable; 
   //  private Map<String, ArrayList<String>> outcomeTable; 
@@ -37,6 +37,7 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
             ArrayList<String> flows = flowTable.get(day);
             monthflows.add(singleDayFlow(day,flows));
         }
+        return monthflows;
     }
     
     public DayFlow singleDayFlow(String day, ArrayList<String> flows){
@@ -44,7 +45,7 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
         for (String flow: flows){
             dayflow.addItem(new FlowItem(flow));
         }
-        outcomeTol = dayflow.getOutcomeTol();
+        expenseTol = dayflow.getExpenseTol();
         incomeTol = dayflow.getIncomeTol();
         notifyObservers();
         return dayflow;
@@ -56,7 +57,7 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
   
     public void notifyObservers(){
         ob.flowSumUpdate(false, incomeTol);
-        ob.flowSumUpdate(true, outcomeTol);
+        ob.flowSumUpdate(true, expenseTol);
     };
     
     public void touch(){

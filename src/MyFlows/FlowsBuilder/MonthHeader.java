@@ -7,16 +7,16 @@ public class MonthHeader implements IHeaderStrategy, IFlowObserver,IDisplayCompo
 {
     private String currentMonth;
     private float incomeTotal;
-    private float outcomeTotal;
+    private float expenseTotal;
     private ITouchEventHandler nextHandler;
     
     public MonthHeader(String month){
         currentMonth = month;
     }
     
-    public void flowSumUpdate(boolean outcome, float sum){
-        if (outcome){
-            outcomeTotal = sum;
+    public void flowSumUpdate(boolean expense, float sum){
+        if (expense){
+            expenseTotal = sum;
         } else {
             incomeTotal = sum;
         }

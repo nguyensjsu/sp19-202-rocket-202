@@ -24,30 +24,30 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    public float getIncomeTol(){
       float income = 0.00f;
       for (FlowItem item : items) {
-         if (!item.outcome()){
+         if (!item.expense()){
           income += item.value();
          }
       }        
       return income;
    }
  
-   public float getOutcomeTol(){
-      float outcome = 0.00f;
+   public float getExpenseTol(){
+      float expense = 0.00f;
       for (FlowItem item : items) {
-         if (item.outcome()){
-          outcome += item.value();
+         if (item.expense()){
+          expense += item.value();
          }
       }        
-      return outcome;
+      return expense;
    }   
    
    public void display(){
       head.setIncome(getIncomeTol());
-      head.setOutcome(getOutcomeTol());
+      head.setExpense(getExpenseTol());
       head.draw();
       for (FlowItem item : items) {
-         if (item.outcome()){
-           (new OutcomeItemDecorator(item)).display();
+         if (item.expense()){
+           (new ExpenseItemDecorator(item)).display();
          } else {
            (new IncomeItemDecorator(item)).display();
          }
