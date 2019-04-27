@@ -2,7 +2,7 @@ import controlP5.*;
 import java.util.*;
 import org.gicentre.utils.stat.*;
 
-class LineChart implements IChartStrategy{
+class LineChart extends Screen implements IChartStrategy{
   ControlP5 cp5;
   ControlFont font;
   PApplet papplet;
@@ -41,8 +41,8 @@ class LineChart implements IChartStrategy{
      // .setType(ScrollableList.DROPDOWN)
      // .setOpen(false)
      // ;
-      
-    // Both x and y data set here.  
+
+    // Both x and y data set here.
       lineChartPayment = new XYChart(papplet);
       lineChartIncome = new XYChart(papplet);
       lineChartBalance = new XYChart(papplet);
@@ -52,7 +52,7 @@ class LineChart implements IChartStrategy{
        lineChartIncome.setLineColour(color(255,0,255));
        chartFormat(lineChartBalance,false);
        lineChartBalance.setLineColour(color(255,255,0));
-       
+
        float[] xAxis = new float[] {1,2,3,4,5,6,7,8,9,10,11,12};
        getDataSet();
        lineChartIncome.setData(xAxis, yIncome);
@@ -62,31 +62,31 @@ class LineChart implements IChartStrategy{
        lineChartPayment.setYAxisLabel("Money");
 
   }
-  
+
     public void hide(){
       //lineChartPayment.setVisible(false);
     }
-    
+
     public void show(){
       //lineChartPayment.setVisible(true);
     }
-  
+
   public void chartFormat(XYChart xyChart, boolean showAxis){
     // Axis formatting and labels.
       xyChart.setPointColour(color(0,0,0));
-      xyChart.showXAxis(showAxis); 
-      xyChart.showYAxis(showAxis); 
-      xyChart.setMinX(1); 
-      
+      xyChart.showXAxis(showAxis);
+      xyChart.showYAxis(showAxis);
+      xyChart.setMinX(1);
+
       xyChart.setYFormat("$###,###");  // Monetary value in $US
       xyChart.setXFormat("00");      // Year
-       
+
       // Symbol colours
       //xyChart.setPointColour(color(180,50,50,100));
       xyChart.setPointSize(5);
       xyChart.setLineWidth(3);
   }
-  
+
       public void showBottomList(){
         count = 0;
         singleList(520, "Month","Income", "Expense","Balance");
@@ -98,13 +98,13 @@ class LineChart implements IChartStrategy{
         } else {
           // do nothing
         }
-      } 
+      }
     }
 
-    
+
     public void getDataSet(){
       count = 0;
-      String outputPath = dataPath("")+"/OverviewAccount.csv";      
+      String outputPath = dataPath("")+"/OverviewAccount.csv";
       ContextCSVChart contextCSVChart = new ContextCSVChart(new LineChartCSV("2019"));
       contextCSVChart.excuteCSVStrategy(outputPath);
       monthSets = contextCSVChart.getFieldSet(outputPath, 0);
@@ -114,18 +114,18 @@ class LineChart implements IChartStrategy{
     }
 
   void display(){
-    background(255); 
-    image(img,0,0);  
+    background(255);
+    image(img,0,0);
     textSize(9);
-        
+
     lineChartPayment.draw(20,130,width-30,height-300);
     lineChartIncome.draw(70,105,width-30,height-300);
     lineChartBalance.draw(70,105,width-30,height-300);
-    
+
     showBottomList();
-   
+
   }
-  
+
   public String month(int m){
     switch(m){
       case 1: month = "Jan."; break;
@@ -143,7 +143,7 @@ class LineChart implements IChartStrategy{
     }
     return month;
   }
-  
+
   public void singleList(float h,String s1, String s2, String s3, String s4){
     line(0,h,380,h);
     h = h+20;
@@ -158,7 +158,7 @@ class LineChart implements IChartStrategy{
     textAlign(CENTER, CENTER);
     text(s4,320,h);
   }
-  
+
 
 
 }

@@ -79,6 +79,7 @@ public class AppController implements IProxy{
 
 		setFlow.setReciver(new IMenuReceiver() {
 			public void doAction() {
+				((ChartScreen)chart.getInnerScreen()).hide();
 				// !!!TODO: Change Name of Flow Scrren
 				if (frame.screen().equals("MyFlows")) {
 					((AddRecordScreen)addRecord).reset();
@@ -91,6 +92,7 @@ public class AppController implements IProxy{
 
 		setAccount.setReciver(new IMenuReceiver() {
 			public void doAction() {
+				((ChartScreen)chart.getInnerScreen()).hide();
 				frame.setCurrentScreen(account);
 			}
 		});
@@ -98,6 +100,9 @@ public class AppController implements IProxy{
 		setChart.setReciver(new IMenuReceiver() {
 			public void doAction() {
 				frame.setCurrentScreen(chart);
+				if (frame.screen().equals("ChartScreen")) {
+					((ChartScreen)chart.getInnerScreen()).reset();
+				}
 			}
 		});
 	}

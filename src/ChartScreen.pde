@@ -2,7 +2,7 @@ import controlP5.*;
 import java.util.*;
 
 public class ChartScreen extends Screen{
-  
+
 
 ControlP5 cp5;
 ControlFont font;
@@ -25,10 +25,10 @@ public ChartScreen(PApplet papplet){
   PFont pfont = createFont("arial",16);
   font = new ControlFont(pfont);
 
-    
+
   }
 
-  public void display(){ 
+  public void display(){
     currentChart.display();
   }
 
@@ -44,10 +44,20 @@ public ChartScreen(PApplet papplet){
        }
       currentChart.show();
     }
-    if(mouseX<=250 && mouseY>=600){
-      currentChart.hide();
-    }
   }
+
+  public void reset(){
+    currentChart = pieChartExpense;
+    currentChart.show();
+  }
+
+  public void hide(){
+    currentChart.hide();
+  }
+  // 
+  // public void show(){
+  //   currentChart.show();
+  // }
 
   public void drag(){
 
