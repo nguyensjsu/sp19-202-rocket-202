@@ -11,9 +11,11 @@ class LineChart implements IChartStrategy{
   XYChart lineChartBalance;
   PImage img;
   //ArrayList<String> dataSet;
-  float[] yAxis = new float[]{0,0,0,0,0,0,0,0,0,0,0,0};
-  float[] dataSets;
-  String[] fieldSets;
+  float[] yPayment;
+  float[] yIncome;
+  float[] yBalance;
+  String[] monthSets;
+  String month;
   int count=0;
 
   public LineChart(PApplet papplet, ControlP5 cp5){
@@ -51,13 +53,11 @@ class LineChart implements IChartStrategy{
        chartFormat(lineChartBalance,false);
        lineChartBalance.setLineColour(color(255,255,0));
        
-       getDataSet("PAYMENT");
        float[] xAxis = new float[] {1,2,3,4,5,6,7,8,9,10,11,12};
-       lineChartPayment.setData(xAxis, yAxis);
-       getDataSet("INCOME");
-       lineChartIncome.setData(xAxis, yAxis);
-       getDataSet("BALANCE");
-       lineChartBalance.setData(xAxis, yAxis);
+       getDataSet();
+       lineChartIncome.setData(xAxis, yIncome);
+       lineChartPayment.setData(xAxis, yPayment);
+       lineChartBalance.setData(xAxis, yBalance);
        lineChartPayment.setXAxisLabel("Month");
        lineChartPayment.setYAxisLabel("Money");
 
@@ -86,21 +86,31 @@ class LineChart implements IChartStrategy{
       xyChart.setPointSize(5);
       xyChart.setLineWidth(3);
   }
+  
+      public void showBottomList(){
+        count = 0;
+        singleList(520, "Month","Income", "Expense","Balance");
+      for(int i=0; i< 12; i++){
+        if(yPayment[i]!=0 || yIncome[i]!=0 || yBalance[i]!=0){
+          count = count+1;
+          month = month(i+1);
+          singleList(520+30*count+20*count, month, String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
+        } else {
+          // do nothing
+        }
+      } 
+    }
 
     
-    public void getDataSet(String type){
+    public void getDataSet(){
       count = 0;
       String outputPath = dataPath("")+"/OverviewAccount.csv";      
       ContextCSVChart contextCSVChart = new ContextCSVChart(new LineChartCSV("2019"));
       contextCSVChart.excuteCSVStrategy(outputPath);
-      dataSets = contextCSVChart.getDataSet(outputPath);
-      fieldSets = contextCSVChart.getFieldSet(outputPath);
-      for(int i=0; i<fieldSets.length; i++){
-        if(fieldSets[i].equals(type)){
-          yAxis[count]=dataSets[i];
-          count++;
-        }
-      }
+      monthSets = contextCSVChart.getFieldSet(outputPath, 0);
+      yIncome = contextCSVChart.getValueSet(outputPath, 1);
+      yPayment = contextCSVChart.getValueSet(outputPath, 2);
+      yBalance = contextCSVChart.getValueSet(outputPath, 3);
     }
 
   void display(){
@@ -112,7 +122,42 @@ class LineChart implements IChartStrategy{
     lineChartPayment.draw(20,130,width-30,height-300);
     lineChartIncome.draw(70,105,width-30,height-300);
     lineChartBalance.draw(70,105,width-30,height-300);
+    
+    showBottomList();
    
+  }
+  
+  public String month(int m){
+    switch(m){
+      case 1: month = "Jan."; break;
+      case 2: month = "Feb."; break;
+      case 3: month = "Mar."; break;
+      case 4: month = "Apr."; break;
+      case 5: month = "May"; break;
+      case 6: month = "June"; break;
+      case 7: month = "July"; break;
+      case 8: month = "Aug."; break;
+      case 9: month = "Sep."; break;
+      case 10: month = "Oct."; break;
+      case 11: month = "Nov."; break;
+      case 12: month = "Dec."; break;
+    }
+    return month;
+  }
+  
+  public void singleList(float h,String s1, String s2, String s3, String s4){
+    line(0,h,380,h);
+    h = h+20;
+    textSize(20);
+    textAlign(LEFT, CENTER);
+    fill(0,0,0);
+    text(s1,10,h);
+    textAlign(CENTER, CENTER);
+    text(s2,120,h);
+    textAlign(CENTER, CENTER);
+    text(s3,220,h);
+    textAlign(CENTER, CENTER);
+    text(s4,320,h);
   }
   
 

@@ -15,29 +15,22 @@ public class ContextCSVChart {
     }
 
     /* the field the same as Categories */
-    public String[] getFieldSet(String filename){
+    public String[] getFieldSet(String filename, int index){
         ArrayList<String> fieldSets = tools.CSVReader(filename);
         String[] fieldSetString = new String[fieldSets.size()];
         for(int i=0; i<fieldSets.size(); i++){
-            fieldSetString[i] = fieldSets.get(i).split(",")[1];
+            fieldSetString[i] = fieldSets.get(i).split(",")[index];
         }
         return fieldSetString;
     }
 
-    public float[] getDataSet(String filename){
+    public float[] getValueSet(String filename, int index){
         ArrayList<String> dataSets = tools.CSVReader(filename);
         float[] dataSetFloat = new float[dataSets.size()];
         //BigDecimal dataSum = BigDecimal.ZERO;
         for(int i=0; i<dataSets.size(); i++){
-            dataSetFloat[i] = new BigDecimal(dataSets.get(i).split(",")[2]).floatValue();
+            dataSetFloat[i] = new BigDecimal(dataSets.get(i).split(",")[index]).floatValue();
         }
-        
-        //for(int i=0; i<dataSets.size(); i++){
-        //    dataSum = dataSum.add(new BigDecimal(dataSets.get(i).split(",")[2]));
-        //}
-        //for(int i=0; i<dataSets.size(); i++){
-        //    dataSetFloat[i] = new BigDecimal(dataSets.get(i).split(",")[2]).divide(dataSum,2).floatValue();
-        //}
         return dataSetFloat;
     }
 }

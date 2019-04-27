@@ -28,32 +28,7 @@ public ChartScreen(PApplet papplet){
     
   }
 
-  public void display(){
-    
-    // create Tab
-    //Tab tab1 = cp5.getTab("default")
-    //   .activateEvent(true)
-    //   .setLabel("Categories")
-    //   .setPosition(0,0)
-    //   .setSize(width/2,40)
-    //   .setHeight(40)
-    //   .setId(1)
-    //   ;
-    // tab1.getCaptionLabel().setFont(font);
-
-    //Tab tab2 = cp5.addTab("Trend")
-    //    .activateEvent(true)
-    //    .setPosition(width/2,0)
-    //    .setSize(width/2,40)
-    //    .setHeight(40)
-    //    .setId(2)
-    //    ;
-    //tab2.getCaptionLabel().setFont(font);
-    
-       // setup Tab font size;
-    
-    
-    
+  public void display(){ 
     currentChart.display();
   }
 
@@ -74,19 +49,4 @@ public ChartScreen(PApplet papplet){
   public void drag(){
 
   }
-  
-  
-  
-  //void controlEvent(ControlEvent theControlEvent) {
-  //if (theControlEvent.isTab()) {
-  //  //println("got an event from tab : "+theControlEvent.getTab().getName()+" with id "+theControlEvent.getTab().getId());
-  //  if(theControlEvent.getTab().getId()==1){
-  //    print(theControlEvent.getTab().getId());
-  //    currentChart = new ContextChart(pieChart);
-  //  } else if(theControlEvent.getTab().getId()==2){
-  //     print(theControlEvent.getTab().getId());
-  //    currentChart = new ContextChart(lineChart);
-  //  }
-  //  }
-  //}
 }

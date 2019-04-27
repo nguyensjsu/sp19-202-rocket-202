@@ -53,26 +53,32 @@ public class LineChartCSV implements IChartCSVStrategy{
         } else {
             len = 0;
         }
-        for(int i=0; i < len; i++){
+          for(int i=0; i < len; i++){
             String timePeriod = yearPeriod + "-" + String.format("%02d", i+1);
             lineData.add(timePeriod);
-            lineData.add("INCOME");
+            // Income
             lineData.add(String.valueOf(totalIncome[i]));
-            tools.CSVWriter(filename, lineData);
-            lineData.clear();
-            lineData.add(timePeriod);
-            lineData.add("PAYMENT");
+            // Payment
             lineData.add(String.valueOf(totalOutcome[i]));
-            tools.CSVWriter(filename, lineData);
-            lineData.clear();
-            lineData.add(timePeriod);
-            lineData.add("BALANCE");
+            // Balance
             lineData.add(String.valueOf(totalBalance[i]));
             tools.CSVWriter(filename, lineData);
             lineData.clear();
         }
-
-
+        if(len<12){
+          for(int j = len; j<12; j++){
+            String tp = tools.getCurrentYear() + "-" + String.format("%02d", j+1);
+            lineData.add(tp);
+            // Income
+            lineData.add("0.00");
+            // Payment
+            lineData.add("0.00");
+            // Balance
+            lineData.add("0.00");
+            tools.CSVWriter(filename, lineData);
+            lineData.clear();
+          }
+        }
     }
 
     public void switchMonth(String monthField, BigDecimal money, BigDecimal[] totalCalculator){
