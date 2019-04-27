@@ -70,6 +70,10 @@ class PieChartIncome implements IChartStrategy{
       pieChart.hide();
     }
     
+    public void show(){
+      pieChart.show();
+    }
+    
     public void getDataSet(){
       String outputPath = null;
       boolean categoriesTpe = true;
@@ -100,7 +104,7 @@ class PieChartIncome implements IChartStrategy{
     }
 
   void display(){
-    background(255,255,255); 
+    background(255); 
     image(img,0,0);
     // set data for pie chart
     getDataSet();

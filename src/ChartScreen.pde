@@ -59,6 +59,7 @@ public ChartScreen(PApplet papplet){
 
   public void touch(){
     if(mouseY<=30){
+      currentChart.hide();
        if(mouseX>=50 && mouseX<140){
          currentChart = pieChartExpense;
        } else if(mouseX>=140 && mouseX<230){
@@ -66,6 +67,7 @@ public ChartScreen(PApplet papplet){
        } else if(mouseX>=240 && mouseX<320){
          currentChart = lineChart;
        }
+      currentChart.show();
     }
   }
 

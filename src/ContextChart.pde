@@ -9,4 +9,12 @@ public class ContextChart {
         chartStrategy.display();
     }
     
+    public void hide(){
+      chartStrategy.hide();
+    }
+    
+    public void show(){
+      chartStrategy.show();
+    }
+    
 }

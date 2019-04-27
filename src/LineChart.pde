@@ -63,6 +63,14 @@ class LineChart implements IChartStrategy{
 
   }
   
+    public void hide(){
+      //lineChartPayment.setVisible(false);
+    }
+    
+    public void show(){
+      //lineChartPayment.setVisible(true);
+    }
+  
   public void chartFormat(XYChart xyChart, boolean showAxis){
     // Axis formatting and labels.
       xyChart.setPointColour(color(0,0,0));
@@ -96,7 +104,7 @@ class LineChart implements IChartStrategy{
     }
 
   void display(){
-    background(255,255,255); 
+    background(255); 
     image(img,0,0);  
     textSize(9);
     //print("Line Chart");
