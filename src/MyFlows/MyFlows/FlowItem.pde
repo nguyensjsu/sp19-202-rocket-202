@@ -2,8 +2,8 @@
 
 public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandler
 {
-    String[] flowDetail;
-    String icopath;
+    private String[] flowDetail;
+    private String icopath;
     private ITouchEventHandler nextHandler;
     
     public FlowItem(String detail){

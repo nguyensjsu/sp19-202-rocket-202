@@ -1,19 +1,21 @@
-import java.math.BigDecimal;
+import java.text.*;
 
 public class ExpenseItemDecorator extends ItemDecorator
 {
-    FlowItem item;
-    PImage icon;
+    private FlowItem item;
+    private PImage icon;
     private int r = 30;
     private int width = 380;
     private int x_center = width/2;
     private int y;
-    int testSize = 13;
-    int x_right = 215;
+    private int testSize = 13;
+    private int x_right = 215;
+    private DecimalFormat df;
     
     public ExpenseItemDecorator(FlowItem items){
         super(items);
         icon = loadImage(this.imgPath());
+        df = new DecimalFormat("0.00");
     }
     
     @Override
@@ -28,8 +30,7 @@ public class ExpenseItemDecorator extends ItemDecorator
     };
     
     public void textDraw(){
-        BigDecimal value = new BigDecimal(item.value());
-        String expense = item.typeName() + " " + value;
+        String expense = item.typeName() + " " + df.format(item.value());
         
         fill(41,36,33);  //color for text
         textSize(testSize);

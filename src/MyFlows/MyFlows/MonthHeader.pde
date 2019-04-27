@@ -1,4 +1,4 @@
-import java.math.BigDecimal;
+import java.text.*;
 /**
  * Header of MyFlows Screen 
  * Display calculated sum of monthly income & outcome
@@ -13,13 +13,15 @@ public class MonthHeader implements IHeaderStrategy, IFlowObserver,IDisplayCompo
     private int x_center = width/2;
     private int y;
     private int r = 30;
-    int testSize = 13;
-        
+    private int testSize = 13;
+    private DecimalFormat df;
+       
     public MonthHeader(String month){
         currentMonth = month;
         y = 60;
         incomeTotal = 0.0f;
         expenseTotal = 0.0f;
+        df = new DecimalFormat("0.00");
     }
     
     public void flowSumUpdate(boolean expense, float sum){
@@ -54,16 +56,13 @@ public class MonthHeader implements IHeaderStrategy, IFlowObserver,IDisplayCompo
     };
     
     public void textDraw(){
-        BigDecimal income = new BigDecimal(incomeTotal);
-        BigDecimal expense = new BigDecimal(expenseTotal);
-        
         fill(41,36,33);  //color for text
         textSize(testSize);
         textAlign(CENTER,CENTER);
         text("Monthly Income", (x_center-r)/2, y-10);
-        text(income, (x_center-r)/2, y+8);
+        text(df.format(incomeTotal), (x_center-r)/2, y+8);
         text("Monthly Expense", width - (x_center-r)/2, y-10);
-        text(expense,  width -(x_center-r)/2, y+8);
+        text(df.format(expenseTotal),  width -(x_center-r)/2, y+8);
     };
    
     

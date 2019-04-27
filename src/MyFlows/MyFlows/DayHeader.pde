@@ -1,4 +1,5 @@
-import java.math.BigDecimal;
+import java.text.*;
+
 /**
  * Header of Day Flows 
  * Display calculated sum of Daily income & outcome
@@ -12,15 +13,17 @@ public class DayHeader implements IHeaderStrategy
     private int x_center = width/2;
     private int y;
     private int r = 15;
-    int testSize = 13;
-    int x_left = 165;
-    int x_right = 215;
+    private int testSize = 13;
+    private int x_left = 165;
+    private int x_right = 215;
+    private DecimalFormat df;
     
     public DayHeader(String day, int y_before){
         currentDay = day;
         setY(y_before) ; //monthHeader + blank + r
         dayIncome = 0.0f;
         dayExpense = 0.0f;
+        df = new DecimalFormat("0.00");
     }
     
     public void setIncome(float income){
@@ -44,10 +47,8 @@ public class DayHeader implements IHeaderStrategy
     };
     
     public void textDraw(){
-        BigDecimal income = new BigDecimal(dayIncome);
-        BigDecimal expense = new BigDecimal(dayExpense);
-        String in = income + " " + "income";
-        String exp = "expense" + " " + expense;
+        String in = df.format(dayIncome) + " " + "income";
+        String exp = "expense" + " " + df.format(dayExpense) ;
         
         fill(41,36,33);  //color for text
         textSize(testSize);
