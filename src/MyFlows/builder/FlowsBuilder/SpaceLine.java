@@ -1,33 +1,23 @@
 
 /**
- * Write a description of class SpaceLine here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * central vertical line between each displayed flow item
  */
-public class SpaceLine
+public class SpaceLine implements IDisplayComponent,ITouchEventHandler
 {
-    // instance variables - replace the example below with your own
-    private int x;
+   private ITouchEventHandler nextHandler;
+   
+   public void touch(){
+        //pass touch inside items
+        if (nextHandler != null){
+           nextHandler.touch(); 
+        }
+    };
 
-    /**
-     * Constructor for objects of class SpaceLine
-     */
-    public SpaceLine()
-    {
-        // initialise instance variables
-        x = 0;
-    }
+    public void setNext(ITouchEventHandler next){
+       nextHandler = next;
+    };
+   
+    public void display(){};
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    public void addSubComponent(IDisplayComponent c){};
 }

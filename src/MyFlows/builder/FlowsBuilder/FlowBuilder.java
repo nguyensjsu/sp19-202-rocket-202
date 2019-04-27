@@ -7,8 +7,8 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
 {
     private MonthFlowReader reader;
     private IFlowObserver ob;
-    private String incomeTol;
-    private String outcomeTol;
+    private float incomeTol;
+    private float outcomeTol;
     private String month;
   //  private Map<String, ArrayList<String>> incomeTable; 
   //  private Map<String, ArrayList<String>> outcomeTable; 

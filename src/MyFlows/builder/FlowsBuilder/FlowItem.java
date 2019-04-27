@@ -19,7 +19,17 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     };
     
     public float value(){
-        return flowDetail[2];
+        float f = 0.00f;
+        try 
+        {
+            f = Float.valueOf(flowDetail[2].trim()).floatValue();
+           // return f;
+        }
+        catch (NumberFormatException nfe) 
+        {
+            System.err.println("NumberFormatException: " + nfe.getMessage());
+        }
+        return f;
     };
     
     public boolean outcome(){

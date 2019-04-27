@@ -6,18 +6,18 @@
 public class DayHeader implements IHeaderStrategy
 {
     private String currentDay;
-    private String dayIncome;
-    private String dayOutcome;
+    private float dayIncome;
+    private float dayOutcome;
     
     public DayHeader(String day){
         currentDay = day;
     }
     
-    public void setIncome(String income){
+    public void setIncome(float income){
         dayIncome = income;
     }
     
-    public String outcomeTotal(String outcome){
+    public void setOutcome(float outcome){
         dayOutcome = outcome;
     }
     

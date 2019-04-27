@@ -44,7 +44,7 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    public void display(){
       head.setIncome(getIncomeTol());
       head.setOutcome(getOutcomeTol());
-      head.display();
+      head.draw();
       for (FlowItem item : items) {
          if (item.outcome()){
            (new OutcomeItemDecorator(item)).display();

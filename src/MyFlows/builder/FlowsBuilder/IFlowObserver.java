@@ -4,5 +4,5 @@
  */
 public interface IFlowObserver
 {
-    void flowSumUpdate(boolean outcome, String sum);
+    void flowSumUpdate(boolean outcome, float sum);
 }
