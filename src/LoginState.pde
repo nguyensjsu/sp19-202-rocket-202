@@ -28,7 +28,7 @@ class LoginState extends PinSet{
 	public void touch(){
 		wrongFlag = false;
 		if(mouseX<width/2+50 && mouseX>width/2-50 && mouseY < 700 && mouseY > 600) this.reset();
-		super.touch();
+		else super.touch();
 	}
 	
 	/**
