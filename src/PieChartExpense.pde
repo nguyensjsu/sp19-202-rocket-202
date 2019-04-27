@@ -25,30 +25,30 @@ class PieChartExpense implements IChartStrategy{
     List monthList = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12");
     List categories = Arrays.asList("Payment","Income");
     
-    // create pieChart scollable list
-     cp5.addScrollableList("pieChartExpenseYear")
-      .setPosition(55,50)
-      .setLabel("2019")
-      .setSize(70,100)
-      .setBarHeight(40)
-      .setItemHeight(30)
-      .addItems(yearList)
-      .setFont(font)
-      .setType(ScrollableList.DROPDOWN)
-      .setOpen(false)
-      ;
+    //// create pieChart scollable list
+    // cp5.addScrollableList("pieChartExpenseYear")
+    //  .setPosition(55,50)
+    //  .setLabel("2019")
+    //  .setSize(70,100)
+    //  .setBarHeight(40)
+    //  .setItemHeight(30)
+    //  .addItems(yearList)
+    //  .setFont(font)
+    //  .setType(ScrollableList.DROPDOWN)
+    //  .setOpen(false)
+    //  ;
 
-    cp5.addScrollableList("pieChartExpenseMonth")
-      .setPosition(135,50)
-      .setSize(50,100)
-      .setLabel("4")
-      .setBarHeight(40)
-      .setItemHeight(30)
-      .addItems(monthList)
-      .setFont(font)
-      .setType(ScrollableList.DROPDOWN)
-      .setOpen(false)
-      ;
+    //cp5.addScrollableList("pieChartExpenseMonth")
+    //  .setPosition(135,50)
+    //  .setSize(50,100)
+    //  .setLabel("4")
+    //  .setBarHeight(40)
+    //  .setItemHeight(30)
+    //  .addItems(monthList)
+    //  .setFont(font)
+    //  .setType(ScrollableList.DROPDOWN)
+    //  .setOpen(false)
+    //  ;
 
 
     // Create my Pie Chart
@@ -82,8 +82,8 @@ class PieChartExpense implements IChartStrategy{
       
       ContextCSVChart contextCSVChart = new ContextCSVChart(new PieChartCSV("2019-04",true));
       contextCSVChart.excuteCSVStrategy(outputPath);
-      dataSets = contextCSVChart.getDataSet(outputPath);
-      fieldSets = contextCSVChart.getFieldSet(outputPath);
+      dataSets = contextCSVChart.getValueSet(outputPath, 2);
+      fieldSets = contextCSVChart.getFieldSet(outputPath, 1);
       dataSetFloat = new float[dataSets.length];
       BigDecimal dataSum = BigDecimal.ZERO;
         
