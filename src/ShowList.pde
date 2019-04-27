@@ -16,5 +16,18 @@ public class ShowList{
     textAlign(RIGHT, CENTER);
     text(s3,360,h);
   }
+  
+  public void showBottomList(String[] fieldSets, float[] dataSetFloat, float[] dataSets){
+    String percent;
+    for(int i=0; i< fieldSets.length; i++){
+      if(String.valueOf(dataSetFloat[i]*100).length()<=5){
+        percent = String.valueOf(dataSetFloat[i]*100)+"%";
+      } else {
+        percent = String.valueOf(dataSetFloat[i]*100).substring(0,5)+"%";
+      }
+      
+      singleList(400+30*i+20*i, fieldSets[i],  percent, String.valueOf(dataSets[i]));
+    }
+  }
 
 }

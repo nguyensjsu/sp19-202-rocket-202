@@ -21,9 +21,9 @@ class PieChartIncome implements IChartStrategy{
     
     img = loadImage("img/chart_income.png");
     // setup Scollable List for Year and Month
-    List yearList = Arrays.asList("2019","2018","2017","2016","2015","2014","2013","2012","2011","2010");
-    List monthList = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12");
-    List categories = Arrays.asList("Payment","Income");
+    //List yearList = Arrays.asList("2019","2018","2017","2016","2015","2014","2013","2012","2011","2010");
+    //List monthList = Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12");
+    //List categories = Arrays.asList("Payment","Income");
     
     //// create pieChart scollable list
     // cp5.addScrollableList("pieChartIncomeYear")
@@ -90,31 +90,32 @@ class PieChartIncome implements IChartStrategy{
             dataSum = dataSum.add(new BigDecimal(dataSets[i]));
         }
         for(int i=0; i<dataSets.length; i++){
-            dataSetFloat[i] = new BigDecimal(dataSets[i]).divide(dataSum,2).floatValue();
-            //System.out.println(dataSetFloat[i]*100);
+            dataSetFloat[i] = new BigDecimal(dataSets[i]).setScale(2, BigDecimal.ROUND_HALF_UP).divide(dataSum,2).floatValue();
+            System.out.println(new BigDecimal("23").divide(dataSum,2));
+            System.out.println(new BigDecimal("23.00").divide(dataSum,2));
+            System.out.println(new BigDecimal(dataSets[i]).divide(dataSum,2));
+            System.out.println(dataSets[i]+"/"+dataSum+"="+dataSetFloat[i]);
         }
     }
     
-    public void showBottomList(){
-      //showList.singleList(400, "Test", "Test", "Test");
-      for(int i=0; i< fieldSets.length; i++){
-        showList.singleList(400+30*i+20*i, fieldSets[i],  String.valueOf(dataSetFloat[i]*100).substring(0,4)+"%", String.valueOf(dataSets[i]));
-      } 
-    }
+    //public void showBottomList(){
+    //  int dataLen = 0;
+    //  for(int i=0; i< fieldSets.length; i++){
+    //    showList.singleList(400+30*i+20*i, fieldSets[i],  String.valueOf(dataSetFloat[i]*100)+"%", String.valueOf(dataSets[i]));
+    //  } 
+    //}
 
   void display(){
     background(255); 
     image(img,0,0);
     // set data for pie chart
     getDataSet();
-    //pieChart.getColor().setBackground(color(255, 100));
     pieChart.addDataSet("payment");
-    //pieChart.setColors("payment", color(244, 89, 66));
     pieChart.setData("payment", dataSetFloat);
     for(int i=0; i<dataSetFloat.length; i++){
       pieChart.setColors("payment", color(25*i, 255, 255), color(255, i, 255));
     }
-    showBottomList();
+    showList.showBottomList(fieldSets, dataSetFloat, dataSets);
     
   }
 
