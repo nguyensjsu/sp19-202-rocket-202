@@ -2,10 +2,10 @@
 
 public class IncomeItemDecorator extends ItemDecorator
 {
-    FlowItemDisplay item;
+    FlowItem item;
     PImage icon;
     
-    public IncomeItemDecorator(FlowItemDisplay items){
+    public IncomeItemDecorator(FlowItem items){
         super(items);
         icon = loadImage(this.imgPath());
     }

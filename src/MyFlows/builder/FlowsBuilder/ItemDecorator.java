@@ -2,9 +2,9 @@ import java.math.BigDecimal;
 
 public class ItemDecorator implements IFlowItem, IDisplayComponent, ITouchEventHandler
 {
-    FlowItemDisplay item;
+    FlowItem item;
     
-    public ItemDecorator(FlowItemDisplay items){
+    public ItemDecorator(FlowItem items){
         item = items;
     }
     
@@ -16,8 +16,12 @@ public class ItemDecorator implements IFlowItem, IDisplayComponent, ITouchEventH
         return item.imgPath();
     };
     
-    public BigDecimal value(){
+    public float value(){
         return item.value();
+    };
+    
+    public boolean outcome(){
+        return item.outcome();
     };
     
     public void touch(){

@@ -1,11 +1,11 @@
 
 
-public class outcomeItemDecorator extends ItemDecorator
+public class OutcomeItemDecorator extends ItemDecorator
 {
-    FlowItemDisplay item;
+    FlowItem item;
     PImage icon;
     
-    public outcomeItemDecorator(FlowItemDisplay items){
+    public OutcomeItemDecorator(FlowItem items){
         super(items);
         icon = loadImage(this.imgPath());
     }
