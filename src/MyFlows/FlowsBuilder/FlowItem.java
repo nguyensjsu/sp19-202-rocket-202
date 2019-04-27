@@ -15,7 +15,7 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     };
     
     public String imgPath(){
-        return "img/" + typeName() +".png";
+        return "img/" + typeName().toLowerCase() +".png";
     };
     
     public float value(){
@@ -54,4 +54,6 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     public void display(){};
 
     public void addSubComponent(IDisplayComponent c){};
+    
+    
 }

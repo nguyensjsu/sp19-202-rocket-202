@@ -4,5 +4,7 @@
  */
 public interface IHeaderStrategy
 {
-    void draw();
+    void circleDraw();
+    void textDraw();
+    void display();
 }

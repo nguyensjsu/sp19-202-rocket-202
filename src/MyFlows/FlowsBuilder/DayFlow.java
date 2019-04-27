@@ -9,12 +9,14 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    private List<FlowItem> items = new ArrayList<FlowItem>();    
    private String day;
    private DayHeader head;
+   private int y;
+   
  //  private float income;
  //  private float outcome;
    
-   public DayFlow(String date){
+   public DayFlow(String date, int y){
        day = date;
-       head = new DayHeader(day);
+       head = new DayHeader(day,y);
    }
    
    public void addItem(FlowItem item){
@@ -44,13 +46,24 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    public void display(){
       head.setIncome(getIncomeTol());
       head.setExpense(getExpenseTol());
-      head.draw();
+      head.display();
+      y = head.getY();
       for (FlowItem item : items) {
          if (item.expense()){
-           (new ExpenseItemDecorator(item)).display();
+            ExpenseItemDecorator exp = new ExpenseItemDecorator(item);
+            exp.setY(y);
+            exp.display();
+            y = exp.getY();
          } else {
-           (new IncomeItemDecorator(item)).display();
+            IncomeItemDecorator in =new IncomeItemDecorator(item);
+            in.setY(y);
+            in.display();
+            y = in.getY();
          }
       }        
-   }    
+   } 
+    
+   public int getY(){
+       return y;
+   }
 }

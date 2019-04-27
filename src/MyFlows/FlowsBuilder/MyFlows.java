@@ -23,8 +23,8 @@ public class MyFlows extends Screen
         
         fb.attach(mh);
         
-        addSubComponent(mh);
         addSubComponent(sl);
+        addSubComponent(mh);
         addSubComponent(fb);
     }
     

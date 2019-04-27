@@ -15,10 +15,12 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
     private Map<String, ArrayList<String>> flowTable;
     private List<String> dateList; 
     private ITouchEventHandler nextHandler;
+    private int y;
     
     public FlowBuilder(String mon){
         month = mon;
         reader = new MonthFlowReader(month);
+        y = 150; //initial 150
      //   getRecordFromReader();
     }
     
@@ -41,7 +43,7 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
     }
     
     public DayFlow singleDayFlow(String day, ArrayList<String> flows){
-        DayFlow dayflow = new DayFlow(day);
+        DayFlow dayflow = new DayFlow(day, y);
         for (String flow: flows){
             dayflow.addItem(new FlowItem(flow));
         }
@@ -71,7 +73,14 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
        nextHandler = next;
     };
    
-    public void display(){};
+    public void display(){
+        for (String day: dateList){
+            ArrayList<String> flows = flowTable.get(day);
+            DayFlow flow = singleDayFlow(day,flows);
+            flow.display();
+            y = flow.getY();
+        }
+    };
 
     public void addSubComponent(IDisplayComponent c){};
 }
