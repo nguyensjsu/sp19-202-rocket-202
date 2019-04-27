@@ -44,6 +44,9 @@ public ChartScreen(PApplet papplet){
        }
       currentChart.show();
     }
+    if(mouseX<=250 && mouseY>=600){
+      currentChart.hide();
+    }
   }
 
   public void drag(){
