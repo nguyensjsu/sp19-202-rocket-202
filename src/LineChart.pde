@@ -117,7 +117,6 @@ class LineChart implements IChartStrategy{
     background(255); 
     image(img,0,0);  
     textSize(9);
-    //print("Line Chart");
         
     lineChartPayment.draw(20,130,width-30,height-300);
     lineChartIncome.draw(70,105,width-30,height-300);
