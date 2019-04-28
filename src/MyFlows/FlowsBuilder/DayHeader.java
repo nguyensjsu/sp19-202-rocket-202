@@ -35,6 +35,7 @@ public class DayHeader implements IHeaderStrategy
     }
     
     public void circleDraw(){
+        System.err.println("dayHeader_Y: "+ y);
         stroke(255,250,250);
         fill(220);
         circle(x_center, y, 2*r);
@@ -49,8 +50,8 @@ public class DayHeader implements IHeaderStrategy
     public void textDraw(){
         String in = df.format(dayIncome) + " " + "INCOME";
         String exp = "EXPENSE" + " " + df.format(dayExpense) ;
-        System.err.println("dayIncome: " + in);
-        System.err.println("dayExpense: " + exp);
+     //   System.err.println("dayIncome: " + in);
+      //  System.err.println("dayExpense: " + exp);
 
         fill(41,36,33);  //color for text
         textSize(testSize);
@@ -62,6 +63,7 @@ public class DayHeader implements IHeaderStrategy
    
     
     public void display(){
+        System.err.println("day: " + currentDay);
         circleDraw();
         textDraw();
     };

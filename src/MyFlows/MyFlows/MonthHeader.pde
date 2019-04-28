@@ -69,6 +69,7 @@ public class MonthHeader implements IHeaderStrategy, IFlowObserver,IDisplayCompo
    
     
     public void display(){
+    System.err.println("monthHeader_Y: "+ y);
         circleDraw();
         textDraw();
     };

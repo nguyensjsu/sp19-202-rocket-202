@@ -10,11 +10,11 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     
     public FlowItem(String detail){
         flowDetail = detail.split(",");
-        System.err.println("FlowItemInput: "+ detail);
+      /*  System.err.println("FlowItemInput: "+ detail);
         System.err.println("FlowItemContent: "+ flowDetail);
         System.err.println("FlowItemName: "+ typeName());
         System.err.println("FlowItemValue: "+ value());
-        System.err.println("FlowItemimgpath: "+ imgPath());
+        System.err.println("FlowItemimgpath: "+ imgPath()); */
     }
     
     public String typeName(){

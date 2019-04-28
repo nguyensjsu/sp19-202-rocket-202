@@ -21,6 +21,7 @@ public class ExpenseItemDecorator extends ItemDecorator
     
     @Override
     public void display(){
+    System.err.println("expenseitem_Y: "+ y);
        circleDraw();
        textDraw();
     }
@@ -31,8 +32,8 @@ public class ExpenseItemDecorator extends ItemDecorator
     };
     
     public void textDraw(){
-    System.err.println("item name: "+ item.typeName());
-    System.err.println("item value: "+ df.format(item.value()));
+   // System.err.println("item name: "+ item.typeName());
+   // System.err.println("item value: "+ df.format(item.value()));
         String expense = item.typeName().toLowerCase() + " " + df.format(item.value());
         
         fill(41,36,33);  //color for text

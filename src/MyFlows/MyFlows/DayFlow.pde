@@ -44,10 +44,13 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    }   
    
    public void display(){
+      head.setY(y-70);
       head.setIncome(getIncomeTol());
       head.setExpense(getExpenseTol());
       head.display();
-      y = head.getY();
+      y = y;
+    //  y = head.getY();
+      System.err.println("*****************begin_single_day_Y: *************"+y);
       for (FlowItem item : items) {
          if (item.expense()){
             ExpenseItemDecorator exp = new ExpenseItemDecorator(item);
@@ -64,7 +67,8 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
             y = in.getY();
             System.err.println("item_Y_GET: "+ y);
          }
-      }        
+      } 
+      System.err.println("*****************end_single_day_Y: *************"+y);       
    } 
     
    public int getY(){

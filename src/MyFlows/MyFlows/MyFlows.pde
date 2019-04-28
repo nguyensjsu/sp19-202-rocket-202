@@ -46,9 +46,12 @@ public class MyFlows extends Screen
 
       for(DayFlow fl: flow){
         fl.setY(y);
+        System.err.println("*******get_set_loop_Y: ******"+y);
         fl.display();
         y = fl.getY();
+        System.err.println("*******get_end_loop_Y: ******"+y);
       }
+      System.err.println("*****************end_day_Y: *************"+y);
       fb.setY(80);
       y = 80;
 

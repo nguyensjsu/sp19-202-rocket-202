@@ -31,19 +31,19 @@ public class MonthFlowReader
         ArrayList<String> flows = new ArrayList<String>();
         flows = CSVHelper.readFile(flowCSVFile);
       //  flows = tools.CSVReader(filepath);
-        System.err.println("readcvs: "+ flows);
+     //   System.err.println("readcvs: "+ flows);
         for (String lines: flows){
             String[] var = lines.split(",");
             var[0] = tools.getDate(var[0]).trim();
-            System.err.println("date: "+ var[0]);
+        //    System.err.println("date: "+ var[0]);
             String months = var[0].substring(0,7);
-            System.err.println("month: "+ months);
+        //    System.err.println("month: "+ months);
             // get flows of all days in choosen month
             if (months.equals(month)){
                 String day = var[0].substring(8,10);
-                System.err.println("day: "+ day);
+          //      System.err.println("day: "+ day);
                 String flowDetails = var[1] + "," + var[2] + "," + var[3];
-                System.err.println("flow details: "+ flowDetails);
+           //     System.err.println("flow details: "+ flowDetails);
                 setTableHelper(flowTable,day,flowDetails);
                 /*//set incomeTable
                 if (var[1].equals("FALSE")){

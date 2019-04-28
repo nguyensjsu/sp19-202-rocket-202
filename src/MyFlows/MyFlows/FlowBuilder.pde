@@ -20,12 +20,12 @@ public class FlowBuilder implements IFlowSubject
     private int y;
     
     public FlowBuilder(String mon){
-        System.err.println("inside flowbuilder");
+     //   System.err.println("inside flowbuilder");
         month = mon;
         reader = new MonthFlowReader(month);
         
         monthflows = new ArrayList<DayFlow>();
-        y = 150; //initial 150
+        y = 80; //initial 150
         getRecordFromReader();
      // creatMonthFlows();
     }
@@ -34,7 +34,7 @@ public class FlowBuilder implements IFlowSubject
      //   incomeTable = reader.getIncomeFlow();
       //  outcomeTable = reader.getOutcomeFlow();
         dateList = reader.sortedRecordDate();
-        System.err.println("dateList: " + dateList);
+      //  System.err.println("dateList: " + dateList);
         flowTable = reader.getFlows();
     }
     
@@ -53,13 +53,13 @@ public class FlowBuilder implements IFlowSubject
     System.err.println("day_Y_use: "+ y);
         DayFlow dayflow = new DayFlow(day, y);
         for (String flow: flows){
-                System.err.println("FlowItemInput: "+ flow);
+             //   System.err.println("FlowItemInput: "+ flow);
                 dayflow.addItem(new FlowItem(flow));
         }
         expenseTol = dayflow.getExpenseTol();
-        System.err.println("day_expense: "+ expenseTol);
+      //  System.err.println("day_expense: "+ expenseTol);
         incomeTol = dayflow.getIncomeTol();
-        System.err.println("day_income: "+ incomeTol);
+      //  System.err.println("day_income: "+ incomeTol);
         notifyObservers();
         y = dayflow.getY() + 70;
         System.err.println("day_Y_SET: "+ y);
