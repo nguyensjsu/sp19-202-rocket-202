@@ -14,6 +14,7 @@ public class IncomeItemDecorator extends ItemDecorator
     
     public IncomeItemDecorator(FlowItem items){
         super(items);
+        item = items;
         icon = loadImage(this.imgPath());
         df = new DecimalFormat("0.00");
     }
@@ -30,7 +31,7 @@ public class IncomeItemDecorator extends ItemDecorator
     };
     
     public void textDraw(){
-        String income = df.format(item.value()) + " " + item.typeName();
+        String income = df.format(item.value()) + " " + item.typeName().toLowerCase();
         
         fill(41,36,33);  //color for text
         textSize(testSize);

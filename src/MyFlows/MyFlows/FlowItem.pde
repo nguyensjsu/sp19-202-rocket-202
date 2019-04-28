@@ -5,13 +5,22 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     private String[] flowDetail;
     private String icopath;
     private ITouchEventHandler nextHandler;
+    private String name = " ";
+    private float f = 0.0f;
     
     public FlowItem(String detail){
         flowDetail = detail.split(",");
+        System.err.println("FlowItemInput: "+ detail);
+        System.err.println("FlowItemContent: "+ flowDetail);
+        System.err.println("FlowItemName: "+ typeName());
+        System.err.println("FlowItemValue: "+ value());
+        System.err.println("FlowItemimgpath: "+ imgPath());
     }
     
     public String typeName(){
-        return flowDetail[1];
+        if(flowDetail[1] != null){
+        name = flowDetail[1];}
+        return name;
     };
     
     public String imgPath(){
@@ -19,7 +28,6 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     };
     
     public float value(){
-        float f = 0.00f;
         try 
         {
             f = Float.valueOf(flowDetail[2].trim()).floatValue();

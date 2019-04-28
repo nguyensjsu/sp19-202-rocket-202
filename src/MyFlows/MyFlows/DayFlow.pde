@@ -51,14 +51,18 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
       for (FlowItem item : items) {
          if (item.expense()){
             ExpenseItemDecorator exp = new ExpenseItemDecorator(item);
+            System.err.println("item_Y_SET: "+ y);
             exp.setY(y);
             exp.display();
             y = exp.getY();
+            System.err.println("item_Y_GET: "+ y);
          } else {
             IncomeItemDecorator in =new IncomeItemDecorator(item);
+            System.err.println("item_Y_SET: "+ y);
             in.setY(y);
             in.display();
             y = in.getY();
+            System.err.println("item_Y_GET: "+ y);
          }
       }        
    } 
@@ -66,4 +70,8 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    public int getY(){
        return y;
    }
+
+   public void setY(int y_before){
+        y = y_before + 70;
+    }
 }

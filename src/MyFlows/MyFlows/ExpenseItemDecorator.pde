@@ -14,6 +14,7 @@ public class ExpenseItemDecorator extends ItemDecorator
     
     public ExpenseItemDecorator(FlowItem items){
         super(items);
+        item = items;
         icon = loadImage(this.imgPath());
         df = new DecimalFormat("0.00");
     }
@@ -30,7 +31,9 @@ public class ExpenseItemDecorator extends ItemDecorator
     };
     
     public void textDraw(){
-        String expense = item.typeName() + " " + df.format(item.value());
+    System.err.println("item name: "+ item.typeName());
+    System.err.println("item value: "+ df.format(item.value()));
+        String expense = item.typeName().toLowerCase() + " " + df.format(item.value());
         
         fill(41,36,33);  //color for text
         textSize(testSize);
