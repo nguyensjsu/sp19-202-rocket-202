@@ -47,9 +47,11 @@ public class DayHeader implements IHeaderStrategy
     };
     
     public void textDraw(){
-        String in = df.format(dayIncome) + " " + "income";
-        String exp = "expense" + " " + df.format(dayExpense) ;
-        
+        String in = df.format(dayIncome) + " " + "INCOME";
+        String exp = "EXPENSE" + " " + df.format(dayExpense) ;
+        System.err.println("dayIncome: " + in);
+        System.err.println("dayExpense: " + exp);
+
         fill(41,36,33);  //color for text
         textSize(testSize);
         textAlign(RIGHT,CENTER);

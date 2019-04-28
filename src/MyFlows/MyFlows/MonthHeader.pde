@@ -26,9 +26,9 @@ public class MonthHeader implements IHeaderStrategy, IFlowObserver,IDisplayCompo
     
     public void flowSumUpdate(boolean expense, float sum){
         if (expense){
-            expenseTotal = sum;
+            expenseTotal += sum;
         } else {
-            incomeTotal = sum;
+            incomeTotal += sum;
         }
     };
     
@@ -59,9 +59,11 @@ public class MonthHeader implements IHeaderStrategy, IFlowObserver,IDisplayCompo
         fill(41,36,33);  //color for text
         textSize(testSize);
         textAlign(CENTER,CENTER);
-        text("Monthly Income", (x_center-r)/2, y-10);
+        text("MONTHLY INCOME", (x_center-r)/2, y-10);
+        
+        text("MONTHLY EXPENSE", width - (x_center-r)/2, y-10);
+        textSize(testSize + 2);
         text(df.format(incomeTotal), (x_center-r)/2, y+8);
-        text("Monthly Expense", width - (x_center-r)/2, y-10);
         text(df.format(expenseTotal),  width -(x_center-r)/2, y+8);
     };
    
