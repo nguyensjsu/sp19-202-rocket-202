@@ -3,7 +3,8 @@ import java.util.*;
 /**
  * Build the flows contain each recorded day
  */
-public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventHandler
+public class FlowBuilder implements IFlowSubject
+// ,IDisplayComponent, ITouchEventHandler
 {
     private MonthFlowReader reader;
     private IFlowObserver ob;
@@ -14,25 +15,31 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
   //  private Map<String, ArrayList<String>> outcomeTable; 
     private Map<String, ArrayList<String>> flowTable;
     private List<String> dateList; 
+    private ArrayList<DayFlow> monthflows;
     private ITouchEventHandler nextHandler;
     private int y;
     
     public FlowBuilder(String mon){
+        System.err.println("inside flowbuilder");
         month = mon;
         reader = new MonthFlowReader(month);
+        
+        monthflows = new ArrayList<DayFlow>();
         y = 150; //initial 150
-     //   getRecordFromReader();
+        getRecordFromReader();
+     // creatMonthFlows();
     }
     
     public void getRecordFromReader(){
      //   incomeTable = reader.getIncomeFlow();
       //  outcomeTable = reader.getOutcomeFlow();
         dateList = reader.sortedRecordDate();
+        System.err.println("dateList: " + dateList);
+        flowTable = reader.getFlows();
     }
     
-    public ArrayList<DayFlow> creatMonthFlows(){
+    public ArrayList<DayFlow> MonthFlows(){
         getRecordFromReader();
-        ArrayList<DayFlow> monthflows = new ArrayList<DayFlow>();
         for (String day: dateList){
           //  ArrayList<String> income = incomeTable.get(day);
           //  ArrayList<String> outcome = outcomeTable.get(day);
@@ -40,16 +47,22 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
             monthflows.add(singleDayFlow(day,flows));
         }
         return monthflows;
-    }
+    } 
     
     public DayFlow singleDayFlow(String day, ArrayList<String> flows){
+    System.err.println("day_Y_use: "+ y);
         DayFlow dayflow = new DayFlow(day, y);
         for (String flow: flows){
-            dayflow.addItem(new FlowItem(flow));
+                System.err.println("FlowItemInput: "+ flow);
+                dayflow.addItem(new FlowItem(flow));
         }
         expenseTol = dayflow.getExpenseTol();
+        System.err.println("day_expense: "+ expenseTol);
         incomeTol = dayflow.getIncomeTol();
+        System.err.println("day_income: "+ incomeTol);
         notifyObservers();
+        y = dayflow.getY() + 70;
+        System.err.println("day_Y_SET: "+ y);
         return dayflow;
     }
     
@@ -61,8 +74,12 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
         ob.flowSumUpdate(false, incomeTol);
         ob.flowSumUpdate(true, expenseTol);
     };
+
+    public void setY(int y_before){
+        y = y_before + 70 ;
+    }
     
-    public void touch(){
+ /*   public void touch(){
         //pass touch inside items
         if (nextHandler != null){
            nextHandler.touch(); 
@@ -76,11 +93,12 @@ public class FlowBuilder implements IFlowSubject,IDisplayComponent, ITouchEventH
     public void display(){
         for (String day: dateList){
             ArrayList<String> flows = flowTable.get(day);
+            System.err.println("dayFlows: " + flows);
             DayFlow flow = singleDayFlow(day,flows);
             flow.display();
-            y = flow.getY();
+            y = flow.getY() + 70;
         }
     };
 
-    public void addSubComponent(IDisplayComponent c){};
+    public void addSubComponent(IDisplayComponent c){};*/
 }

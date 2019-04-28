@@ -12,6 +12,8 @@ public class MyFlows extends Screen
     private SpaceLine sl;
     private MonthHeader mh;
     private FlowBuilder fb;
+    private ArrayList<DayFlow> flow;
+    private int y;
     
     public MyFlows(){
        df = new SimpleDateFormat("yyyy-MM");
@@ -25,8 +27,31 @@ public class MyFlows extends Screen
         
         addSubComponent(sl);
         addSubComponent(mh);
-        addSubComponent(fb);
+      //  addSubComponent(fb);
+        System.err.println("finish myflow");
+        flow = fb.MonthFlows();
+        y = 80;
     }
     
+    @Override
+    public void display(){
+        super.display();
+      //  background(255);
+      //  sl.display();
+     //   mh.display();
+      //  fb.display();
+      
+
+      System.err.println("*****************first_day_Y: *************"+y);
+
+      for(DayFlow fl: flow){
+        fl.setY(y);
+        fl.display();
+        y = fl.getY();
+      }
+      fb.setY(80);
+      y = 80;
+
+    }
     
 }
