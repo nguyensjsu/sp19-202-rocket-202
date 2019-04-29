@@ -20,6 +20,7 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    }
    
    public void addItem(FlowItem item){
+   items.add(0,item);
       items.add(item);
    }
  
@@ -51,6 +52,7 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
       y = y;
     //  y = head.getY();
       System.err.println("*****************begin_single_day_Y: *************"+y);
+    //  Collections.reverse(items);
       for (FlowItem item : items) {
          if (item.expense()){
             ExpenseItemDecorator exp = new ExpenseItemDecorator(item);

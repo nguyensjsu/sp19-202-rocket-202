@@ -19,26 +19,18 @@ public class MyFlows extends Screen
        df = new SimpleDateFormat("yyyy-MM");
        month = df.format(new Date()); //initial set as current month
     //   reader = new MonthFlowReader(Month);
-        mh = new MonthHeader(month);
         sl = new SpaceLine();
-        fb = new FlowBuilder(month);
-        
-        fb.attach(mh);
-        
         addSubComponent(sl);
-        addSubComponent(mh);
-      //  addSubComponent(fb);
-        System.err.println("finish myflow");
-        flow = fb.MonthFlows();
-        y = 80;
+        reload();
     }
     
     @Override
     public void display(){
+        reload();
         super.display();
       //  background(255);
       //  sl.display();
-     //   mh.display();
+        mh.display();
       //  fb.display();
       
 
@@ -57,4 +49,19 @@ public class MyFlows extends Screen
 
     }
     
+    public void reload(){
+    //   reader = new MonthFlowReader(Month);
+        mh = new MonthHeader(month);
+        
+        fb = new FlowBuilder(month);
+        
+        fb.attach(mh);
+        
+        
+      //  addSubComponent(mh);
+      //  addSubComponent(fb);
+        System.err.println("finish myflow");
+        flow = fb.MonthFlows();
+        y = 80;
+    }
 }

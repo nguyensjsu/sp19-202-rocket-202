@@ -20,7 +20,7 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    }
    
    public void addItem(FlowItem item){
-      items.add(item);
+      items.add(0,item);
    }
  
    public float getIncomeTol(){
@@ -50,6 +50,8 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
       head.display();
     //  y = head.getY();
       System.err.println("*****************beign_single_day_Y: *************"+y);
+      
+    //  Collections.reverse(items);
       for (FlowItem item : items) {
          if (item.expense()){
             ExpenseItemDecorator exp = new ExpenseItemDecorator(item);
