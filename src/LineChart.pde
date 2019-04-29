@@ -9,18 +9,19 @@ class LineChart extends Screen implements IChartStrategy{
   // XYChart lineChartPayment;
   // XYChart lineChartIncome;
   // XYChart lineChartBalance;
-  PImage img;
+  PImage img, icon;
   //ArrayList<String> dataSet;
   float[] yPayment;
   float[] yIncome;
   float[] yBalance;
   String[] monthSets;
   String month;
+  SimpleDateFormat df = new SimpleDateFormat("yyyy");
   int count=0;
   LineChartPlot lp = new LineChartPlot(width/2, 90);
 
   PImage imgb = loadImage("img/whiteback.png");
-  int displacement = 0; //<>//
+  int displacement = 0;
   int bottom = 640;
   int uplimit = 380;
   int height = 380;
@@ -31,44 +32,10 @@ class LineChart extends Screen implements IChartStrategy{
    // this.cp5 = cp5;
     this.papplet = papplet;
     img = loadImage("img/chart_monthly.png");
+    icon = loadImage("img/mar.png");
     // setup Tab font size
     PFont pfont = createFont("arial",16);
     font = new ControlFont(pfont);
-
-    //List yearList = Arrays.asList("2019","2018","2017","2016","2015","2014","2013","2012","2011","2010");
-
-     //// create LineChart scollable list
-     //cp5.addScrollableList("lineChartYear")
-     // .setPosition(160,650)
-     // .setSize(70,100)
-     // .setLabel("2019")
-     // .setBarHeight(40)
-     // .setItemHeight(30)
-     // .addItems(yearList)
-     // .setFont(font)
-     // .setType(ScrollableList.DROPDOWN)
-     // .setOpen(false)
-     // ;
-
-    // Both x and y data set here.
-      // lineChartPayment = new XYChart(papplet);
-      // lineChartIncome = new XYChart(papplet);
-      // lineChartBalance = new XYChart(papplet);
-      //  chartFormat(lineChartPayment,true);
-      //  lineChartPayment.setLineColour(color(173,255,47));
-      //  chartFormat(lineChartIncome,false);
-      //  lineChartIncome.setLineColour(color(255,0,255));
-      //  chartFormat(lineChartBalance,false);
-      //  lineChartBalance.setLineColour(color(255,255,0));
-      //
-      //  float[] xAxis = new float[] {1,2,3,4,5,6,7,8,9,10,11,12};
-      //  getDataSet();
-      //  lineChartIncome.setData(xAxis, yIncome);
-      //  lineChartPayment.setData(xAxis, yPayment);
-      //  lineChartBalance.setData(xAxis, yBalance);
-      //  lineChartPayment.setXAxisLabel("Month");
-      //  lineChartPayment.setYAxisLabel("Money");
-
   }
 
     public void hide(){
@@ -79,21 +46,6 @@ class LineChart extends Screen implements IChartStrategy{
       //lineChartPayment.setVisible(true);
     }
 
-  // public void chartFormat(XYChart xyChart, boolean showAxis){
-  //   // Axis formatting and labels.
-  //     xyChart.setPointColour(color(0,0,0));
-  //     xyChart.showXAxis(showAxis);
-  //     xyChart.showYAxis(showAxis);
-  //     xyChart.setMinX(1);
-  //
-  //     xyChart.setYFormat("$###,###");  // Monetary value in $US
-  //     xyChart.setXFormat("00");      // Year
-  //
-  //     // Symbol colours
-  //     //xyChart.setPointColour(color(180,50,50,100));
-  //     xyChart.setPointSize(5);
-  //     xyChart.setLineWidth(3);
-  // }
 
       public void showBottomList(){
         count = 0;
@@ -134,6 +86,15 @@ class LineChart extends Screen implements IChartStrategy{
 	showBottomList();
 	image(imgb,0,0,380,height);
     image(img,0,0);
+
+    fill(255);
+    stroke(0,0,247);
+    rectMode(CORNER);
+    rect(45, 55, 60, 25, 10, 10, 10, 10);
+    fill(0,0,247);
+    textSize(15);
+    textAlign(CENTER, CENTER);
+    text(df.format(new Date()), 75, 65);
     textSize(9);
 
 	lp.getMax(yIncome);
@@ -141,13 +102,10 @@ class LineChart extends Screen implements IChartStrategy{
 	lp.getMax(yBalance);
 	lp.printAxis();
 
-	lp.getData(yPayment, color(255,0,255),"Payment", true);
-	lp.getData(yIncome, color(173,255,47),"Income", true);
-	lp.getData(yBalance, color(255,255,0),"Balance",false);
+  lp.getData(yPayment, color(100,149,237),"Payment", true);
+  lp.getData(yIncome, color(127,255,212),"Income", true);
+  lp.getData(yBalance, color(240,128,128),"Balance",false);
 
-    // lineChartPayment.draw(20,130,width-30,height-300);
-    // lineChartIncome.draw(70,105,width-30,height-300);
-    // lineChartBalance.draw(70,105,width-30,height-300);
 
     setback();
 
@@ -175,6 +133,7 @@ class LineChart extends Screen implements IChartStrategy{
     stroke(0);
 	  line(0,h,380,h);
     h = h+15;
+    // image(icon,10,h-12,30,30);
     textSize(15);
     textAlign(LEFT, CENTER);
     fill(0,0,0);
