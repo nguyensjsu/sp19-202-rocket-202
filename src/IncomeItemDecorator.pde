@@ -32,7 +32,11 @@ public class IncomeItemDecorator extends ItemDecorator
     };
     
     public void textDraw(){
-        String income = df.format(item.value()) + " " + item.typeName().toLowerCase();
+        String name = item.typeName().toLowerCase();
+        if(name.equals("red_packet")){
+                name = "red packet";
+            }
+        String income = df.format(item.value()) + " " + name;
         
         fill(41,36,33);  //color for text
         textSize(testSize);
