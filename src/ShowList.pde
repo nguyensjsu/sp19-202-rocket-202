@@ -5,7 +5,8 @@ public class ShowList{
   }
   
   public void singleList(float h,String s1, String s2, String s3){
-    line(0,h,380,h);
+    stroke(0);
+	line(0,h,380,h);
     h = h+20;
     textSize(20);
     textAlign(LEFT, CENTER);

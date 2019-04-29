@@ -7,7 +7,7 @@ public class AppProxy implements IAuthObserver, IProxy{
   IProxy app;
 
   public AppProxy(PApplet papplet) {
-      authenticated = true;
+      authenticated = false;
       login = new LoginScreen();
 	    app = new AppController(papplet);
 	    ((IAuthSubject)login).addObserver(this);
