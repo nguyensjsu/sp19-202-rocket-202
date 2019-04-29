@@ -3,6 +3,8 @@ class LineChartPlot{
 	int month = Calendar.getInstance().get(Calendar.MONTH)+1;
 	int length = 240;
 	int maxV=-1;
+	int minV = 0;
+	int range = 0;
 	int markX = width/2-90;
 	
 	//X position:Center, Y position: Top
@@ -34,7 +36,7 @@ class LineChartPlot{
 		markX = width/2-90;
 		println(maxV);
 		int s = 15;
-		int c = 126;
+		int c = 100;
 		//Y axis
 		stroke(c);
 		line(x ,y , x, y+length);
@@ -46,7 +48,7 @@ class LineChartPlot{
 		textSize(s);
 		fill(c);
 		rotate(-PI/2);
-		text("Money", -(y+length/2), x-30);
+		text("Money", -(y+length/2), x-40);
 		//XLabel
 		rotate(PI/2);
 		textSize(s);
@@ -62,15 +64,23 @@ class LineChartPlot{
 			// month--;
 		}
 		// Money Value
+		range = maxV - minV;
 		for(int i = 0; i < 5; i++){
-			textAlign(CENTER,CENTER);
-			text(maxV-i*maxV/4, x-10, y+length/4*i);
+			textAlign(RIGHT,CENTER);
+			text(maxV-i*range/4, x-10, y+length/4*i);
 			line(x,y+length/4*i,x+3,y+length/4*i);
+		}
+		// zero value line
+		if(minV<0){
+			stroke(200);
+			line(x,getYPosition(0), x+length,getYPosition(0));
+			textAlign(RIGHT,CENTER);
+			text(0, x-20, getYPosition(0));
 		}
 	}
 	
 	private int getYPosition(float num){
-		return Math.round(y+length - num/maxV*length);
+		return Math.round(y+length - (num-minV)/range*length);
 	}
 
 	public void getMax(float[] yPayment){
@@ -79,6 +89,11 @@ class LineChartPlot{
 				 if (yPayment[counter] > maxV)
 				 {
 				  maxV = Math.round(yPayment[counter]);
+				 }
+				 
+				 if (yPayment[counter] < minV)
+				 {
+				  minV = Math.round(yPayment[counter]);
 				 }
 			}
 	}
