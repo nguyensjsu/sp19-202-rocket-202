@@ -15,7 +15,7 @@ public class Tools {
 
     /* Convert unix_timestamp to "YYYY-MM-dd"*/
     public String getDate(String unix_timestamp){
-        Long long_timestamp = Long.parseLong(unix_timestamp);
+        Long long_timestamp = Long.parseLong(unix_timestamp.trim());
         Date date = new Date(long_timestamp);
         /* Format Date */
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
