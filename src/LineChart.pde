@@ -18,6 +18,13 @@ class LineChart extends Screen implements IChartStrategy{
   String month;
   int count=0;
   LineChartPlot lp = new LineChartPlot(width/2, 90);
+  
+  PImage imgb = loadImage("img/whiteback.png");
+  int displacement = 0; //<>//
+  int bottom = 640;
+  int uplimit = 380;
+  int height = 380;
+  int end = -1;
 
   public LineChart(PApplet papplet){
     this.cp5 = new ControlP5(papplet);
@@ -90,15 +97,19 @@ class LineChart extends Screen implements IChartStrategy{
 
       public void showBottomList(){
         count = 0;
-        singleList(520, "Month","Income", "Expense","Balance");
+		
+		if (displacement > 0) displacement = 0;
+        singleList(height+displacement, "Month","Income", "Expense","Balance");
       for(int i=0; i< 12; i++){
         if(yPayment[i]!=0 || yIncome[i]!=0 || yBalance[i]!=0){
           count = count+1;
           month = month(i+1);
-          singleList(520+30*count+20*count, month, String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
-        } else {
+          singleList(height+30*count+20*count+displacement, month, String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
+			end = height+30*count+20*count+displacement;
+		} else {
           // do nothing
         }
+		
       }
     }
 
@@ -117,6 +128,8 @@ class LineChart extends Screen implements IChartStrategy{
   void display(){
     background(255);
 	getDataSet();
+	showBottomList();
+	image(imgb,0,0,380,height);
     image(img,0,0);
     textSize(9);
 	
@@ -132,7 +145,7 @@ class LineChart extends Screen implements IChartStrategy{
     // lineChartIncome.draw(70,105,width-30,height-300);
     // lineChartBalance.draw(70,105,width-30,height-300);
 
-    showBottomList();
+    setback();
 
   }
 
@@ -170,6 +183,12 @@ class LineChart extends Screen implements IChartStrategy{
     text(s4,320,h);
   }
 
+	public void drag(){
+		displacement = displacement + mouseY - pmouseY;
+		println("end: ",end);
+	}
 
-
+	protected void setback(){
+		if (end <= bottom-30 && !mousePressed) displacement *= 0.95;
+	}
 }
