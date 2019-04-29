@@ -17,5 +17,6 @@ void mouseClicked(){
 }
 
 void mouseDragged(){
+  println("dragged: ", mouseX, "  ", mouseY);
 	proxy.drag();
 }

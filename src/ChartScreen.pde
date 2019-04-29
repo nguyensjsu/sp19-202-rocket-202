@@ -15,10 +15,10 @@ PApplet papplet;
 
 public ChartScreen(PApplet papplet){
   this.papplet = papplet;
-  cp5 = new ControlP5(papplet);
-  pieChartExpense = new ContextChart(new PieChartExpense(papplet, cp5));
-  pieChartIncome = new ContextChart(new PieChartIncome(papplet, cp5));
-  lineChart = new ContextChart(new LineChart(papplet,cp5));
+  // cp5 = new ControlP5(papplet);
+  pieChartExpense = new ContextChart(new PieChartExpense(papplet));
+  pieChartIncome = new ContextChart(new PieChartIncome(papplet));
+  lineChart = new ContextChart(new LineChart(papplet));
   currentChart = pieChartExpense;
 
   // setup Tab font size
@@ -60,6 +60,6 @@ public ChartScreen(PApplet papplet){
   // }
 
   public void drag(){
-
+	currentChart.drag();
   }
 }

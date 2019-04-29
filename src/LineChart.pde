@@ -18,7 +18,7 @@ class LineChart extends Screen implements IChartStrategy{
   String month;
   int count=0;
 
-  public LineChart(PApplet papplet, ControlP5 cp5){
+  public LineChart(PApplet papplet){
     this.cp5 = new ControlP5(papplet);
    // this.cp5 = cp5;
     this.papplet = papplet;
