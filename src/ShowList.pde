@@ -10,16 +10,15 @@ public class ShowList{
     textSize(20);
     textAlign(LEFT, CENTER);
     fill(0,0,0);
-    text(s1,10,h,-50);
+    text(s1,10,h);
     textAlign(CENTER, CENTER);
-    text(s2,190,h,-50);
+    text(s2,190,h);
     textAlign(RIGHT, CENTER);
-    text(s3,360,h,-50);
+    text(s3,360,h);
   }
   
-  public int showBottomList(String[] fieldSets, float[] dataSetFloat, float[] dataSets,int displacemant){
+  public void showBottomList(String[] fieldSets, float[] dataSetFloat, float[] dataSets){
     String percent;
-	int end = 0;
     for(int i=0; i< fieldSets.length; i++){
       if(String.valueOf(dataSetFloat[i]*100).length()<=5){
         percent = String.valueOf(dataSetFloat[i]*100)+"%";
@@ -27,10 +26,8 @@ public class ShowList{
         percent = String.valueOf(dataSetFloat[i]*100).substring(0,5)+"%";
       }
       
-      singleList(290+30*i+20*i+displacemant, fieldSets[i],  percent, String.valueOf(dataSets[i]));
-	  end = 290+30*i+20*i+displacemant+20;//?
+      singleList(400+30*i+20*i, fieldSets[i],  percent, String.valueOf(dataSets[i]));
     }
-	return end;
   }
 
 }
