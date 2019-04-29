@@ -1,14 +1,14 @@
 import controlP5.*;
 import java.util.*;
-import org.gicentre.utils.stat.*;
+// import org.gicentre.utils.stat.*;
 
 class LineChart extends Screen implements IChartStrategy{
   ControlP5 cp5;
   ControlFont font;
   PApplet papplet;
-  XYChart lineChartPayment;
-  XYChart lineChartIncome;
-  XYChart lineChartBalance;
+  // XYChart lineChartPayment;
+  // XYChart lineChartIncome;
+  // XYChart lineChartBalance;
   PImage img;
   //ArrayList<String> dataSet;
   float[] yPayment;
@@ -18,7 +18,7 @@ class LineChart extends Screen implements IChartStrategy{
   String month;
   int count=0;
   LineChartPlot lp = new LineChartPlot(width/2, 90);
-  
+
   PImage imgb = loadImage("img/whiteback.png");
   int displacement = 0; //<>//
   int bottom = 640;
@@ -51,23 +51,23 @@ class LineChart extends Screen implements IChartStrategy{
      // ;
 
     // Both x and y data set here.
-      lineChartPayment = new XYChart(papplet);
-      lineChartIncome = new XYChart(papplet);
-      lineChartBalance = new XYChart(papplet);
-       chartFormat(lineChartPayment,true);
-       lineChartPayment.setLineColour(color(173,255,47));
-       chartFormat(lineChartIncome,false);
-       lineChartIncome.setLineColour(color(255,0,255));
-       chartFormat(lineChartBalance,false);
-       lineChartBalance.setLineColour(color(255,255,0));
-
-       float[] xAxis = new float[] {1,2,3,4,5,6,7,8,9,10,11,12};
-       getDataSet();
-       lineChartIncome.setData(xAxis, yIncome);
-       lineChartPayment.setData(xAxis, yPayment);
-       lineChartBalance.setData(xAxis, yBalance);
-       lineChartPayment.setXAxisLabel("Month");
-       lineChartPayment.setYAxisLabel("Money");
+      // lineChartPayment = new XYChart(papplet);
+      // lineChartIncome = new XYChart(papplet);
+      // lineChartBalance = new XYChart(papplet);
+      //  chartFormat(lineChartPayment,true);
+      //  lineChartPayment.setLineColour(color(173,255,47));
+      //  chartFormat(lineChartIncome,false);
+      //  lineChartIncome.setLineColour(color(255,0,255));
+      //  chartFormat(lineChartBalance,false);
+      //  lineChartBalance.setLineColour(color(255,255,0));
+      //
+      //  float[] xAxis = new float[] {1,2,3,4,5,6,7,8,9,10,11,12};
+      //  getDataSet();
+      //  lineChartIncome.setData(xAxis, yIncome);
+      //  lineChartPayment.setData(xAxis, yPayment);
+      //  lineChartBalance.setData(xAxis, yBalance);
+      //  lineChartPayment.setXAxisLabel("Month");
+      //  lineChartPayment.setYAxisLabel("Money");
 
   }
 
@@ -79,25 +79,25 @@ class LineChart extends Screen implements IChartStrategy{
       //lineChartPayment.setVisible(true);
     }
 
-  public void chartFormat(XYChart xyChart, boolean showAxis){
-    // Axis formatting and labels.
-      xyChart.setPointColour(color(0,0,0));
-      xyChart.showXAxis(showAxis);
-      xyChart.showYAxis(showAxis);
-      xyChart.setMinX(1);
-
-      xyChart.setYFormat("$###,###");  // Monetary value in $US
-      xyChart.setXFormat("00");      // Year
-
-      // Symbol colours
-      //xyChart.setPointColour(color(180,50,50,100));
-      xyChart.setPointSize(5);
-      xyChart.setLineWidth(3);
-  }
+  // public void chartFormat(XYChart xyChart, boolean showAxis){
+  //   // Axis formatting and labels.
+  //     xyChart.setPointColour(color(0,0,0));
+  //     xyChart.showXAxis(showAxis);
+  //     xyChart.showYAxis(showAxis);
+  //     xyChart.setMinX(1);
+  //
+  //     xyChart.setYFormat("$###,###");  // Monetary value in $US
+  //     xyChart.setXFormat("00");      // Year
+  //
+  //     // Symbol colours
+  //     //xyChart.setPointColour(color(180,50,50,100));
+  //     xyChart.setPointSize(5);
+  //     xyChart.setLineWidth(3);
+  // }
 
       public void showBottomList(){
         count = 0;
-		
+
 		if (displacement > 0) displacement = 0;
         singleList(height+displacement, "Month","Income", "Expense","Balance");
       for(int i=0; i< 12; i++){
@@ -109,7 +109,7 @@ class LineChart extends Screen implements IChartStrategy{
 		} else {
           // do nothing
         }
-		
+
       }
     }
 
@@ -132,7 +132,7 @@ class LineChart extends Screen implements IChartStrategy{
 	image(imgb,0,0,380,height);
     image(img,0,0);
     textSize(9);
-	
+
 	lp.getMax(yIncome);
 	lp.getMax(yPayment);
 	lp.getMax(yBalance);
@@ -140,7 +140,7 @@ class LineChart extends Screen implements IChartStrategy{
 	lp.getData(yIncome, color(173,255,47),"Income");
 	lp.getData(yPayment, color(255,0,255),"Payment");
 	lp.getData(yBalance, color(255,255,0),"Balance");
-	
+
     // lineChartPayment.draw(20,130,width-30,height-300);
     // lineChartIncome.draw(70,105,width-30,height-300);
     // lineChartBalance.draw(70,105,width-30,height-300);
