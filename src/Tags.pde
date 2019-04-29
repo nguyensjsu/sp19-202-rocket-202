@@ -121,4 +121,11 @@ public class Tags implements ITouchEventHandler, IDisplayComponent, IRadioButton
     }
 
     public void cancel() {}
+
+    public void reset() {
+        currentStrategy = expStrategy;
+        inMotion = false;
+        moveLeft = false;
+        offset = 0;
+    }
 }
