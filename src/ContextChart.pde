@@ -16,5 +16,9 @@ public class ContextChart {
     public void show(){
       chartStrategy.show();
     }
+	
+	public void drag(){
+      chartStrategy.drag();
+    }
     
 }
