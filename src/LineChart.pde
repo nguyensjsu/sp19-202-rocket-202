@@ -17,6 +17,7 @@ class LineChart extends Screen implements IChartStrategy{
   String[] monthSets;
   String month;
   int count=0;
+  LineChartPlot lp = new LineChartPlot(width/2, 90);
 
   public LineChart(PApplet papplet){
     this.cp5 = new ControlP5(papplet);
@@ -115,12 +116,21 @@ class LineChart extends Screen implements IChartStrategy{
 
   void display(){
     background(255);
+	getDataSet();
     image(img,0,0);
     textSize(9);
-
-    lineChartPayment.draw(20,130,width-30,height-300);
-    lineChartIncome.draw(70,105,width-30,height-300);
-    lineChartBalance.draw(70,105,width-30,height-300);
+	
+	lp.getMax(yIncome);
+	lp.getMax(yPayment);
+	lp.getMax(yBalance);
+	lp.printAxis();
+	lp.getData(yIncome, color(173,255,47),"Income");
+	lp.getData(yPayment, color(255,0,255),"Payment");
+	lp.getData(yBalance, color(255,255,0),"Balance");
+	
+    // lineChartPayment.draw(20,130,width-30,height-300);
+    // lineChartIncome.draw(70,105,width-30,height-300);
+    // lineChartBalance.draw(70,105,width-30,height-300);
 
     showBottomList();
 
@@ -145,7 +155,8 @@ class LineChart extends Screen implements IChartStrategy{
   }
 
   public void singleList(float h,String s1, String s2, String s3, String s4){
-    line(0,h,380,h);
+    stroke(0);
+	line(0,h,380,h);
     h = h+20;
     textSize(20);
     textAlign(LEFT, CENTER);
