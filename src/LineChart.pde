@@ -104,8 +104,8 @@ class LineChart extends Screen implements IChartStrategy{
         if(yPayment[i]!=0 || yIncome[i]!=0 || yBalance[i]!=0){
           count = count+1;
           month = month(i+1);
-          singleList(height+30*count+20*count+displacement, month, String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
-			end = height+30*count+20*count+displacement;
+          singleList(height+20*count+15*count+displacement, month, String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
+			end = height+20*count+15*count+displacement;
 		} else {
           // do nothing
         }
@@ -140,7 +140,7 @@ class LineChart extends Screen implements IChartStrategy{
 	lp.getMax(yPayment);
 	lp.getMax(yBalance);
 	lp.printAxis();
-	
+
 	lp.getData(yPayment, color(255,0,255),"Payment", true);
 	lp.getData(yIncome, color(173,255,47),"Income", true);
 	lp.getData(yBalance, color(255,255,0),"Balance",false);
@@ -173,9 +173,9 @@ class LineChart extends Screen implements IChartStrategy{
 
   public void singleList(float h,String s1, String s2, String s3, String s4){
     stroke(0);
-	line(0,h,380,h);
-    h = h+20;
-    textSize(20);
+	  line(0,h,380,h);
+    h = h+15;
+    textSize(15);
     textAlign(LEFT, CENTER);
     fill(0,0,0);
     text(s1,10,h);
