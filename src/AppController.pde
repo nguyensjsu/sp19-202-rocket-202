@@ -16,8 +16,6 @@ public class AppController implements IProxy{
 
 	public AppController(PApplet p){
 		papplet = p;
-		//initial
-		// !!!TODO: change to real screen
 		myFlows = new MenuScreen(new MyFlows(){
 			String name() { return "MyFlows"; }
 		});
@@ -80,7 +78,6 @@ public class AppController implements IProxy{
 		setFlow.setReciver(new IMenuReceiver() {
 			public void doAction() {
 				((ChartScreen)chart.getInnerScreen()).hide();
-				// !!!TODO: Change Name of Flow Scrren
 				if (frame.screen().equals("MyFlows")) {
 					((AddRecordScreen)addRecord).reset();
 					frame.setCurrentScreen(addRecord);

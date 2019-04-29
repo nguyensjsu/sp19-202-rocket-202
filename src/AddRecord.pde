@@ -49,6 +49,7 @@ class AddRecordScreen extends Screen implements IRadioButtonObserver, IAccountAr
         rb.reset();
         co.toggleExpense();
         kp.reset();
+        tags.reset();
         accList.loadFromFile();
         msgCounter = 0;
         date = new Date();
