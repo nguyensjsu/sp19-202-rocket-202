@@ -20,8 +20,7 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
    }
    
    public void addItem(FlowItem item){
-   items.add(0,item);
-      items.add(item);
+      items.add(0,item);
    }
  
    public float getIncomeTol(){
