@@ -1,11 +1,11 @@
+##Usage of controlP5:
+We use this library in our project, so you need to install this library in Processing before running our project.
 
-*Please do the following:*
-
-1. Edit this readme file first
-
-2. Read './document/README.md' for instructions about team repo submissions.
+Install library controlP5:
+Move folder controlP5 into Processing's libraries folder and restart Processing.
 
 
-# Team Project Repo 
+
+
 
 
