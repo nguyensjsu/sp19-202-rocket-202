@@ -1,11 +1,17 @@
+## Instruction
 
-*Please do the following:*
+In our project, we use controlP5 library.You need to install controP5 in your Processing.
 
-1. Edit this readme file first
+Download controlP5 here:http://www.sojamo.de/libraries/controlP5/#installation
 
-2. Read './document/README.md' for instructions about team repo submissions.
+Then you need to move folder controlP5 into Processing's libraries folder and restart Processing.
+
+The Processing library folder such as:
+
+/Users/**/Processing/libraries
 
 
-# Team Project Repo 
+
+
 
 

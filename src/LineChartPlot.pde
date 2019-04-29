@@ -2,7 +2,7 @@ class LineChartPlot{
 	int x,y;
 	int month = Calendar.getInstance().get(Calendar.MONTH)+1;
 	int length = 240;
-	int maxV=-1;
+	int maxV = 0;
 	int minV = 0;
 	int range = 0;
 	int markX = width/2-90;
@@ -13,11 +13,34 @@ class LineChartPlot{
 		this.y = y;
 	}
 	
-	public void getData(float[] yPayment, color c, String name){
-		
+	public void getData(float[] yPayment, color c, String name, boolean flag){
+		int maxG = 0;
+		int minG = 0;
+		int yi = 0;
+		for (int counter = 0; counter < yPayment.length; counter++)
+			{
+				 if (yPayment[counter] > maxG)
+				 {
+				  maxG = Math.round(yPayment[counter]);
+				 }
+				 
+				 if (yPayment[counter] < minG)
+				 {
+				  minG = Math.round(yPayment[counter]);
+				 }
+			}
 		for(int i = 0; i < yPayment.length-1; i++){
 			stroke(c);
 			line(x+length/11*i,getYPosition(yPayment[i]), x+length/11*(i+1),getYPosition(yPayment[i+1]));
+			if (!flag) continue;
+			setGradient(x+length/11*i,getYPosition(yPayment[i]), getYPosition(maxG), getYPosition(minG), c);
+			for(int j = x+length/11*i+1; j<x+length/11*(i+1);j++){
+				double yf =getYPosition(yPayment[i])+(getYPosition(yPayment[i+1])-getYPosition(yPayment[i]))/(length/11)*(j-x-length/11*i);
+				println(yf);
+				if(yf<getYPosition(maxG)) yi = (int)Math.floor(yf);
+				else yi = (int)Math.ceil(yf);
+				setGradient(j, yi, getYPosition(maxG), getYPosition(minG), c);
+			}
 			fill(0);
 			circle(x+length/11*i,getYPosition(yPayment[i]),3);
 		}
@@ -96,5 +119,27 @@ class LineChartPlot{
 				  minV = Math.round(yPayment[counter]);
 				 }
 			}
+	}
+	
+	private void setGradient(int x, int y, int max, int min, color c){
+		int dis = 20;
+		if(max == min) return;
+		if(y<getYPosition(0)){
+			// if(max == getYPosition(0)) return;
+			for(int p = y;p<getYPosition(0);p++){
+				float i = map(p,max,getYPosition(0),0,1);
+				color gre = lerpColor(c,color(255,255,255),i);
+				stroke(gre);
+				point(x,p);
+			}
+		}else{
+			// if(min == getYPosition(0)) return;
+			for(int p = y;p>getYPosition(0);p--){
+				float i = map(p,getYPosition(0),min,0,1);
+				color gre = lerpColor(color(255,255,255),c,i);
+				stroke(gre);
+				point(x,p);
+			}
+		}
 	}
 }

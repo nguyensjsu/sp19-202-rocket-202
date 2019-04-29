@@ -123,6 +123,9 @@ class LineChart extends Screen implements IChartStrategy{
       yIncome = contextCSVChart.getValueSet(outputPath, 1);
       yPayment = contextCSVChart.getValueSet(outputPath, 2);
       yBalance = contextCSVChart.getValueSet(outputPath, 3);
+	  for(int i = 0; i< yPayment.length;i++){
+		  yPayment[i] = -yPayment[i];
+	  }
     }
 
   void display(){
@@ -137,9 +140,10 @@ class LineChart extends Screen implements IChartStrategy{
 	lp.getMax(yPayment);
 	lp.getMax(yBalance);
 	lp.printAxis();
-	lp.getData(yIncome, color(173,255,47),"Income");
-	lp.getData(yPayment, color(255,0,255),"Payment");
-	lp.getData(yBalance, color(255,255,0),"Balance");
+	
+	lp.getData(yPayment, color(255,0,255),"Payment", true);
+	lp.getData(yIncome, color(173,255,47),"Income", true);
+	lp.getData(yBalance, color(255,255,0),"Balance",false);
 
     // lineChartPayment.draw(20,130,width-30,height-300);
     // lineChartIncome.draw(70,105,width-30,height-300);
