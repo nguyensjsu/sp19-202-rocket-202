@@ -30,7 +30,7 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
           income += item.value();
          }
       }        
-      return income;
+      return income/2;
    }
  
    public float getExpenseTol(){
@@ -40,7 +40,7 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
           expense += item.value();
          }
       }        
-      return expense;
+      return expense/2;
    }   
    
    public void display(){

@@ -19,7 +19,10 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     
     public String typeName(){
         if(flowDetail[1] != null){
-        name = flowDetail[1];}
+            name = flowDetail[1];
+            if(name.equals("red_packet"));
+            name = "red packet";
+        }
         return name;
     };
     
