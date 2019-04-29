@@ -18,7 +18,7 @@ public class AppController implements IProxy{
 		papplet = p;
 		//initial
 		// !!!TODO: change to real screen
-		myFlows = new MenuScreen(new Screen(){
+		myFlows = new MenuScreen(new MyFlows(){
 			String name() { return "MyFlows"; }
 		});
 		account = new MenuScreen(new AccountsScreen());
