@@ -131,7 +131,6 @@ class LineChartPlot{
 				color gre = lerpColor(c,color(255,255,255),i);
 				stroke(gre);
 				point(x,p);
-				println("high gre");
 			}
 		}else{
 			// if(min == getYPosition(0)) return;
@@ -140,7 +139,6 @@ class LineChartPlot{
 				color gre = lerpColor(color(255,255,255),c,i);
 				stroke(gre);
 				point(x,p);
-				println("low gre");
 			}
 		}
 	}
