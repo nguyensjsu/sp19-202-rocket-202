@@ -79,7 +79,11 @@ class PieChart extends Screen implements IChartStrategy{
     }
 
 	public void display(){
+<<<<<<< HEAD
     image(imgb,0,0,380,680);
+=======
+    image(imgb,0,0,380,680);   
+>>>>>>> master
     fill(255);
     stroke(0,0,247);
     rectMode(CORNER);
@@ -87,7 +91,11 @@ class PieChart extends Screen implements IChartStrategy{
     fill(0,0,247);
     textSize(15);
     textAlign(CENTER, CENTER);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> master
     // noStroke();
     getDataSet();
 	printData();
@@ -95,7 +103,11 @@ class PieChart extends Screen implements IChartStrategy{
 	image(imgb,0,0,380,300);
 	image(img,0,0);
     createPieChart(dataDegreeFloat);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> master
   	setback();
  }
 
