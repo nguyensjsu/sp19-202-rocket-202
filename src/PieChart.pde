@@ -1,4 +1,3 @@
-import controlP5.*;
 import java.util.*;
 import java.util.Date;
 import java.text.*;
@@ -7,8 +6,6 @@ import java.util.Collections;
 
 /* Expense and Income screen */
 class PieChart extends Screen implements IChartStrategy{
- ControlP5 cp5;
- ControlFont font;
  // Chart pieChart;
  ShowList showList = new ShowList();
  //ArrayList<String> dataSet;

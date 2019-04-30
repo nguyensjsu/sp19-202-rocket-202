@@ -1,10 +1,7 @@
-import controlP5.*;
 import java.util.*;
 // import org.gicentre.utils.stat.*;
 
 class LineChart extends Screen implements IChartStrategy{
-  ControlP5 cp5;
-  ControlFont font;
   PImage img, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec;
   float[] yPayment;
   float[] yIncome;
@@ -37,10 +34,6 @@ class LineChart extends Screen implements IChartStrategy{
     oct = loadImage("img/oct.png");
     nov = loadImage("img/nov.png");
     dec = loadImage("img/dec.png");
-
-    // setup Tab font size
-    PFont pfont = createFont("arial",16);
-    font = new ControlFont(pfont);
   }
 
 /* Show bottom list, combine all single list */

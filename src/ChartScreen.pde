@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class ChartScreen extends Screen{
-ControlFont font;
 ContextChart currentChart;
 ContextChart pieChartExpense;
 ContextChart pieChartIncome;
@@ -15,9 +14,6 @@ public ChartScreen(){
   pieChartIncome = new ContextChart(new PieChart("INCOME"));
   lineChart = new ContextChart(new LineChart());
   currentChart = pieChartExpense;
-  // setup Tab font size
-  PFont pfont = createFont("arial",16);
-  font = new ControlFont(pfont);
   }
 
  /* display chart screen */
