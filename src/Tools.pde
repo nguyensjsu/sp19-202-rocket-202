@@ -13,7 +13,11 @@ public class Tools {
 
     Calendar cal = Calendar.getInstance();
 
-    /* Convert unix_timestamp to "YYYY-MM-dd"*/
+    /**
+     * Convert unix_timestamp to "YYYY-MM-dd"
+     * @param unix_timestamp String timestamp
+     * @return "yyyy-MM-dd" format String date
+     */
     public String getDate(String unix_timestamp){
         Long long_timestamp = Long.parseLong(unix_timestamp.trim());
         Date date = new Date(long_timestamp);
