@@ -93,6 +93,9 @@ class PieChart extends Screen implements IChartStrategy{
 
 	public void display(){
     image(imgb,0,0,380,680);
+    getDataSet();
+    printData();
+    image(imgb,0,0,380,300);
     image(img,0,0);
     fill(255);
     stroke(0,0,247);
@@ -102,11 +105,9 @@ class PieChart extends Screen implements IChartStrategy{
     textSize(15);
     textAlign(CENTER, CENTER);
     text(df.format(new Date()), 60, 75);
-    noStroke();
-    getDataSet();
-    createPieChart(dataDegreeFloat);
-    printData();
   	setback();
+    noStroke();
+    createPieChart(dataDegreeFloat);
  }
 
 	// public void hide(){
