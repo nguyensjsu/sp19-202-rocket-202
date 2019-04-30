@@ -5,12 +5,12 @@ import java.util.*;
 class LineChart extends Screen implements IChartStrategy{
   ControlP5 cp5;
   ControlFont font;
-  PImage img, icon;
+  PImage img, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec;
   float[] yPayment;
   float[] yIncome;
   float[] yBalance;
   String[] monthSets;
-  String month;
+  // String month;
   SimpleDateFormat df = new SimpleDateFormat("yyyy");
   int count=0;
   LineChartPlot lp = new LineChartPlot(width/2, 90);
@@ -24,7 +24,19 @@ class LineChart extends Screen implements IChartStrategy{
 
   public LineChart(){
     img = loadImage("img/chart_monthly.png");
-    icon = loadImage("img/mar.png");
+    jan = loadImage("img/jan.png");
+    feb = loadImage("img/feb.png");
+    mar = loadImage("img/mar.png");
+    apr = loadImage("img/apr.png");
+    may = loadImage("img/may.png");
+    jun = loadImage("img/jun.png");
+    jul = loadImage("img/jul.png");
+    aug = loadImage("img/aug.png");
+    sep = loadImage("img/sep.png");
+    oct = loadImage("img/oct.png");
+    nov = loadImage("img/nov.png");
+    dec = loadImage("img/dec.png");
+
     // setup Tab font size
     PFont pfont = createFont("arial",16);
     font = new ControlFont(pfont);
@@ -33,13 +45,27 @@ class LineChart extends Screen implements IChartStrategy{
 public void showBottomList(){
         count = 0;
 		if (displacement > 0) displacement = 0;
-        singleList(height+displacement, "Month","Income", "Expense","Balance");
+    int h = height + displacement;
+    stroke(0);
+	  line(0,h,380,h);
+    h = h+15;
+    textSize(15);
+    textAlign(LEFT, CENTER);
+    fill(0,0,0);
+    text("Month",10,h);
+    textAlign(CENTER, CENTER);
+    text("Income",120,h);
+    textAlign(CENTER, CENTER);
+    text("Expense",220,h);
+    textAlign(CENTER, CENTER);
+    text("Balance",320,h);
+        // singleList(height+displacement, "Month","Income", "Expense","Balance");
       for(int i=0; i< 12; i++){
         if(yPayment[i]!=0 || yIncome[i]!=0 || yBalance[i]!=0){
           count = count+1;
-          month = month(i+1);
-          singleList(height+20*count+15*count+displacement, month, String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
-			end = height+20*count+15*count+displacement;
+          // month = month(i+1);
+          singleList(height+20*count+15*count+displacement, month(i+1), String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
+			    end = height+20*count+15*count+displacement;
 		} else {
           // do nothing
         }
@@ -64,9 +90,9 @@ public void showBottomList(){
 
   void display(){
     background(255);
-	getDataSet();
-	showBottomList();
-	image(imgb,0,0,380,height);
+	  getDataSet();
+	  showBottomList();
+	  image(imgb,0,0,380,height);
     image(img,0,0);
 
     fill(255);
@@ -92,34 +118,35 @@ public void showBottomList(){
     setback();
 
   }
-
-  public String month(int m){
+  
+  public PImage month(int m){
+    PImage returnImg = null;
     switch(m){
-      case 1: month = "Jan."; break;
-      case 2: month = "Feb."; break;
-      case 3: month = "Mar."; break;
-      case 4: month = "Apr."; break;
-      case 5: month = "May"; break;
-      case 6: month = "June"; break;
-      case 7: month = "July"; break;
-      case 8: month = "Aug."; break;
-      case 9: month = "Sep."; break;
-      case 10: month = "Oct."; break;
-      case 11: month = "Nov."; break;
-      case 12: month = "Dec."; break;
+      case 1: returnImg = jan; break;
+      case 2: returnImg = feb; break;
+      case 3: returnImg = mar; break;
+      case 4: returnImg = apr; break;
+      case 5: returnImg = may; break;
+      case 6: returnImg = jun; break;
+      case 7: returnImg = jul; break;
+      case 8: returnImg = aug; break;
+      case 9: returnImg = sep; break;
+      case 10: returnImg = oct; break;
+      case 11: returnImg = nov; break;
+      case 12: returnImg = dec; break;
     }
-    return month;
+    return returnImg;
   }
 
-  public void singleList(float h,String s1, String s2, String s3, String s4){
+  public void singleList(float h,PImage icon, String s2, String s3, String s4){
     stroke(0);
 	  line(0,h,380,h);
     h = h+15;
-    // image(icon,10,h-12,30,30);
+    image(icon,10,h-12,30,30);
     textSize(15);
-    textAlign(LEFT, CENTER);
+    // textAlign(LEFT, CENTER);
     fill(0,0,0);
-    text(s1,10,h);
+    // text(s1,10,h);
     textAlign(CENTER, CENTER);
     text(s2,120,h);
     textAlign(CENTER, CENTER);
