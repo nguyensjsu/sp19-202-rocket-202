@@ -3,7 +3,9 @@ AppProxy proxy;
 
 void setup(){
    size(380, 680);
-   proxy = new AppProxy();
+   proxy = new AppProxy(this);
+   img = loadImage("img/logo.jpg");
+   flag = true;
 }
 
 void draw(){
