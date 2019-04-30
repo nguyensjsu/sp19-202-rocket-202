@@ -16,10 +16,17 @@ public class LineChartCSV implements IChartCSVStrategy{
     private String yearPeriod;
 
 
+    /**
+    * Constuctor
+    * @param yearPeriod String like '2019'
+    */
     public LineChartCSV(String yearPeriod) {
         this.yearPeriod = yearPeriod;
     }
 
+    /**
+    * calculate Total data
+    */
     @Override
     public void calculateTotaldata() {
         for(String line : csvData){
@@ -41,6 +48,10 @@ public class LineChartCSV implements IChartCSVStrategy{
         calculateTotalBalance();
     }
 
+    /**
+     * Write data to CSV
+     * @param filename String
+     */
     @Override
     public void writeData(String filename) {
         tools.deleteCSV(filename);
@@ -81,6 +92,12 @@ public class LineChartCSV implements IChartCSVStrategy{
         }
     }
 
+    /**
+     * get month total
+     * @param monthField String
+     * @param money BigDecimal
+     * @param totalCalculator BigDecimal[]
+     */
     public void switchMonth(String monthField, BigDecimal money, BigDecimal[] totalCalculator){
         switch (monthField){
             case "01": totalCalculator[0] = totalCalculator[0].add(money); break;
@@ -99,6 +116,9 @@ public class LineChartCSV implements IChartCSVStrategy{
         }
     }
 
+    /**
+     * get every month total plus the month before
+     */
     public void recursiveTotal(){
         for(int i = 0; i < 11; i++){
             totalIncome[i+1] = totalIncome[i+1].add(totalIncome[i]);
@@ -106,6 +126,9 @@ public class LineChartCSV implements IChartCSVStrategy{
         }
     }
 
+    /**
+     * calculate Total Balance
+     */
     public void calculateTotalBalance(){
         for(int i = 0; i < 12; i++){
             totalBalance[i] = totalIncome[i].subtract(totalOutcome[i]);
