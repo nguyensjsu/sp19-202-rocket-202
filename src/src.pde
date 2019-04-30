@@ -5,7 +5,7 @@ boolean flag;
 
 void setup(){
    size(380, 680);
-   proxy = new AppProxy(this);
+   proxy = new AppProxy();
    img = loadImage("img/logo.jpg");
    flag = true;
 }
