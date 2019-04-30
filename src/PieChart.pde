@@ -31,23 +31,7 @@ class PieChart extends Screen implements IChartStrategy{
    } else if(categories.equals("INCOME")){
      img = loadImage("img/chart_income.png");
    }
-
-
-   // Create my Pie Chart
-
-
-
  }
-
-   // public Chart createPieChart(String pieChartName){
-   //   return cp5.addChart(pieChartName)
-   //                      .setPosition(90,70)
-   //                      .setSize(200,200)
-   //                      .setView(Chart.PIE)
-   //                      .setLabelVisible(true)
-   //                      .setStrokeWeight(200)
-   //                      .setColorCaptionLabel(color(40));
-   // }
 
    public void createPieChart(float[] dataDegreeFloat){
      float lastAngle = 0;
@@ -110,13 +94,6 @@ class PieChart extends Screen implements IChartStrategy{
     createPieChart(dataDegreeFloat);
  }
 
-	// public void hide(){
-  //     pieChart.hide();
-  //   }
-  //
-  //   public void show(){
-  //     pieChart.show();
-  //   }
 
 	public void drag(){
 		displacement = displacement + mouseY - pmouseY;
@@ -124,14 +101,6 @@ class PieChart extends Screen implements IChartStrategy{
 	}
 
 	protected void printData(){
-		// pieChart.addDataSet(name);
-    // pieChart.setData(name, dataSetFloat);
-    // for(int i=0; i<dataSetFloat.length; i++){
-    //
-    //   pieChart.setColors(name, color(25*i, 255, 255), color(255, i, 255));
-    //         // fill(getColor(fieldSets[i]));
-    //   // pieChart.setColors(i,getColor(fieldSets[i]));
-    // }
 	if (displacement > 0) displacement = 0;
     end = showList.showBottomList(fieldSets, dataSetFloat, dataSets,displacement);
 

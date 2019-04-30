@@ -5,12 +5,7 @@ import java.util.*;
 class LineChart extends Screen implements IChartStrategy{
   ControlP5 cp5;
   ControlFont font;
-  PApplet papplet;
-  // XYChart lineChartPayment;
-  // XYChart lineChartIncome;
-  // XYChart lineChartBalance;
   PImage img, icon;
-  //ArrayList<String> dataSet;
   float[] yPayment;
   float[] yIncome;
   float[] yBalance;
@@ -27,10 +22,7 @@ class LineChart extends Screen implements IChartStrategy{
   int height = 380;
   int end = -1;
 
-  public LineChart(PApplet papplet){
-    this.cp5 = new ControlP5(papplet);
-   // this.cp5 = cp5;
-    this.papplet = papplet;
+  public LineChart(){
     img = loadImage("img/chart_monthly.png");
     icon = loadImage("img/mar.png");
     // setup Tab font size
@@ -38,18 +30,8 @@ class LineChart extends Screen implements IChartStrategy{
     font = new ControlFont(pfont);
   }
 
-    public void hide(){
-      //lineChartPayment.setVisible(false);
-    }
-
-    public void show(){
-      //lineChartPayment.setVisible(true);
-    }
-
-
-      public void showBottomList(){
+public void showBottomList(){
         count = 0;
-
 		if (displacement > 0) displacement = 0;
         singleList(height+displacement, "Month","Income", "Expense","Balance");
       for(int i=0; i< 12; i++){

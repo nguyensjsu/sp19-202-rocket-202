@@ -2,7 +2,6 @@
  * Application Controller after login
  */
 public class AppController implements IProxy{
-	private PApplet papplet;
 	private IFrame frame;
 	private MenuScreen myFlows;
 	private MenuScreen account;
@@ -14,8 +13,7 @@ public class AppController implements IProxy{
 	private IMenuCommand setAccount;
 	private IMenuCommand setChart;
 
-	public AppController(PApplet p){
-		papplet = p;
+	public AppController(){
 		myFlows = new MenuScreen(new MyFlows(){
 			String name() { return "MyFlows"; }
 		});
@@ -25,7 +23,7 @@ public class AppController implements IProxy{
 		account.setNext(addAccountType);
 		addAccountType.setPrev(account);
 
-		chart = new MenuScreen( new ChartScreen(p) {
+		chart = new MenuScreen( new ChartScreen() {
 			String name(){ return "ChartScreen"; }
 		});;
 		addRecord = new AddRecordScreen();

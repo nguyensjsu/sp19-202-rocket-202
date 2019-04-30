@@ -3,7 +3,7 @@ AppProxy proxy;
 
 void setup(){
    size(380, 680);
-   proxy = new AppProxy(this);
+   proxy = new AppProxy();
 }
 
 void draw(){
