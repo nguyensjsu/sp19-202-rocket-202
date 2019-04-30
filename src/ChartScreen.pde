@@ -1,10 +1,6 @@
-import controlP5.*;
 import java.util.*;
 
 public class ChartScreen extends Screen{
-
-
-ControlP5 cp5;
 ControlFont font;
 ContextChart currentChart;
 ContextChart pieChartExpense;
@@ -13,12 +9,10 @@ ContextChart lineChart;
 
 PApplet papplet;
 
-public ChartScreen(PApplet papplet){
-  this.papplet = papplet;
-  // cp5 = new ControlP5(papplet);
+public ChartScreen(){
   pieChartExpense = new ContextChart(new PieChart("EXPENSE"));
   pieChartIncome = new ContextChart(new PieChart("INCOME"));
-  lineChart = new ContextChart(new LineChart(papplet));
+  lineChart = new ContextChart(new LineChart());
   currentChart = pieChartExpense;
 
   // setup Tab font size
