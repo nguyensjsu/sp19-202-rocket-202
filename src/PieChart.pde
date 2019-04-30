@@ -2,6 +2,9 @@ import controlP5.*;
 import java.util.*;
 import java.util.Date;
 import java.text.*;
+import java.util.Arrays;
+import java.util.Collections;
+
 
 class PieChart extends Screen implements IChartStrategy{
  ControlP5 cp5;
@@ -31,23 +34,7 @@ class PieChart extends Screen implements IChartStrategy{
    } else if(categories.equals("INCOME")){
      img = loadImage("img/chart_income.png");
    }
-
-
-   // Create my Pie Chart
-
-
-
  }
-
-   // public Chart createPieChart(String pieChartName){
-   //   return cp5.addChart(pieChartName)
-   //                      .setPosition(90,70)
-   //                      .setSize(200,200)
-   //                      .setView(Chart.PIE)
-   //                      .setLabelVisible(true)
-   //                      .setStrokeWeight(200)
-   //                      .setColorCaptionLabel(color(40));
-   // }
 
    public void createPieChart(float[] dataDegreeFloat){
      float lastAngle = 0;
@@ -92,7 +79,11 @@ class PieChart extends Screen implements IChartStrategy{
     }
 
 	public void display(){
+<<<<<<< HEAD
+    image(imgb,0,0,380,680);
+=======
     image(imgb,0,0,380,680);   
+>>>>>>> master
     fill(255);
     stroke(0,0,247);
     rectMode(CORNER);
@@ -100,7 +91,11 @@ class PieChart extends Screen implements IChartStrategy{
     fill(0,0,247);
     textSize(15);
     textAlign(CENTER, CENTER);
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> master
     // noStroke();
     getDataSet();
 	printData();
@@ -108,17 +103,14 @@ class PieChart extends Screen implements IChartStrategy{
 	image(imgb,0,0,380,300);
 	image(img,0,0);
     createPieChart(dataDegreeFloat);
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> master
   	setback();
  }
 
-	// public void hide(){
-  //     pieChart.hide();
-  //   }
-  //
-  //   public void show(){
-  //     pieChart.show();
-  //   }
 
 	public void drag(){
 		displacement = displacement + mouseY - pmouseY;
@@ -126,14 +118,6 @@ class PieChart extends Screen implements IChartStrategy{
 	}
 
 	protected void printData(){
-		// pieChart.addDataSet(name);
-    // pieChart.setData(name, dataSetFloat);
-    // for(int i=0; i<dataSetFloat.length; i++){
-    //
-    //   pieChart.setColors(name, color(25*i, 255, 255), color(255, i, 255));
-    //         // fill(getColor(fieldSets[i]));
-    //   // pieChart.setColors(i,getColor(fieldSets[i]));
-    // }
 	if (displacement > 0) displacement = 0;
     end = showList.showBottomList(fieldSets, dataSetFloat, dataSets,displacement);
 
