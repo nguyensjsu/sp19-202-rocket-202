@@ -8,17 +8,17 @@ public class ContextChart {
     public void display(){
         chartStrategy.display();
     }
-    
-    public void hide(){
-      chartStrategy.hide();
-    }
-    
-    public void show(){
-      chartStrategy.show();
-    }
-	
+
+    // public void hide(){
+    //   chartStrategy.hide();
+    // }
+    //
+    // public void show(){
+    //   chartStrategy.show();
+    // }
+
 	public void drag(){
       chartStrategy.drag();
     }
-    
+
 }

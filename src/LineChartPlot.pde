@@ -6,13 +6,13 @@ class LineChartPlot{
 	int minV = 0;
 	int range = 0;
 	int markX = width/2-90;
-	
+
 	//X position:Center, Y position: Top
 	public LineChartPlot(int x, int y){
 		this.x = x-length/2;
 		this.y = y;
 	}
-	
+
 	public void getData(float[] yPayment, color c, String name, boolean flag){
 		int maxG = 0;
 		int minG = 0;
@@ -23,7 +23,7 @@ class LineChartPlot{
 				 {
 				  maxG = Math.round(yPayment[counter]);
 				 }
-				 
+
 				 if (yPayment[counter] < minG)
 				 {
 				  minG = Math.round(yPayment[counter]);
@@ -47,14 +47,14 @@ class LineChartPlot{
 		point(x+length,getYPosition(yPayment[11]));
 		rectMode(CENTER);
 		fill(c);
-		rect(markX,y-20,20,10);
+		rect(markX+35,y-20,20,10);
 		fill(0);
 		textAlign(CENTER,CENTER);
 		textSize(10);
-		text(name,markX+35,y-20);
+		text(name,markX+35+35,y-20);
 		markX+=90;
 	}
-		
+
 	public void printAxis(){
 		markX = width/2-90;
 		println(maxV);
@@ -101,7 +101,7 @@ class LineChartPlot{
 			text(0, x-20, getYPosition(0));
 		}
 	}
-	
+
 	private int getYPosition(float num){
 		return Math.round(y+length - (num-minV)/range*length);
 	}
@@ -113,14 +113,14 @@ class LineChartPlot{
 				 {
 				  maxV = Math.round(yPayment[counter]);
 				 }
-				 
+
 				 if (yPayment[counter] < minV)
 				 {
 				  minV = Math.round(yPayment[counter]);
 				 }
 			}
 	}
-	
+
 	private void setGradient(int x, int y, int max, int min, color c){
 		int dis = 20;
 		if(max == min) return;

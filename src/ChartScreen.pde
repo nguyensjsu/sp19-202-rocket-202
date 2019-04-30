@@ -16,8 +16,8 @@ PApplet papplet;
 public ChartScreen(PApplet papplet){
   this.papplet = papplet;
   // cp5 = new ControlP5(papplet);
-  pieChartExpense = new ContextChart(new PieChartExpense(papplet));
-  pieChartIncome = new ContextChart(new PieChartIncome(papplet));
+  pieChartExpense = new ContextChart(new PieChart("EXPENSE"));
+  pieChartIncome = new ContextChart(new PieChart("INCOME"));
   lineChart = new ContextChart(new LineChart(papplet));
   currentChart = pieChartExpense;
 
@@ -34,7 +34,7 @@ public ChartScreen(PApplet papplet){
 
   public void touch(){
     if(mouseY<=30){
-      currentChart.hide();
+      // currentChart.hide();
        if(mouseX>=50 && mouseX<140){
          currentChart = pieChartExpense;
        } else if(mouseX>=140 && mouseX<230){
@@ -42,19 +42,19 @@ public ChartScreen(PApplet papplet){
        } else if(mouseX>=240 && mouseX<320){
          currentChart = lineChart;
        }
-      currentChart.show();
+      // currentChart.show();
     }
   }
 
   public void reset(){
     currentChart = pieChartExpense;
-    currentChart.show();
+    // currentChart.show();
   }
 
-  public void hide(){
-    currentChart.hide();
-  }
-  // 
+  // public void hide(){
+  //   currentChart.hide();
+  // }
+  //
   // public void show(){
   //   currentChart.show();
   // }
