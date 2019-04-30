@@ -22,6 +22,7 @@ class LineChart extends Screen implements IChartStrategy{
   int height = 380;
   int end = -1;
 
+  /* Construnctor */
   public LineChart(){
     img = loadImage("img/chart_monthly.png");
     jan = loadImage("img/jan.png");
@@ -42,6 +43,7 @@ class LineChart extends Screen implements IChartStrategy{
     font = new ControlFont(pfont);
   }
 
+/* Show bottom list, combine all single list */
 public void showBottomList(){
         count = 0;
 		if (displacement > 0) displacement = 0;
@@ -73,7 +75,7 @@ public void showBottomList(){
       }
     }
 
-
+    /* Get data set from csv */
     public void getDataSet(){
       count = 0;
       String outputPath = dataPath("")+"/OverviewAccount.csv";
@@ -88,7 +90,8 @@ public void showBottomList(){
 	  }
     }
 
-  void display(){
+    /* display line chart */
+    public void display(){
     background(255);
 	  getDataSet();
 	  showBottomList();
@@ -113,12 +116,15 @@ public void showBottomList(){
   lp.getData(yPayment, color(100,149,237),"Payment", true);
   lp.getData(yIncome, color(127,255,212),"Income", true);
   lp.getData(yBalance, color(240,128,128),"Balance",false);
-
-
     setback();
 
   }
 
+  /**
+   * get month icon
+   * @param m int month
+   * @return PImage month icon
+   */
   public PImage month(int m){
     PImage returnImg = null;
     switch(m){
@@ -138,6 +144,14 @@ public void showBottomList(){
     return returnImg;
   }
 
+  /**
+  * Add line and word under chart to show list
+  * @param h float height
+  * @param icon PImage month icon
+  * @param s2 String Income money
+  * @param s3 String Expense money
+  * @param s4 String Balance money
+  */
   public void singleList(float h,PImage icon, String s2, String s3, String s4){
     stroke(0);
 	  line(0,h,380,h);
@@ -155,11 +169,13 @@ public void showBottomList(){
     text(s4,320,h);
   }
 
+  /* drag bottom list */
 	public void drag(){
 		displacement = displacement + mouseY - pmouseY;
 		println("end: ",end);
 	}
 
+  /* set back end list */
 	protected void setback(){
 		if (end <= bottom-30 && !mousePressed) displacement *= 0.95;
 	}

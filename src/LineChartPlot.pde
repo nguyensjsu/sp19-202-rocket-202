@@ -7,12 +7,23 @@ class LineChartPlot{
 	int range = 0;
 	int markX = width/2-90;
 
-	//X position:Center, Y position: Top
+	/**
+  * Constructor
+	* @param x X position:Center
+  * @param y Y position: Top
+  */
 	public LineChartPlot(int x, int y){
 		this.x = x-length/2;
 		this.y = y;
 	}
 
+	/**
+	* get data to show line chart
+	* @param yPayment float[] payment data
+	* @param c color
+	* @param name String
+	* @param flag boolean
+	*/
 	public void getData(float[] yPayment, color c, String name, boolean flag){
 		int maxG = 0;
 		int minG = 0;
@@ -55,6 +66,9 @@ class LineChartPlot{
 		markX+=90;
 	}
 
+	/**
+  * print Axis
+  */
 	public void printAxis(){
 		markX = width/2-90;
 		println(maxV);
@@ -102,10 +116,19 @@ class LineChartPlot{
 		}
 	}
 
+	/**
+  * Get Y axis position
+  * @param num float
+  * @return y axis position int
+  */
 	private int getYPosition(float num){
 		return Math.round(y+length - (num-minV)/range*length);
 	}
 
+	/**
+  * Get payment Max
+  * @param yPayment float[]
+  */
 	public void getMax(float[] yPayment){
 	for (int counter = 0; counter < yPayment.length; counter++)
 			{
@@ -121,6 +144,14 @@ class LineChartPlot{
 			}
 	}
 
+	/**
+  * set Gradient
+  * @param x int
+  * @param y int
+	* @param max int
+	* @param min int
+	* @param c color
+  */
 	private void setGradient(int x, int y, int max, int min, color c){
 		int dis = 20;
 		if(max == min) return;

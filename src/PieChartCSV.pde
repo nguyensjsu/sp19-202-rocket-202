@@ -26,12 +26,17 @@ public class PieChartCSV implements IChartCSVStrategy{
     private BigDecimal totalCash = new BigDecimal("0.00");
     private BigDecimal totalRewards = new BigDecimal("0.00");
 
-    /* timePeriod like "2019-04", type is true as payment, type is false as income */
+    /**
+     * Constuctor
+     * @param timePeriod String timePeriod like "2019-04"
+     * @param type, type is false as income, trus as Expense
+     */
     public PieChartCSV(String timePeriod, boolean type) {
         this.timePeriod = timePeriod;
         this.type = type ;
     }
 
+    /* calculate Total data */
     @Override
     public void calculateTotaldata(){
         for(String line: csvData){
@@ -88,24 +93,13 @@ public class PieChartCSV implements IChartCSVStrategy{
         }
     }
 
+    /**
+     * Write data to CSV
+     * @param filename String
+     */
     @Override
     public void writeData(String filename) {
         tools.deleteCSV(filename);
-//        System.out.println("totalFood: " + totalFood);
-//        System.out.println("totalShopping: " + totalShopping);
-//        System.out.println("totalEntertainment: " + totalEntertainment);
-//        System.out.println("totalHealth: " + totalHealth);
-//        System.out.println("totalHousehold: " + totalHousehold);
-//        System.out.println("totalTransportation: " + totalTransportation);
-//        System.out.println("totalInsurance: " + totalInsurance);
-//        System.out.println("totalOutcomeOthers: " + totalOutcomeOthers);
-//        System.out.println("totalSalary: " + totalSalary);
-//        System.out.println("totalRedpacket: " + totalRedpacket);
-//        System.out.println("totalRefund: " + totalRefund);
-//        System.out.println("totalCash: " + totalCash);
-//        System.out.println("totalRewards: " + totalRewards);
-//        System.out.println("totalIncomeOthers: " + totalIncomeOthers);
-
         if(totalFood.compareTo(BigDecimal.ZERO)>0){
             pieData.add(timePeriod);
             pieData.add("FOOD");

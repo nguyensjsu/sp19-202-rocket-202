@@ -9,23 +9,23 @@ ContextChart lineChart;
 
 PApplet papplet;
 
+/* Constructor */
 public ChartScreen(){
   pieChartExpense = new ContextChart(new PieChart("EXPENSE"));
   pieChartIncome = new ContextChart(new PieChart("INCOME"));
   lineChart = new ContextChart(new LineChart());
   currentChart = pieChartExpense;
-
   // setup Tab font size
   PFont pfont = createFont("arial",16);
   font = new ControlFont(pfont);
-
-
   }
 
+ /* display chart screen */
   public void display(){
     currentChart.display();
   }
 
+  /* touch method */
   public void touch(){
     if(mouseY<=30){
       // currentChart.hide();
@@ -40,19 +40,12 @@ public ChartScreen(){
     }
   }
 
+  /* reset chart screen */
   public void reset(){
     currentChart = pieChartExpense;
-    // currentChart.show();
   }
 
-  // public void hide(){
-  //   currentChart.hide();
-  // }
-  //
-  // public void show(){
-  //   currentChart.show();
-  // }
-
+  /* drag chart screen */
   public void drag(){
 	currentChart.drag();
   }

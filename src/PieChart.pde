@@ -5,7 +5,7 @@ import java.text.*;
 import java.util.Arrays;
 import java.util.Collections;
 
-
+/* Expense and Income screen */
 class PieChart extends Screen implements IChartStrategy{
  ControlP5 cp5;
  ControlFont font;
@@ -26,6 +26,10 @@ class PieChart extends Screen implements IChartStrategy{
   int uplimit = 300;
   int end = -1;
 
+/**
+* Constructor
+* @param categories INCOME/EXPENSE
+*/
  public PieChart(String categories){
 
    this.categories = categories;
@@ -36,6 +40,10 @@ class PieChart extends Screen implements IChartStrategy{
    }
  }
 
+  /**
+  * Create a new Pie Chart
+  * @param dataDegreeFloat float[] piechart degree
+  */
    public void createPieChart(float[] dataDegreeFloat){
      float lastAngle = 0;
      for (int i = 0; i < dataDegreeFloat.length; i++) {
@@ -46,6 +54,9 @@ class PieChart extends Screen implements IChartStrategy{
      }
    }
 
+   /**
+   * Get dataSets and fieldSets from csv
+   */
    public void getDataSet(){
       String outputPath = null;
       boolean categoriesTpe = true;
@@ -64,7 +75,6 @@ class PieChart extends Screen implements IChartStrategy{
       dataSetFloat = new float[dataSets.length];
       dataDegreeFloat = new float[dataSets.length];
       BigDecimal dataSum = BigDecimal.ZERO;
-
         for(int i=0; i<dataSets.length; i++){
             dataSum = dataSum.add(new BigDecimal(dataSets[i]));
         }
@@ -78,6 +88,9 @@ class PieChart extends Screen implements IChartStrategy{
         }
     }
 
+    /**
+    * display expense / income screen
+    */
 	public void display(){
     image(imgb,0,0,380,680);
     getDataSet();
@@ -97,22 +110,35 @@ class PieChart extends Screen implements IChartStrategy{
     createPieChart(dataDegreeFloat);
  }
 
-
+ /**
+ * drag bottom list function
+ */
 	public void drag(){
 		displacement = displacement + mouseY - pmouseY;
 		println("end: ",end);
 	}
 
+  /**
+  * print data
+  */
 	protected void printData(){
 	if (displacement > 0) displacement = 0;
     end = showList.showBottomList(fieldSets, dataSetFloat, dataSets,displacement);
 
 	}
 
+  /**
+  * set display back
+  */
 	protected void setback(){
 		if (end <= bottom-30 && !mousePressed) displacement *= 0.95;
 	}
 
+  /**
+  * get tag color to show on pieChart
+  * @param str String tag name
+  * @return tag color
+  */
   public color getColor(String str){
     color c = color(0,0,0);
     switch(str){

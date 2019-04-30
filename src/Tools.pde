@@ -28,17 +28,27 @@ public class Tools {
         return sdf.format(date);
     }
 
-    /* Get current Year */
+    /**
+     * Get current Year
+     * @return "yyyy" format String date
+     */
     public String getCurrentYear(){
         return String.valueOf(cal.get(Calendar.YEAR));
     }
 
-    /* Get current Month */
+    /**
+     * Get current Month
+     * @return int month
+     */
     public int getCurrentMonth(){
         return cal.get(Calendar.MONTH )+1;
     }
 
-    /* Return CSV record as Array */
+    /**
+     * Return CSV record as Array
+     * @param filename String
+     * @return ArrayList<String> file rows
+     */
     public ArrayList<String> CSVReader(String filename){
         ArrayList<String> csvContent = new ArrayList<String>();
         try{
@@ -54,7 +64,11 @@ public class Tools {
         return csvContent;
     }
 
-    /* Write record to CSV */
+    /**
+     * Write record to CSV
+     * @param filename String
+     * @param fields write fields
+     */
     public void CSVWriter(String filename, ArrayList<String> fields) {
         try {
             File csv = new File(filename);
@@ -70,7 +84,10 @@ public class Tools {
         }
     }
 
-    /* Delete File */
+    /**
+     * Delete File
+     * @param filename String
+     */
     public void deleteCSV(String filename){
         File file = new File(filename);
         if(file.exists()){

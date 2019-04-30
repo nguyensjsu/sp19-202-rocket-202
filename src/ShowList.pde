@@ -1,6 +1,7 @@
 public class ShowList{
   PImage foodimg, cashimg, entertainmentimg, healthimg, householdimg, insuranceimg, othersimg, red_packetimg, refundimg, rewardsimg, salaryimg, shoppingimg, transportationimg;
   int y = 300;
+  // Constructor
   public ShowList(){
     foodimg = loadImage("img/food.png");
     cashimg = loadImage("img/cash.png");
@@ -15,9 +16,15 @@ public class ShowList{
     salaryimg = loadImage("img/salary.png");
     shoppingimg = loadImage("img/shopping.png");
     transportationimg = loadImage("img/transportation.png");
-
   }
 
+  /**
+  * Add line and word under chart to show list
+  * @param h float height
+  * @param s1 String tag name
+  * @param s2 String percent
+  * @param s3 String money
+  */
   public void singleList(float h, String s1, String s2, String s3){
     PImage img = getImg(s1);
     stroke(0);
@@ -34,6 +41,14 @@ public class ShowList{
     text(s3,360,h,-50);
   }
 
+  /**
+  * combine single line to one bottom list
+  * @param fieldSets String[] tag sets
+  * @param dataSetFloat float[]
+  * @param dataSets float[]
+  * @param displacemant int
+  * @return end height int
+  */
   public int showBottomList(String[] fieldSets, float[] dataSetFloat, float[] dataSets,int displacemant){
     String percent;
     int end = 0;
@@ -43,13 +58,17 @@ public class ShowList{
       } else {
         percent = String.valueOf(dataSetFloat[i]*100).substring(0,5)+"%";
       }
-
       singleList(y+20*i+15*i+displacemant, fieldSets[i],  percent, String.valueOf(dataSets[i]));
 	  end = y+20*i+15*i+displacemant+20;
     }
 	return end;
   }
 
+  /**
+  * get tag icon
+  * @param str String tag name
+  * @return PImage return tag icon
+  */
   public PImage getImg(String str){
     PImage returnImg = null;
     switch(str){
