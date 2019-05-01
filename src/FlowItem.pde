@@ -32,7 +32,6 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
         try 
         {
             f = Float.valueOf(flowDetail[2].trim()).floatValue();
-           // return f;
         }
         catch (NumberFormatException nfe) 
         {

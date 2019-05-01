@@ -50,28 +50,27 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
       head.display();
       y = y;
     //  y = head.getY();
-      System.err.println("******begin_single_day_Y: *****"+y);
-    //  Collections.reverse(items);
+    //  System.err.println("******begin_single_day_Y: *****"+y);
       for (FlowItem item : items) {
          if (item.expense()){
             ExpenseItemDecorator exp = new ExpenseItemDecorator(item);
          //   System.err.println("item_Y_SET: "+ y);
             exp.setY(y);
             exp.display();
-          //  y = exp.getY();
             y = y + 70;
+          //  y = exp.getY();
           //  System.err.println("item_Y_GET: "+ y);
          } else {
             IncomeItemDecorator in =new IncomeItemDecorator(item);
           //  System.err.println("item_Y_SET: "+ y);
             in.setY(y);
             in.display();
-            //y = in.getY();
             y = y + 70;
+          //  y = in.getY();   
           //  System.err.println("item_Y_GET: "+ y);
          }
       } 
-      System.err.println("****end_single_day_Y: ****"+y);       
+    //  System.err.println("****end_single_day_Y: ****"+y);       
    } 
     
    public int getY(){

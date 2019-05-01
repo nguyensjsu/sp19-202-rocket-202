@@ -11,8 +11,6 @@ public class FlowBuilder implements IFlowSubject
     private float incomeTol;
     private float expenseTol;
     private String month;
-  //  private Map<String, ArrayList<String>> incomeTable; 
-  //  private Map<String, ArrayList<String>> outcomeTable; 
     private Map<String, ArrayList<String>> flowTable;
     private List<String> dateList; 
     private ArrayList<DayFlow> monthflows;
@@ -27,12 +25,9 @@ public class FlowBuilder implements IFlowSubject
         monthflows = new ArrayList<DayFlow>();
     //    y = 80; //initial 150
         getRecordFromReader();
-     // creatMonthFlows();
     }
     
     public void getRecordFromReader(){
-     //   incomeTable = reader.getIncomeFlow();
-      //  outcomeTable = reader.getOutcomeFlow();
         dateList = reader.sortedRecordDate();
       //  System.err.println("dateList: " + dateList);
         flowTable = reader.getFlows();
@@ -41,8 +36,6 @@ public class FlowBuilder implements IFlowSubject
     public ArrayList<DayFlow> MonthFlows(){
         getRecordFromReader();
         for (String day: dateList){
-          //  ArrayList<String> income = incomeTable.get(day);
-          //  ArrayList<String> outcome = outcomeTable.get(day);
             ArrayList<String> flows = flowTable.get(day);
             monthflows.add(singleDayFlow(day,flows));
         }
@@ -50,7 +43,7 @@ public class FlowBuilder implements IFlowSubject
     } 
     
     public DayFlow singleDayFlow(String day, ArrayList<String> flows){
-    System.err.println("day_Y_use: "+ y);
+ //   System.err.println("day_Y_use: "+ y);
         DayFlow dayflow = new DayFlow(day, y);
         for (String flow: flows){
              //   System.err.println("FlowItemInput: "+ flow);
@@ -62,7 +55,7 @@ public class FlowBuilder implements IFlowSubject
       //  System.err.println("day_income: "+ incomeTol);
         notifyObservers();
       //  y = dayflow.getY() + 70;
-        System.err.println("day_Y_SET: "+ y);
+      //  System.err.println("day_Y_SET: "+ y);
         return dayflow;
     }
     
