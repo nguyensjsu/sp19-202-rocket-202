@@ -33,4 +33,28 @@ public class ContextCSVChart {
         }
         return dataSetFloat;
     }
+
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllIncome(){
+      return chartCSVStrategy.getAllIncome();
+    }
+
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllOutcome(){
+      return chartCSVStrategy.getAllOutcome();
+    }
+
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllBalance(){
+      return chartCSVStrategy.getAllBalance();
+    }
 }
