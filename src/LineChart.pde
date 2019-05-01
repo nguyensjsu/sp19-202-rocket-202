@@ -7,6 +7,9 @@ class LineChart extends Screen implements IChartStrategy{
   float[] yIncome;
   float[] yBalance;
   String[] monthSets;
+  String allIncome;
+  String allOutcome;
+  String allBalance;
   // String month;
   SimpleDateFormat df = new SimpleDateFormat("yyyy");
   int count=0;
@@ -61,11 +64,24 @@ public void showBottomList(){
           // month = month(i+1);
           singleList(height+20*count+15*count+displacement, month(i+1), String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
 			    end = height+20*count+15*count+displacement;
+          h = height+20*(count+1)+15*(count+1)+displacement;
 		} else {
           // do nothing
         }
-
       }
+      stroke(0);
+  	  line(0,h,380,h);
+      h = h+15;
+      textSize(15);
+      textAlign(LEFT, CENTER);
+      fill(0,0,0);
+      text("Total",10,h);
+      textAlign(CENTER, CENTER);
+      text(allIncome,120,h);
+      textAlign(CENTER, CENTER);
+      text(allOutcome,220,h);
+      textAlign(CENTER, CENTER);
+      text(allBalance,320,h);
     }
 
     /* Get data set from csv */
@@ -78,6 +94,9 @@ public void showBottomList(){
       yIncome = contextCSVChart.getValueSet(outputPath, 1);
       yPayment = contextCSVChart.getValueSet(outputPath, 2);
       yBalance = contextCSVChart.getValueSet(outputPath, 3);
+      allIncome = contextCSVChart.getAllIncome();
+      allOutcome = contextCSVChart.getAllOutcome();
+      allBalance = contextCSVChart.getAllBalance();
 	  for(int i = 0; i< yPayment.length;i++){
 		  yPayment[i] = -yPayment[i];
 	  }
