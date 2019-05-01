@@ -59,7 +59,7 @@ public class MyFlows extends Screen
         y = fl.getY();
        // System.err.println("*******get_end_day_Y: ******"+y);
       }
-    //  System.err.println("*****************end_month_Y: *************"+y);
+      System.err.println("*****************end_month_Y: *************"+y);
 
       stroke(255);
       line(190, y+70, 190, 10000);
@@ -71,7 +71,6 @@ public class MyFlows extends Screen
     
      // fb.setY(80);
      // y = 80;
-
     }
     
     public void reload(){
@@ -84,6 +83,6 @@ public class MyFlows extends Screen
       //  addSubComponent(fb);
       //  System.err.println("finish myflow");
         flow = fb.MonthFlows();
-      // y = 80;
+      //  y = 80;
     }
 }

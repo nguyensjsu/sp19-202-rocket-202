@@ -1,10 +1,11 @@
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.*;
+
 /**
  * Build the flows contain each recorded day
  */
-public class FlowBuilder implements IFlowSubject
-// ,IDisplayComponent, ITouchEventHandler
+public class FlowBuilder implements IFlowSubject//, IDisplayComponent, ITouchEventHandler
 {
     private MonthFlowReader reader;
     private IFlowObserver ob;
@@ -14,7 +15,7 @@ public class FlowBuilder implements IFlowSubject
     private Map<String, ArrayList<String>> flowTable;
     private List<String> dateList; 
     private ArrayList<DayFlow> monthflows;
-    private ITouchEventHandler nextHandler;
+   // private ITouchEventHandler nextHandler;
     private int y;
     
     public FlowBuilder(String mon){
@@ -72,7 +73,7 @@ public class FlowBuilder implements IFlowSubject
         y = y_before + 70 ;
     }
     
- /*   public void touch(){
+  /*  public void touch(){
         //pass touch inside items
         if (nextHandler != null){
            nextHandler.touch(); 
@@ -83,15 +84,13 @@ public class FlowBuilder implements IFlowSubject
        nextHandler = next;
     };
    
-    public void display(){
-        for (String day: dateList){
-            ArrayList<String> flows = flowTable.get(day);
-            System.err.println("dayFlows: " + flows);
-            DayFlow flow = singleDayFlow(day,flows);
-            flow.display();
-            y = flow.getY() + 70;
-        }
+   public void display(){
+      for(DayFlow fl: MonthFlows()){
+        fl.setY(y);
+        fl.display();
+        y = fl.getY();
+      }
     };
 
-    public void addSubComponent(IDisplayComponent c){};*/
+     public void addSubComponent(IDisplayComponent c){};*/
 }

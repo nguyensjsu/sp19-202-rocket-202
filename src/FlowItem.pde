@@ -7,6 +7,7 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     private ITouchEventHandler nextHandler;
     private String name = " ";
     private float f = 0.0f;
+    private int y;
     
     public FlowItem(String detail){
         flowDetail = detail.split(",");
@@ -15,6 +16,7 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
         System.err.println("FlowItemName: "+ typeName());
         System.err.println("FlowItemValue: "+ value());
         System.err.println("FlowItemimgpath: "+ imgPath()); */
+
     }
     
     public String typeName(){
@@ -59,9 +61,15 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
        nextHandler = next;
     };
    
-    public void display(){};
+    public void display(){ }
 
     public void addSubComponent(IDisplayComponent c){};
     
+    public void setY(int y_before){
+        y = y_before + 70;
+    }
     
+    public int getY(){
+       return y;
+    }
 }

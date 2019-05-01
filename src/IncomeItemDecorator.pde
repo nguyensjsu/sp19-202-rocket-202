@@ -21,6 +21,8 @@ public class IncomeItemDecorator extends ItemDecorator
     
     @Override
     public void display(){
+        super.display();
+        y = this.getY();
    // System.err.println("incomeitem_Y: "+ y);
         circleDraw();
         textDraw();
@@ -44,11 +46,11 @@ public class IncomeItemDecorator extends ItemDecorator
         text(income, x_left, y);
     };
     
-    public void setY(int y_before){
+   /* public void setY(int y_before){
         y = y_before + 70;
     }
     
     public int getY(){
        return y;
-    }
+    } */
 }

@@ -21,14 +21,17 @@ public class ExpenseItemDecorator extends ItemDecorator
     
     @Override
     public void display(){
+        super.display();
+        y = this.getY();
    // System.err.println("expenseitem_Y: "+ y);
        circleDraw();
        textDraw();
     }
     
     public void circleDraw(){
+        int x = x_center;
         imageMode(CENTER);
-        image(icon,x_center,y,r,r);
+        image(icon,x,y,r,r);
     };
     
     public void textDraw(){
@@ -42,11 +45,11 @@ public class ExpenseItemDecorator extends ItemDecorator
         text(expense, x_right, y);
     };
     
-    public void setY(int y_before){
+   /* public void setY(int y_before){
         y = y_before + 70;
     }
     
     public int getY(){
        return y;
-    }
+    }*/
 }

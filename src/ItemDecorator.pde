@@ -39,5 +39,14 @@ public class ItemDecorator implements IFlowItem, IDisplayComponent, ITouchEventH
     public void addSubComponent(IDisplayComponent c){
         item.addSubComponent(c);
     };
+
+     public void setY(int y_before){
+        item.setY(y_before);
+    }
+    
+    public int getY(){
+       return item.getY();
+    }
+    
     
 }
