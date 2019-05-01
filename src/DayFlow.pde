@@ -48,7 +48,6 @@ public class DayFlow //implements IHeaderStratedgy, IDisplayComponent, ITouchEve
       head.setIncome(getIncomeTol());
       head.setExpense(getExpenseTol());
       head.display();
-      y = y;
     //  y = head.getY();
     //  System.err.println("******begin_single_day_Y: *****"+y);
       for (FlowItem item : items) {

@@ -35,7 +35,7 @@ public class DayHeader implements IHeaderStrategy
     }
     
     public void circleDraw(){
-    System.err.println("dayHeader_Y: "+ y);
+   // System.err.println("dayHeader_Y: "+ y);
         stroke(255,250,250);
         fill(220);
         circle(x_center, y, 2*r);
@@ -63,7 +63,7 @@ public class DayHeader implements IHeaderStrategy
    
     
     public void display(){
-        System.err.println("day: " + currentDay);
+      //  System.err.println("day: " + currentDay);
         circleDraw();
         textDraw();
     };
