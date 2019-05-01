@@ -7,6 +7,7 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     private ITouchEventHandler nextHandler;
     private String name = " ";
     private float f = 0.0f;
+    private int y;
     
     public FlowItem(String detail){
         flowDetail = detail.split(",");
@@ -53,6 +54,10 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
     
     public void touch(){
         //trigger delete cvs item; 
+        if (mouseX = , mouseY = ){
+            
+        }
+        
         if (nextHandler != null){
            nextHandler.touch(); 
         }
@@ -66,5 +71,11 @@ public class FlowItem implements IFlowItem, IDisplayComponent, ITouchEventHandle
 
     public void addSubComponent(IDisplayComponent c){};
     
+    public void setY(int y_before){
+        y = y_before + 70;
+    }
     
+    public int getY(){
+       return y;
+    }
 }

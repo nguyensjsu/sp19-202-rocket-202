@@ -3,8 +3,7 @@ import java.util.*;
 /**
  * Build the flows contain each recorded day
  */
-public class FlowBuilder implements IFlowSubject
-// ,IDisplayComponent, ITouchEventHandler
+public class FlowBuilder implements IFlowSubject, IDisplayComponent, ITouchEventHandler
 {
     private MonthFlowReader reader;
     private IFlowObserver ob;
@@ -79,7 +78,7 @@ public class FlowBuilder implements IFlowSubject
         y = y_before + 70 ;
     }
     
- /*   public void touch(){
+   public void touch(){
         //pass touch inside items
         if (nextHandler != null){
            nextHandler.touch(); 
@@ -89,8 +88,9 @@ public class FlowBuilder implements IFlowSubject
     public void setNext(ITouchEventHandler next){
        nextHandler = next;
     };
+    
    
-    public void display(){
+   /*  public void display(){
         for (String day: dateList){
             ArrayList<String> flows = flowTable.get(day);
             System.err.println("dayFlows: " + flows);
