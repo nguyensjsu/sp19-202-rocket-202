@@ -65,7 +65,7 @@ class PieChart extends Screen implements IChartStrategy{
         outputPath = dataPath("")+"/PieChartForExpense.csv";
         type = false;
       }
-      ContextCSVChart contextCSVChart = new ContextCSVChart(new PieChartCSV("2019-04",type));
+      ContextCSVChart contextCSVChart = new ContextCSVChart(new PieChartCSV(df.format(new Date()),type));
       contextCSVChart.excuteCSVStrategy(outputPath);
       dataSets = contextCSVChart.getValueSet(outputPath, 2);
       fieldSets = contextCSVChart.getFieldSet(outputPath, 1);
