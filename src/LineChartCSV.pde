@@ -11,6 +11,9 @@ public class LineChartCSV implements IChartCSVStrategy{
     private BigDecimal[] totalIncome = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};
     private BigDecimal[] totalOutcome = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};
     private BigDecimal[] totalBalance = new BigDecimal[]{initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData, initialData};
+    private BigDecimal allIncome = new BigDecimal("0.00");
+    private BigDecimal allOutcome = new BigDecimal("0.00");
+    private BigDecimal allBalance = new BigDecimal("0.00");
     private ArrayList<String> lineData = new ArrayList<String>();
     /* yearPeriod just a year, like "2019" */
     private String yearPeriod;
@@ -44,8 +47,9 @@ public class LineChartCSV implements IChartCSVStrategy{
                 }
             }
         }
-        recursiveTotal();
+
         calculateTotalBalance();
+        recursiveTotal();
     }
 
     /**
@@ -117,16 +121,6 @@ public class LineChartCSV implements IChartCSVStrategy{
     }
 
     /**
-     * get every month total plus the month before
-     */
-    public void recursiveTotal(){
-        for(int i = 0; i < 11; i++){
-            totalIncome[i+1] = totalIncome[i+1].add(totalIncome[i]);
-            totalOutcome[i+1] = totalOutcome[i+1].add(totalOutcome[i]);
-        }
-    }
-
-    /**
      * calculate Total Balance
      */
     public void calculateTotalBalance(){
@@ -134,4 +128,42 @@ public class LineChartCSV implements IChartCSVStrategy{
             totalBalance[i] = totalIncome[i].subtract(totalOutcome[i]);
         }
     }
+
+    /**
+     * get every month total plus the month before
+     */
+    public void recursiveTotal(){
+        for(int i = 0; i < 11; i++){
+            allIncome = allIncome.add(totalIncome[i]);
+            allOutcome = allOutcome.add(totalOutcome[i]);
+        }
+        allBalance = allIncome.subtract(allOutcome);
+        System.out.println(allIncome+"  "+allOutcome+"  "+allBalance);
+    }
+
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllIncome(){
+      return allIncome.toString();
+    }
+
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllOutcome(){
+      return allOutcome.toString();
+    }
+
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllBalance(){
+      return allBalance.toString();
+    }
+
+
 }

@@ -21,7 +21,7 @@ public class IncomeItemDecorator extends ItemDecorator
     
     @Override
     public void display(){
-    System.err.println("incomeitem_Y: "+ y);
+   // System.err.println("incomeitem_Y: "+ y);
         circleDraw();
         textDraw();
     }

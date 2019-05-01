@@ -198,7 +198,29 @@ public class PieChartCSV implements IChartCSVStrategy{
         }
     }
 
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllIncome(){
+      return "";
+    }
 
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllOutcome(){
+      return "";
+    }
+
+    /**
+     * get allIncome variables
+     * @return String
+     */
+    public String getAllBalance(){
+      return "";
+    }
 
 
 }

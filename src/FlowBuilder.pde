@@ -61,7 +61,7 @@ public class FlowBuilder implements IFlowSubject
         incomeTol = dayflow.getIncomeTol();
       //  System.err.println("day_income: "+ incomeTol);
         notifyObservers();
-        y = dayflow.getY() + 70;
+      //  y = dayflow.getY() + 70;
         System.err.println("day_Y_SET: "+ y);
         return dayflow;
     }

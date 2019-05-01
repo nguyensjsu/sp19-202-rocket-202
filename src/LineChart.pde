@@ -7,6 +7,9 @@ class LineChart extends Screen implements IChartStrategy{
   float[] yIncome;
   float[] yBalance;
   String[] monthSets;
+  String allIncome;
+  String allOutcome;
+  String allBalance;
   // String month;
   SimpleDateFormat df = new SimpleDateFormat("yyyy");
   int count=0;
@@ -41,19 +44,7 @@ public void showBottomList(){
         count = 0;
 		if (displacement > 0) displacement = 0;
     int h = height + displacement;
-    stroke(0);
-	  line(0,h,380,h);
-    h = h+15;
-    textSize(15);
-    textAlign(LEFT, CENTER);
-    fill(0,0,0);
-    text("Month",10,h);
-    textAlign(CENTER, CENTER);
-    text("Income",120,h);
-    textAlign(CENTER, CENTER);
-    text("Expense",220,h);
-    textAlign(CENTER, CENTER);
-    text("Balance",320,h);
+    hfList(h,"Month", "Income", "Expense", "Balance");
         // singleList(height+displacement, "Month","Income", "Expense","Balance");
       for(int i=0; i< 12; i++){
         if(yPayment[i]!=0 || yIncome[i]!=0 || yBalance[i]!=0){
@@ -61,11 +52,12 @@ public void showBottomList(){
           // month = month(i+1);
           singleList(height+20*count+15*count+displacement, month(i+1), String.valueOf(yIncome[i]),String.valueOf(yPayment[i]),String.valueOf(yBalance[i]));
 			    end = height+20*count+15*count+displacement;
+          h = height+20*(count+1)+15*(count+1)+displacement;
 		} else {
           // do nothing
         }
-
       }
+       hfList(h,"Total", allIncome, "-"+allOutcome, allBalance);
     }
 
     /* Get data set from csv */
@@ -78,6 +70,9 @@ public void showBottomList(){
       yIncome = contextCSVChart.getValueSet(outputPath, 1);
       yPayment = contextCSVChart.getValueSet(outputPath, 2);
       yBalance = contextCSVChart.getValueSet(outputPath, 3);
+      allIncome = contextCSVChart.getAllIncome();
+      allOutcome = contextCSVChart.getAllOutcome();
+      allBalance = contextCSVChart.getAllBalance();
 	  for(int i = 0; i< yPayment.length;i++){
 		  yPayment[i] = -yPayment[i];
 	  }
@@ -161,6 +156,31 @@ public void showBottomList(){
     textAlign(CENTER, CENTER);
     text(s4,320,h);
   }
+
+
+    /**
+    * Add header and footer list
+    * @param h float height
+    * @param s1 String month / total
+    * @param s2 String allIncome money
+    * @param s3 String allExpense money
+    * @param s4 String allBalance money
+    */
+    public void hfList(float h,String s1, String s2, String s3, String s4){
+      stroke(0);
+  	  line(0,h,380,h);
+      h = h+15;
+      textSize(15);
+      textAlign(LEFT, CENTER);
+      fill(0,0,0);
+      text(s1,10,h);
+      textAlign(CENTER, CENTER);
+      text(s2,120,h);
+      textAlign(CENTER, CENTER);
+      text(s3,220,h);
+      textAlign(CENTER, CENTER);
+      text(s4,320,h);
+    }
 
   /* drag bottom list */
 	public void drag(){
