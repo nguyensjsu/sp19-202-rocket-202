@@ -83,7 +83,7 @@ In the meeting, I tell my members a truth that our project progress is slow. We 
 - Debug my function with other members
 - Prepare our project demo
 
-###XP core value--Courage
+### XP core value--Courage
 When members try to merge their own branch into master in Github, they are afraid that it may broken master. I tell them to try, don't be worried. Even if it's broken, we can fix it because we are a team.
 
 ### Problems
@@ -113,7 +113,7 @@ Waiting for other members completion to merge our function
 - Task4: Complete observer design pattern class diagram and prepare presentation
 - Task5: Have a demo rehearsal with team and sort out all code and documents
 
-###XP core value--Courage
+### XP core value--Courage
 - Courage my team members for the last demo. Just do it.
 
 ### Time Spend
