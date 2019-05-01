@@ -25,7 +25,7 @@ public class FlowBuilder implements IFlowSubject
         reader = new MonthFlowReader(month);
         
         monthflows = new ArrayList<DayFlow>();
-        y = 80; //initial 150
+    //    y = 80; //initial 150
         getRecordFromReader();
      // creatMonthFlows();
     }

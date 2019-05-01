@@ -14,6 +14,7 @@ public class MyFlows extends Screen
     private FlowBuilder fb;
     private ArrayList<DayFlow> flow;
     private int y;
+    PImage img_end;
 
 
 int boxSize = 480;
@@ -29,6 +30,7 @@ int yOffset = 0;
         addSubComponent(sl);
         reload();
         y = 80;
+        img_end = loadImage("img/flow_end.png");
     }
     
 
@@ -99,6 +101,17 @@ System.err.println("------------mouseReleased---------------"+ y);
        // System.err.println("*******get_end_day_Y: ******"+y);
       }
       System.err.println("*****************end_month_Y: *************"+y);
+
+      stroke(255);
+      line(190, y+70, 190, 10000);
+      imageMode(CENTER);
+      image(img_end, 190, y+70, 32, 28);
+      textSize(12);
+      textAlign(CENTER,CENTER);
+      text("End of This Month", 190, y+100);
+      
+
+
      // fb.setY(80);
      // y = 80;
 
