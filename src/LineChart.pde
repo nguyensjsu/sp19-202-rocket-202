@@ -44,19 +44,7 @@ public void showBottomList(){
         count = 0;
 		if (displacement > 0) displacement = 0;
     int h = height + displacement;
-    stroke(0);
-	  line(0,h,380,h);
-    h = h+15;
-    textSize(15);
-    textAlign(LEFT, CENTER);
-    fill(0,0,0);
-    text("Month",10,h);
-    textAlign(CENTER, CENTER);
-    text("Income",120,h);
-    textAlign(CENTER, CENTER);
-    text("Expense",220,h);
-    textAlign(CENTER, CENTER);
-    text("Balance",320,h);
+    hfList(h,"Month", "Income", "Expense", "Balance");
         // singleList(height+displacement, "Month","Income", "Expense","Balance");
       for(int i=0; i< 12; i++){
         if(yPayment[i]!=0 || yIncome[i]!=0 || yBalance[i]!=0){
@@ -69,19 +57,7 @@ public void showBottomList(){
           // do nothing
         }
       }
-      stroke(0);
-  	  line(0,h,380,h);
-      h = h+15;
-      textSize(15);
-      textAlign(LEFT, CENTER);
-      fill(0,0,0);
-      text("Total",10,h);
-      textAlign(CENTER, CENTER);
-      text(allIncome,120,h);
-      textAlign(CENTER, CENTER);
-      text(allOutcome,220,h);
-      textAlign(CENTER, CENTER);
-      text(allBalance,320,h);
+       hfList(h,"Total", allIncome, "-"+allOutcome, allBalance);
     }
 
     /* Get data set from csv */
@@ -180,6 +156,31 @@ public void showBottomList(){
     textAlign(CENTER, CENTER);
     text(s4,320,h);
   }
+
+
+    /**
+    * Add header and footer list
+    * @param h float height
+    * @param s1 String month / total
+    * @param s2 String allIncome money
+    * @param s3 String allExpense money
+    * @param s4 String allBalance money
+    */
+    public void hfList(float h,String s1, String s2, String s3, String s4){
+      stroke(0);
+  	  line(0,h,380,h);
+      h = h+15;
+      textSize(15);
+      textAlign(LEFT, CENTER);
+      fill(0,0,0);
+      text(s1,10,h);
+      textAlign(CENTER, CENTER);
+      text(s2,120,h);
+      textAlign(CENTER, CENTER);
+      text(s3,220,h);
+      textAlign(CENTER, CENTER);
+      text(s4,320,h);
+    }
 
   /* drag bottom list */
 	public void drag(){
