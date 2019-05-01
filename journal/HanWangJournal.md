@@ -88,10 +88,11 @@ When members try to merge their own branch into master in Github, they are afrai
 
 ### Problems
 Waiting for other members completion to merge our function
+
 ### Time Spend
 
-- Task1: 0.5 hr
-- Task2: 3 hrs
+- Task1: 0.5 hrs
+- Task2: 2.5 hrs
 - Task3: 1 hrs
 - Task4: 11 hrs
 - Task5: 1.5 hrs
@@ -104,8 +105,21 @@ Waiting for other members completion to merge our function
 
 ### Finished Last Week
 - Task1: Complete Use Case Overview Diagram
-- Task2: 
+- Task2: Had the fourth team meeting to discuss about:
+  - unfinished works
+  - make some due time of unfinished works
+  - prepare demo day presentation
+- Task3: Make 1-minute "Ad Video" to sell our app
+- Task4: Complete observer design pattern class diagram and prepare presentation
+- Task5: Have a demo rehearsal with team and sort out all code and documents
 
 ###XP core value--Courage
 - Courage my team members for the last demo. Just do it.
+
 ### Time Spend
+
+- Task1: 0.5 hrs
+- Task2: 0.5 hrs
+- Task3: 5 hrs
+- Task4: 2 hrs
+- Task5: 4 hrs
