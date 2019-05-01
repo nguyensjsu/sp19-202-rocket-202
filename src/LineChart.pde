@@ -57,7 +57,7 @@ public void showBottomList(){
           // do nothing
         }
       }
-       hfList(h,"Total", allIncome, "-"+allOutcome, allBalance);
+       hfList(h,"Total", allIncome, allOutcome, allBalance);
     }
 
     /* Get data set from csv */
@@ -73,9 +73,9 @@ public void showBottomList(){
       allIncome = contextCSVChart.getAllIncome();
       allOutcome = contextCSVChart.getAllOutcome();
       allBalance = contextCSVChart.getAllBalance();
-	  for(int i = 0; i< yPayment.length;i++){
-		  yPayment[i] = -yPayment[i];
-	  }
+	  // for(int i = 0; i< yPayment.length;i++){
+		//   yPayment[i] = yPayment[i];
+	  // }
     }
 
     /* display line chart */
