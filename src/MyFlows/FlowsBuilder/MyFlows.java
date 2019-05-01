@@ -15,6 +15,7 @@ public class MyFlows extends Screen
     private ArrayList<DayFlow> flow;
     private int y;
     
+    
     public MyFlows(){
        df = new SimpleDateFormat("yyyy-MM");
        month = df.format(new Date()); //initial set as current month

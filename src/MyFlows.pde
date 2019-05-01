@@ -14,6 +14,12 @@ public class MyFlows extends Screen
     private FlowBuilder fb;
     private ArrayList<DayFlow> flow;
     private int y;
+
+
+int boxSize = 480;
+boolean overBox = false;
+boolean locked = false;
+int yOffset = 0.0; 
     
     public MyFlows(){
        df = new SimpleDateFormat("yyyy-MM");
@@ -24,15 +30,45 @@ public class MyFlows extends Screen
         reload();
     }
     
+
+void mousePressed() {
+  if(overBox) { 
+    locked = true; 
+  } else {
+    locked = false;
+  }
+  yOffset = mouseY-y; 
+
+}
+
+void mouseDragged() {
+  if(locked) {
+    y = mouseY-yOffset; 
+  }
+}
+
+void mouseReleased() {
+  locked = false;
+}
+
     @Override
     public void display(){
         reload();
         super.display();
       //  background(255);
       //  sl.display();
-        mh.display();
+        
       //  fb.display();
       
+      // Test if the cursor is over the box 
+  if ( mouseY > 120) {
+    overBox = true;  
+    if(!locked) { 
+     
+    } 
+  } else {
+    overBox = false;
+  }
 
       System.err.println("*****************first_day_Y: *************"+y);
 
@@ -46,6 +82,14 @@ public class MyFlows extends Screen
       System.err.println("*****************end_day_Y: *************"+y);
       fb.setY(80);
       y = 80;
+
+
+      noStroke();
+      fill(255);
+      rect(0,0,380,120);
+      stroke(220);
+      line(190, 0, 190, 120);
+      mh.display();
 
     }
     
