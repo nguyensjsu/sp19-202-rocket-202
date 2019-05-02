@@ -31,9 +31,13 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 ### Individual Contributions
 
 Login screen: Shiyan Cai
+
 Record Flow screen: Yijun Zhang
+
 Add Record screen: Xingchen Kang
+
 Asset screen: Han Wang
+
 Chart screen: Min Yu
 
 #### Han Wang
