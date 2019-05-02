@@ -16,7 +16,9 @@ rocket202
 
 ## Presentation
 
-https://docs.google.com/presentation/d/11_2fH6qzV071KdldFaePDzyNSiVsduSfTFsSO6z_pmc/edit?usp=sharing
+[Rocket 202 Presentation Slide](https://docs.google.com/presentation/d/1OCnWug36wbcUUwsd9Lt7C_mQwn2OUnJkrA3UtGOr0ik/edit?usp=sharing)
+
+
 
 ## Project Progress
 
