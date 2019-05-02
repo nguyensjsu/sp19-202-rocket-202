@@ -1,4 +1,4 @@
-# Team Project Repo 
+# Team Project Repo
 https://github.com/nguyensjsu/sp19-202-rocket-202
 ## Team Name
 rocket202
@@ -32,10 +32,10 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 
 #### Han Wang
 
-1. Provide application prototype, app name and logo 
+1. Provide application prototype, app name and logo
 2. Use Observer Design Pattern when implementing Keypad function which is used in two screens: Input account balance screen and add account record screen
 3. Use Composite Design Pattern when implementing input new account balance screen. Components are Keypad and OutputText
-4. Use Observer Design Pattern when implementing add new account function. 
+4. Use Observer Design Pattern when implementing add new account function.
 5. Create a tool CSVHelper which help to read and write csv files. And it’s used in three parts: read each account balance from accounts.csv, write new account information into accounts.csv, write new record into records.csv
 6. Develope a comprehensive UseCase diagram
 7. Develope add account use case specification with supporting Sequence diagram
@@ -53,3 +53,13 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 6. Use Strategy design pattern to generate Expense/Income/Monthly screen on Chart screen.
 7. Complete overall class diagram.
 8. As a role of XP value "Feedback", I always test the program. If I find bug, I told it to my team mates and communicated with them.
+
+### Xingchen Kang
+1. Create UI Wirefames.
+2. Develop a MenuScreen that add a menu bar to normal screen using ```Decorator``` Design Pattern。
+3. Develop main screen control flow for the app using ```Command``` Design Pattern.
+4. Develop a add record screen using ```Composite```, ```Strategy``` and ```Observer``` Design Pattern.
+5. Develop a choose account screen for adding record.
+6. Develop change screen and add expense record use case with supporting sequence diagrams.
+7. Develop an AD video for the APP.
+8. As a role of XP value "Simplicity", I always remind my team to keep things simple, cut off unnecessary developing demands and add small development pieces into the whole framework.

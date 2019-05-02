@@ -63,7 +63,7 @@ I suggested we should stick to what we can achieve for the app instead of creati
 ### Planned Next Week
 - Task1: Integrate all codes together, add every screen into the main frame.
 - Task2: Test whole app.
-- Task3: Creat an ad vedio for our app.
+- Task3: Creat an ad video for our app.
 
 ### Problems
 I share a display component with someone else, we have conlict demand for display format. Take a while to figure it out.
@@ -82,7 +82,7 @@ I encourage my team members to add their screen into our main frame during devel
 ### Finished Last Week
 - Task1: Integrate all codes together, add every screen into the main frame.
 - Task2: Test whole app.
-- Task3: Creat an ad vedio for our app.
+- Task3: Creat an ad video for our app.
 
 ### Time Spend
 - Task1: 2 hrs
@@ -90,7 +90,7 @@ I encourage my team members to add their screen into our main frame during devel
 - Task3: 5 hrs
 
 ### Problems
-We are not familiar with vedio editing.
+We are not familiar with video editing.
 
 ### XP core value - Simplicity
-When creating vedio ad for our app, we use all the tools we have now.
+When creating video ad for our app, we use all the tools we have now.
