@@ -30,16 +30,22 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 
 ### Individual Contributions
 
+Login screen: Shiyan Cai
+Record Flow screen: Yijun Zhang
+Add Record screen: Xingchen Kang
+Asset screen: Han Wang
+Chart screen: Min Yu
+
 #### Han Wang
 
 1. Provide application prototype, app name and logo
-2. Use Observer Design Pattern when implementing Keypad function which is used in two screens: Input account balance screen and add account record screen
-3. Use Composite Design Pattern when implementing input new account balance screen. Components are Keypad and OutputText
-4. Use Observer Design Pattern when implementing add new account function.
+2. Use ```Observer``` Design Pattern when implementing Keypad function which is used in two screens: Input account balance screen and add account record screen
+3. Use ```Composite``` Design Pattern when implementing input new account balance screen. Components are Keypad and OutputText
+4. Use ```Observer``` Design Pattern when implementing add new account function.
 5. Create a tool CSVHelper which help to read and write csv files. And it’s used in three parts: read each account balance from accounts.csv, write new account information into accounts.csv, write new record into records.csv
-6. Develope a comprehensive UseCase diagram
-7. Develope add account use case specification with supporting Sequence diagram
-8. Develope an Ad Video for the application
+6. Develop a comprehensive UseCase diagram
+7. Develop add account use case specification with supporting Sequence diagram
+8. Develop an Ad Video for the application
 9. Complete app testing, find out problems and fix bugs in the code
 10. As a role of XP value “Courage”, when some thing was wrong, I pointed it out and provided my solutions. I encouraged our members to try new things. And I also encouraged them that we don’t need to be afraid with failures because we are a team.
 
@@ -57,7 +63,7 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 
 ### Xingchen Kang
 1. Create UI Wirefames.
-2. Develop a MenuScreen that add a menu bar to normal screen using ```Decorator``` Design Pattern。
+2. Develop a MenuScreen that add a menu bar to normal screen using ```Decorator``` Design Pattern.
 3. Develop main screen control flow for the app using ```Command``` Design Pattern.
 4. Develop a add record screen using ```Composite```, ```Strategy``` and ```Observer``` Design Pattern.
 5. Develop a choose account screen for adding record.
@@ -68,7 +74,7 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 ### Shiyan Cai
 
 1. Build major stracture of application, implemant a proxy pattern for login authentication.
-2. Create login screen for authentication,
+2. Create login screen for authentication.
 3. Create reset password process, allow user to enter old passcode, enter new passcode, and verify new passcode. Implemented with state pattern
 3. Design a keypad for login process. Include shaking effect when enter wrong passcode, and button may change color when pressed.
 4. Design drag effect for the drag effect for the chart screen. Allow to drag up and down, and list may slowly come back when bottom display area leaves empty.
