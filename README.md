@@ -4,11 +4,11 @@ https://github.com/nguyensjsu/sp19-202-rocket-202
 rocket202
 ## Team Members
 
-* [Han Wang](url_to_your_github_repo)
-* [Xingchen Kang](url_to_your_github_repo)
-* [Min Yu](url_to_your_github_repo)
-* [Yijun Zhang](url_to_your_github_repo)
-* [Shiyan Cai](url_to_your_github_repo)
+* [Han Wang](<https://github.com/wanghansjsu>)
+* [Xingchen Kang](<https://github.com/xckang>)
+* [Min Yu](<https://github.com/wing324>)
+* [Yijun Zhang](<https://github.com/zhangyijun0518>)
+* [Shiyan Cai](<https://github.com/robert4213>)
 
 ## Project Name
 
