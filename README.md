@@ -16,8 +16,7 @@ rocket202
 
 ## Presentation
 
-https://docs.google.com/presentation/d/11_2fH6qzV071KdldFaePDzyNSiVsduSfTFsSO6z_pmc/edit?usp=sharing
-
+https://docs.google.com/presentation/d/1OCnWug36wbcUUwsd9Lt7C_mQwn2OUnJkrA3UtGOr0ik/edit#slide=id.g56f8ade76b_1_83
 ## Project Progress
 
 ### Burndown Map
