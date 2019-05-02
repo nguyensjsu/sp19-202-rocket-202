@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class ChartScreen extends Screen{
-ContextChart currentChart;
-ContextChart pieChartExpense;
-ContextChart pieChartIncome;
-ContextChart lineChart;
+private ContextChart currentChart;
+private ContextChart pieChartExpense;
+private ContextChart pieChartIncome;
+private ContextChart lineChart;
 
 PApplet papplet;
 

@@ -118,7 +118,7 @@ class PieChart extends Screen implements IChartStrategy{
   /**
   * print data
   */
-	protected void printData(){
+	public void printData(){
 	if (displacement > 0) displacement = 0;
     end = showList.showBottomList(fieldSets, dataSetFloat, dataSets,displacement);
 
@@ -127,7 +127,7 @@ class PieChart extends Screen implements IChartStrategy{
   /**
   * set display back
   */
-	protected void setback(){
+	public void setback(){
 		if (end <= bottom-30 && !mousePressed) displacement *= 0.95;
 	}
 
