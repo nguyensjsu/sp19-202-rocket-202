@@ -54,6 +54,7 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 7. Complete overall class diagram.
 8. As a role of XP value "Feedback", I always test the program. If I find bug, I told it to my team mates and communicated with them.
 
+
 ### Xingchen Kang
 1. Create UI Wirefames.
 2. Develop a MenuScreen that add a menu bar to normal screen using ```Decorator``` Design Pattern。
@@ -63,3 +64,17 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 6. Develop change screen and add expense record use case with supporting sequence diagrams.
 7. Develop an AD video for the APP.
 8. As a role of XP value "Simplicity", I always remind my team to keep things simple, cut off unnecessary developing demands and add small development pieces into the whole framework.
+
+### Shiyan Cai
+
+1. Build major stracture of application, implemant a proxy pattern for login authentication.
+2. Create login screen for authentication,
+3. Create reset password process, allow user to enter old passcode, enter new passcode, and verify new passcode. Implemented with state pattern
+3. Design a keypad for login process. Include shaking effect when enter wrong passcode, and button may change color when pressed.
+4. Design drag effect for the drag effect for the chart screen. Allow to drag up and down, and list may slowly come back when bottom display area leaves empty.
+5. Design a line chart to show income, expense, and balance change in current year.
+6. Apply a gradient color change on the line chart.
+7. Add a welcome screen, when open the application.
+8. Create the sequence diagram for both login and reset passcode process(sucessfully reset).
+9. Create state machine diagram for reset pascode process.
+10. As a role of XP value "Communication", I gurantee our group meet at least one time a week, and all members keep contacting with each other through wechat. I also make meeting record to allow others to review the decision made through the meeting.
