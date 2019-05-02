@@ -33,8 +33,6 @@ Unable to use Processing.
 - [ ] Task 2: Beauty chart screen.
 
 ### Problems
-------
-
 I used controlP5 lib for Chart screen, but I can not control the lib, I can not hide or show chart when I go to other menu. I think the problem because of controlP5 lib, so I am going to replace controlP5 to other staff.
 
 ### Time Spend
