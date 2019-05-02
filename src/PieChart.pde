@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /* Expense and Income screen */
-class PieChart extends Screen implements IChartStrategy{
+class PieChart extends ChartTemplete{
  // Chart pieChart;
  ShowList showList = new ShowList();
  //ArrayList<String> dataSet;
@@ -37,11 +37,12 @@ class PieChart extends Screen implements IChartStrategy{
    }
  }
 
+  @Override
   /**
   * Create a new Pie Chart
   * @param dataDegreeFloat float[] piechart degree
   */
-   public void createPieChart(float[] dataDegreeFloat){
+   public void createChart(){
      float lastAngle = 0;
      for (int i = 0; i < dataDegreeFloat.length; i++) {
        // float gray = map(i, 0, data.length, 0, 255);
@@ -51,6 +52,7 @@ class PieChart extends Screen implements IChartStrategy{
      }
    }
 
+   @Override
    /**
    * Get dataSets and fieldSets from csv
    */
@@ -85,28 +87,6 @@ class PieChart extends Screen implements IChartStrategy{
         }
     }
 
-    /**
-    * display expense / income screen
-    */
-	public void display(){
-    image(imgb,0,0,380,680);
-    getDataSet();
-    printData();
-    image(imgb,0,0,380,300);
-    image(img,0,0);
-    fill(255);
-    stroke(0,0,247);
-    rectMode(CORNER);
-    rect(20, 65, 80, 25, 10, 10, 10, 10);
-    fill(0,0,247);
-    textSize(15);
-    textAlign(CENTER, CENTER);
-    text(df.format(new Date()), 60, 75);
-    setback();
-    noStroke();
-    createPieChart(dataDegreeFloat);
- }
-
  /**
  * drag bottom list function
  */
@@ -115,6 +95,7 @@ class PieChart extends Screen implements IChartStrategy{
 		println("end: ",end);
 	}
 
+  @Override
   /**
   * print data
   */
@@ -124,6 +105,21 @@ class PieChart extends Screen implements IChartStrategy{
 
 	}
 
+  @Override
+  public void printImg(){
+       image(imgb,0,0,380,300);
+       image(img,0,0);
+       fill(255);
+       stroke(0,0,247);
+       rectMode(CORNER);
+       rect(20, 65, 80, 25, 10, 10, 10, 10);
+       fill(0,0,247);
+       textSize(15);
+       textAlign(CENTER, CENTER);
+       text(df.format(new Date()), 60, 75);
+  }
+
+  @Override
   /**
   * set display back
   */

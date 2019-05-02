@@ -1,18 +1,16 @@
 import java.util.*;
 
 public class ChartScreen extends Screen{
-private ContextChart currentChart;
-private ContextChart pieChartExpense;
-private ContextChart pieChartIncome;
-private ContextChart lineChart;
-
-PApplet papplet;
+private ChartTemplete pieChartExpense;
+private ChartTemplete pieChartIncome;
+private ChartTemplete lineChart;
+private ChartTemplete currentChart;
 
 /* Constructor */
 public ChartScreen(){
-  pieChartExpense = new ContextChart(new PieChart("EXPENSE"));
-  pieChartIncome = new ContextChart(new PieChart("INCOME"));
-  lineChart = new ContextChart(new LineChart());
+  pieChartExpense = new PieChart("EXPENSE");
+  pieChartIncome = new PieChart("INCOME");
+  lineChart = new LineChart();
   currentChart = pieChartExpense;
   }
 

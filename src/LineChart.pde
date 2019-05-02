@@ -1,7 +1,7 @@
 import java.util.*;
 // import org.gicentre.utils.stat.*;
 
-class LineChart extends Screen implements IChartStrategy{
+class LineChart extends ChartTemplete{
   PImage img, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec;
   float[] yPayment;
   float[] yIncome;
@@ -39,8 +39,22 @@ class LineChart extends Screen implements IChartStrategy{
     dec = loadImage("img/dec.png");
   }
 
+  @Override
+  /* create line chart */
+  public void createChart(){
+    lp.getMax(yIncome);
+    lp.getMax(yPayment);
+    lp.getMax(yBalance);
+    lp.printAxis();
+
+    lp.getData(yPayment, color(100,149,237),"Payment", true);
+    lp.getData(yIncome, color(127,255,212),"Income", true);
+    lp.getData(yBalance, color(240,128,128),"Balance",false);
+  }
+
+@Override
 /* Show bottom list, combine all single list */
-public void showBottomList(){
+public void printData(){
         count = 0;
 		if (displacement > 0) displacement = 0;
     int h = height + displacement;
@@ -60,6 +74,7 @@ public void showBottomList(){
        hfList(h,"Total", allIncome, "-"+allOutcome, allBalance);
     }
 
+    @Override
     /* Get data set from csv */
     public void getDataSet(){
       count = 0;
@@ -76,36 +91,6 @@ public void showBottomList(){
 	  for(int i = 0; i< yPayment.length;i++){
 		  yPayment[i] = -yPayment[i];
 	  }
-    }
-
-    /* display line chart */
-    public void display(){
-    background(255);
-	  getDataSet();
-	  showBottomList();
-	  image(imgb,0,0,380,height);
-    image(img,0,0);
-
-    fill(255);
-    stroke(0,0,247);
-    rectMode(CORNER);
-    rect(45, 55, 60, 25, 10, 10, 10, 10);
-    fill(0,0,247);
-    textSize(15);
-    textAlign(CENTER, CENTER);
-    text(df.format(new Date()), 75, 65);
-    textSize(9);
-
-	lp.getMax(yIncome);
-	lp.getMax(yPayment);
-	lp.getMax(yBalance);
-	lp.printAxis();
-
-  lp.getData(yPayment, color(100,149,237),"Payment", true);
-  lp.getData(yIncome, color(127,255,212),"Income", true);
-  lp.getData(yBalance, color(240,128,128),"Balance",false);
-    setback();
-
   }
 
   /**
@@ -188,8 +173,24 @@ public void showBottomList(){
 		println("end: ",end);
 	}
 
+@Override
+public void printImg(){
+  image(imgb,0,0,380,height);
+    image(img,0,0);
+    fill(255);
+    stroke(0,0,247);
+    rectMode(CORNER);
+    rect(45, 55, 60, 25, 10, 10, 10, 10);
+    fill(0,0,247);
+    textSize(15);
+    textAlign(CENTER, CENTER);
+    text(df.format(new Date()), 75, 65);
+    textSize(9);
+}
+
+@Override
   /* set back end list */
-	protected void setback(){
+	public void setback(){
 		if (end <= bottom-30 && !mousePressed) displacement *= 0.95;
 	}
 }
