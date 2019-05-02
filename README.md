@@ -42,3 +42,14 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 8. Develope an Ad Video for the application
 9. Complete app testing, find out problems and fix bugs in the code
 10. As a role of XP value “Courage”, when some thing was wrong, I pointed it out and provided my solutions. I encouraged our members to try new things. And I also encouraged them that we don’t need to be afraid with failures because we are a team.
+
+#### Min Yu
+
+ 	1. Develop Tools class for time conversion: convert unix timestamp to datetime and convert datetime to unix timestamp.
+ 	2. Get data and analysis data from record.csv, generate corresponding statistics CSV data in order to easy display data on Chart screen.
+ 	3. Develop pie chart code in order to show it on Chart screen.
+ 	4. Create tab icon for Chart screen.
+ 	5. Use Strategy design pattern to get record.csv data into relevant statistic csv file.
+ 	6. Use Strategy design pattern to generate Expense/Income/Monthly screen on Chart screen.
+ 	7. Complete overall class diagram.
+ 	8. As a role of XP value "Feedback", I always test the program. If I find bug, I told it to my team mates and communicated with them.
