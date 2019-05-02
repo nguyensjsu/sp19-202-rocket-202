@@ -76,7 +76,7 @@ I don't know how to use Processing to draw a beautiful line chart, so my team ma
 
 ### Time Spend
 
-- Task 1: 5 hrs
+- Task 1: 2 hrs
 - Task 2: 10 hrs
 - Task 3: 3 hrs
 
