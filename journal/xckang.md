@@ -42,9 +42,9 @@ Image can't display properly on the screen. (imageMode is not set properyly.)
 
 ### Time Spend
 
-- Task1: 2 hrs
-- Task2: 5 hrs
-- Task3: 3 hrs
+- Task1: 3 hrs
+- Task2: 9 hrs
+- Task3: 2 hrs
 - Task4: 1 hr
 
 ### XP core value - Simplicity
@@ -69,8 +69,8 @@ I suggested we should stick to what we can achieve for the app instead of creati
 I share a display component with someone else, we have conlict demand for display format. Take a while to figure it out.
 
 ### Time Spend
-- Task1: 4 hrs
-- Task2: 3 hrs
+- Task1: 6 hrs
+- Task2: 6 hrs
 - Task3: 2 hrs
 - Task4: 1 hr
 
