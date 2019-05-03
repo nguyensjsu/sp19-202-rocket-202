@@ -2,23 +2,23 @@
 
 **Login screen: Shiyan Cai**
 
-![](https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/gif/login.gif)
+![](../gif/login.gif)
 
 **Record Flow screen: Yijun Zhang**
 
-![](https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/gif/flow.gif)
+![](../gif/flow.gif)
 
 **Add Record screen: Xingchen Kang**
 
-![](https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/gif/addrecord.gif)
+![](../gif/addrecord.gif)
 
 **Asset screen: Han Wang**
 
-![](https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/gif/asset.gif)
+![](../gif/asset.gif)
 
 **Chart screen: Min Yu**
 
-![](https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/gif/chart.gif)
+![](../gif/chart.gif)
 
 #### Han Wang
 
