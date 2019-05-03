@@ -32,13 +32,23 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 
 Login screen: Shiyan Cai
 
+![](gif/login.gif)
+
 Record Flow screen: Yijun Zhang
+
+![](gif/flow.gif)
 
 Add Record screen: Xingchen Kang
 
+![](gif/addrecord.gif)
+
 Asset screen: Han Wang
 
+![](gif/asset.gif)
+
 Chart screen: Min Yu
+
+![](gif/chart.gif)
 
 #### Han Wang
 
