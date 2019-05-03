@@ -120,14 +120,14 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 
 
 ### UML Analysis Models
+- **Use Case Specification & Class Diagram for Design Pattens** 
+See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models 
+
 - **Activity Diagram**
 ![](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/ActivityDiagram_Check%26AddRecord.png)
 
 - **Use Case Overview Diagram** 
 ![](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/UseCaseOverviewDiagram.png)
-
-- **Use Case Specification (for each Feature Story)** 
-See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models
 
 ### Class Diagram
 - **Builder Pattern**
@@ -135,3 +135,8 @@ See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202
 
 - **Template Pattern**
 ![](UML%20Analysis%20Models/TemplateClassDiagram.png)
+
+- **Overall Class Diagram Pattern**
+![](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/Domain%20Model%20Diagram/img/Ovealall%20Details%20Class%20Diagram.png)
+
+
