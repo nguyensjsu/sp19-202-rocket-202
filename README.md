@@ -131,7 +131,7 @@ See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202
 
 ### Class Diagram
 - **Builder Pattern**
-![image]（https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/ClassDiagram_BuilderPattern.png）
+![image](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/ClassDiagram_BuilderPattern.png）
 
 - **Template Pattern**
 ![image](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/TemplateClassDiagram.png）
