@@ -13,13 +13,13 @@
 
 ## Class Diagram Template Pattern
 
-![Template Class Diagram](img/Template Class Diagram.png)
+![Template Class Diagram](img/TemplateClassDiagram.png)
 
 
 
 ## Class diagram for Strategy Pattern
 
-![Template Class Diagram](img/Strategy Class Diagram.png)
+![Strategy Class Diagram](img/StrategyClassDiagram.png)
 
 
 
