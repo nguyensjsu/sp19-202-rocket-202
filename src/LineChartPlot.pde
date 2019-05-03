@@ -46,9 +46,10 @@ class LineChartPlot{
 			if (!flag) continue;
 			setGradient(x+length/11*i,getYPosition(yPayment[i]), getYPosition(maxG), getYPosition(minG), c);
 			for(int j = x+length/11*i+1; j<x+length/11*(i+1);j++){
-				double yf =getYPosition(yPayment[i])+(getYPosition(yPayment[i+1])-getYPosition(yPayment[i]))/(length/11)*(j-x-length/11*i);
-				println(yf);
-				if(yf<getYPosition(maxG)) yi = (int)Math.floor(yf);
+				double y2 = (double)getYPosition(yPayment[i+1]);
+				double y1 = (double)getYPosition(yPayment[i]);
+				double yf =y1+(y2-y1)/((double)length/11.0)*(double)(j-x-length/11*i);
+				if(yf<getYPosition(0)) yi = (int)Math.floor(yf);
 				else yi = (int)Math.ceil(yf);
 				setGradient(j, yi, getYPosition(maxG), getYPosition(minG), c);
 			}
@@ -153,7 +154,6 @@ class LineChartPlot{
 	* @param c color
   */
 	private void setGradient(int x, int y, int max, int min, color c){
-		int dis = 20;
 		if(max == min) return;
 		if(y<getYPosition(0)){
 			// if(max == getYPosition(0)) return;
