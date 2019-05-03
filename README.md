@@ -2,19 +2,18 @@
 https://github.com/nguyensjsu/sp19-202-rocket-202
 ## Team Name
 rocket202
-## Team Members
-
-* [Han Wang](<https://github.com/wanghansjsu>)
-* [Xingchen Kang](<https://github.com/xckang>)
-* [Min Yu](<https://github.com/wing324>)
-* [Yijun Zhang](<https://github.com/zhangyijun0518>)
-* [Shiyan Cai](<https://github.com/robert4213>)
+## Team Members & Journals
+* Han Wang [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Han%20Wang.md>)
+* Xingchen Kang [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Xingchen%20Kang.md>)
+* Min Yu [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Min%20Yu.md>)
+* Yijun Zhang [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Yijun%20Zhang.md>)
+* Shiyan Cai [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Shiyan%20Cai.md>)
 
 ## Project Name
-### Poke Accounting   
+### Poke Accounting
 
-## Project Description   
-Poke Accounting is an accounting software, allowing users to add and check personal expense and income records. 
+## Project Description
+Poke Accounting is an accounting software, allowing users to add and check personal expense and income records.
 Poke Accounting also provides different charts to help you visualize your record.
 Account function make it easier to follow your account balance.
 Poke Accounting has its own login authentication to guarantee your personal privacy.
@@ -111,22 +110,22 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 2. Use ```Decorator``` Pattern to add name to related flow icon of each income and expense record.
 3. Use ```Strategy```Pattern to show monthly and daily flow headers which have same contents combination but different sizes and locations for displaying.
 4. Use ```Builder```Pattern to build the month flows with all recorded day flows in this month(which contains several detailed daily flow records）with hierarchical hearders showing hierarchical total values.
-5. Use ```Observer```Pattern to ensure the month total value will change once the displayed flow changes. 
+5. Use ```Observer```Pattern to ensure the month total value will change once the displayed flow changes.
 6. Develop the drag function for Flow Screen with special sign displayed in the end of month flows.
 7. Develop a use case about using drags to see all flow records in flow screen with related sequence diagram.
 8. Produce the animations in presentation slides.
-9. Draw the activity diagram. 
+9. Draw the activity diagram.
 10. As a role of XP value "Respect", I keep the faith in every member in our team and keep showing them that they are improtant. I show respect to everyone and show belief in them during the whole project period. When anyone come up with any ideas about our project or finish any tasks, I always express respect to their thought and admire evey works they have done.
 
 
 ### UML Analysis Models
-- **Use Case Specification & Class Diagram for Design Pattens** 
-See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models 
+- **Use Case Specification & Class Diagram for Design Pattens**
+See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models
 
 - **Activity Diagram**
 ![](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/ActivityDiagram_Check%26AddRecord.png)
 
-- **Use Case Overview Diagram** 
+- **Use Case Overview Diagram**
 ![](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/UseCaseOverviewDiagram.png)
 
 ### Class Diagram
