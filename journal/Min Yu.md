@@ -12,6 +12,10 @@
 - [ ] Continue to learn Processing.
 - [ ] Analysis data from record.csv and generate expense/income/monthly CSV data.
 
+### XP core value -- Feedback
+
+- When my team mates provide some idea, I give some my suggestion to my team mates.
+
 ### Problems
 Unable to use Processing.
 
@@ -31,6 +35,10 @@ Unable to use Processing.
 ### Planned Next Week
 - [ ] Task 1: Draw pie chart and line chart by using Processing.
 - [ ] Task 2: Beauty chart screen.
+
+### XP core value -- Feedback
+
+- I do the test for our app, if I find some bugs, I told my team mates the bug and give them my suggestion.
 
 ### Problems
 I used controlP5 lib for Chart screen, but I can not control the lib, I can not hide or show chart when I go to other menu. I think the problem because of controlP5 lib, so I am going to replace controlP5 to other staff.
@@ -55,6 +63,10 @@ I used controlP5 lib for Chart screen, but I can not control the lib, I can not 
 - [ ] Task 2: Beauty chart screen.
 - [ ] Task 3: Draw overall class diagram.
 
+### XP core value -- Feedback
+
+- I collect all team mates suggestion about the app, like what can we do better, and I put all suggestions in meeting to ask for my all team mates.
+
 ### Problems
 
 I don't know how to use Processing to draw a beautiful line chart, so my team mate ShiYan Cai helps me to do it.
@@ -73,6 +85,10 @@ I don't know how to use Processing to draw a beautiful line chart, so my team ma
 - [x] Task 1: Add list to show Items under chart.
 - [x] Task 2:  Beauty chart screen.
 - [x] Task 3: Draw overall class diagram
+
+### XP core value -- Feedback
+
+- 
 
 ### Time Spend
 
