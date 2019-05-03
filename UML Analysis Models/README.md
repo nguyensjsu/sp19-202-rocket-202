@@ -57,7 +57,7 @@ https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/docs/UseCase.pdf
 
 ### Class Diagram Template Design Pattern
 
-![](TemplateClassDiagram.png)
+![TemplateClassDiagram](TemplateClassDiagram.png)
 
 ### Class Diagram Strategy Design Pattern
 

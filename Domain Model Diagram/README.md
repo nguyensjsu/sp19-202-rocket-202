@@ -11,17 +11,9 @@
 
 
 
-## Class Diagram Template Pattern
+## Overall Class Diagram
 
-![Template Class Diagram](img/TemplateClassDiagram.png)
-
-
-
-## Class diagram for Strategy Pattern
-
-![Strategy Class Diagram](img/StrategyClassDiagram.png)
-
-
+![Ovealall Details Class Diagram](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/Domain%20Model%20Diagram/img/Ovealall%20Details%20Class%20Diagram.png>)
 
 
 
