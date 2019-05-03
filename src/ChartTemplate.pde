@@ -7,7 +7,7 @@ public abstract class ChartTemplete {
   abstract void printImg();
   abstract void drag();
 
-  public void display(){
+  public final void display(){
     background(255);
     getDataSet();
     printData();

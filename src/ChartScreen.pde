@@ -24,11 +24,11 @@ public ChartScreen(){
     if(mouseY<=30){
       // currentChart.hide();
        if(mouseX>=50 && mouseX<140){
-         currentChart = pieChartExpense;
+         setCurrentScreen(pieChartExpense);
        } else if(mouseX>=140 && mouseX<230){
-         currentChart = pieChartIncome;
+         setCurrentScreen(pieChartIncome);
        } else if(mouseX>=240 && mouseX<320){
-         currentChart = lineChart;
+         setCurrentScreen(lineChart);
        }
       // currentChart.show();
     }
@@ -36,11 +36,16 @@ public ChartScreen(){
 
   /* reset chart screen */
   public void reset(){
-    currentChart = pieChartExpense;
+    setCurrentScreen(currentChart);
   }
 
   /* drag chart screen */
   public void drag(){
 	currentChart.drag();
+  }
+
+  public ChartTemplete setCurrentScreen(ChartTemplete chartTemplete){
+    currentChart = chartTemplete;
+    return currentChart;
   }
 }
