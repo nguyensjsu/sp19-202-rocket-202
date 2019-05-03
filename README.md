@@ -109,7 +109,7 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 
 1. Design and develop the Main Screen of Flows, which generally reads data from data records.csv, and displays them in hierarchical time order with daily and monthly total values.
 2. Use ```Decorator``` Pattern to add name to related flow icon of each income and expense record.
-3. Use ```Strategy```Pattern to show monthly and daily flow headers which display same contents combination but have different sizes and locations for displaying.
+3. Use ```Strategy```Pattern to show monthly and daily flow headers which have same contents combination but different sizes and locations for displaying.
 4. Use ```Builder```Pattern to build the month flows with all recorded day flows in this month(which contains several detailed daily flow records）with hierarchical hearders showing hierarchical total values.
 5. Use ```Observer```Pattern to ensure the month total value will change once the displayed flow changes. 
 6. Develop the drag function for Flow Screen with special sign displayed in the end of month flows.
