@@ -84,7 +84,7 @@ Still not so familiar with Processing, how to implement these design patterns in
 # Week 4 Scrum Report
 
 ### Finished Last Week 
-- Task1: Finished Adding the drag function.
+- Task1: Finished Adding the drag function, also add an ending sign of the month flows
 - Task2: Draw Activity Diagram.
 - Task3: Producted animations in presentation slides.
 - Task4: Draw user case for dragging feature with sequence diagram.
