@@ -8,11 +8,11 @@
 
 ## Use Case - Login
 
-![](Sequence Diagram_Login.png)
+![](Sequence%20Diagram_Login.png)
 
 ## Use Case - Reset passcode
 
-![](Sequence Diagram_Reset Passcode.png)
+![](Sequence%20Diagram_Reset%20Passcode.png)
 
 ## Use Case - Change Screen
 
@@ -20,11 +20,11 @@
 
 ## Use Case - Add a new account
 
-![](Sequence Diagram_Add a new account.png)
+![](Sequence%20Diagram_Add%20a%20new%20account.png)
 
 ## Use Cae - View Statistic data and chart
 
-![](Sequence Diagram_View Chart.png)
+![](Sequence%20Diagram_View%20Chart.png)
 
 ## Use Case - Add Record
 
@@ -32,7 +32,7 @@
 
 ## Use Case - View Flows Use Drag
 
-![](Sequence Diagram_ViewMyFlowsUseDrag.png)
+![](Sequence%20Diagram_ViewMyFlowsUseDrag.png)
 
 ## Class Diagram State Design Pattern
 
