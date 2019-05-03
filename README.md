@@ -117,3 +117,21 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 8. Produce the animations in presentation slides.
 9. Draw the activity diagram. 
 10. As a role of XP value "Respect", I keep the faith in every member in our team and keep showing them that they are improtant. I show respect to everyone and show belief in them during the whole project period. When anyone come up with any ideas about our project or finish any tasks, I always express respect to their thought and admire evey works they have done.
+
+
+### UML Analysis Models
+- **Activity Diagram**
+![image](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/ActivityDiagram_Check%26AddRecord.png)
+
+- **Use Case Overview Diagram** 
+![image](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/UseCaseOverviewDiagram.png)
+
+- **Use Case Specification (for each Feature Story)** 
+See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models
+
+### Class Diagram
+- **Builder Pattern**
+![image]（https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/ClassDiagram_BuilderPattern.png）
+
+- **Template Pattern**
+![image](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/TemplateClassDiagram.png）
