@@ -57,7 +57,7 @@ Still not so familiar with Processing, how to implement these design patterns in
 # Week 3 Scrum Report
 
 ### Finished Last Week 
-- Task1: Finished the month flow dispaly with builder pattern.
+- Task1: Finished the month flow dispaly with builder pattern and add a new observer pattern to observer the month total value.
 - Task2: Combined my code with the app frame.
 - Task3: Test and debug. Fixed lots of bugs.
 - Task4: Draw the class diagram of the builder pattern.
