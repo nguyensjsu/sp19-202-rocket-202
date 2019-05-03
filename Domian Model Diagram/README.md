@@ -1,30 +1,27 @@
-
-*Please do the following:*
-
-1. Edit this readme file first
-
-2. Read './document/README.md' for instructions about team repo submissions.
+# CMPE 202 - Project - Team Hackathon
 
 
-# Team Project Repo 
-https://github.com/nguyensjsu/sp19-202-rocket-202
-## Team Name
-rocket202
-## Team Members
 
-* [Han Wang](url_to_your_github_repo)
-* [Xingchen Kang](url_to_your_github_repo)
-* [Min Yu](url_to_your_github_repo)
-* [Yijun Zhang](url_to_your_github_repo)
-* [Shiyan Cai](url_to_your_github_repo)
-## Project Name
+- Create a **Domain Model Diagram**
 
-## Project Description
+- - This should be a **UML Class Diagram** that organizes packages/classes that can be developed in parallel by each team member.
+  - Typically, there may be one package for “Common” components, class definitions and/or interface definitions.  The common classes can be worked on by all team members at different times/days in the Sprint.
 
-## Project Progress
 
-### Burndown Map
 
-### Project Dashboard
 
-### Individual Contributions
+
+## Class Diagram Template Pattern
+
+![Template Class Diagram](img/Template Class Diagram.png)
+
+
+
+## Class diagram for Strategy Pattern
+
+![Template Class Diagram](img/Strategy Class Diagram.png)
+
+
+
+
+
