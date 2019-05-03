@@ -11,8 +11,13 @@ rocket202
 * [Shiyan Cai](<https://github.com/robert4213>)
 
 ## Project Name
+### Poke Accounting   
 
-## Project Description
+## Project Description   
+Poke Accounting is an accounting software, allowing users to add and check personal expense and income records. 
+Poke Accounting also provides different charts to help you visualize your record.
+Account function make it easier to follow your account balance.
+Poke Accounting has its own login authentication to guarantee your personal privacy.
 
 ## Presentation
 
