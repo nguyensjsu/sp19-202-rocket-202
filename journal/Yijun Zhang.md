@@ -81,20 +81,19 @@ Still not so familiar with Processing, how to implement these design patterns in
 - Task4:  1 hrs
 
 
-
 # Week 4 Scrum Report
 
 ### Finished Last Week 
-- Task1: 
-- Task2: 
-- Task3: 
-- Task4: 
+- Task1: Finished Adding the drag function.
+- Task2: Draw Activity Diagram.
+- Task3: Producted animations in presentation slides.
+- Task4: Draw user case for dragging feature with sequence diagram.
 
 ### XP core value--Respect
-- 
+- All documents and App functions are done this week. I respect teammates's choice of 1mins Ad and the designed structure of presentation with admiring their lovely works. I expressed thankful and respect for their works in whole project, not only the code and the UMl diagram，but also the design，every idea and the ability of us to make concerted effort.
 
 ### Time Spend
-- Task1:   hr
-- Task2:   hrs
-- Task3:   hrs
-- Task4:   hrs
+- Task1:  5  hr
+- Task2: 2.5 hrs
+- Task3:  3  hrs
+- Task4:  2  hrs
