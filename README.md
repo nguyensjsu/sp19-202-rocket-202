@@ -93,9 +93,9 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 
 ### Shiyan Cai
 
-1. Build major stracture of application, implemant a proxy pattern for login authentication.
+1. Build major stracture of application, implemant a ```proxy``` pattern for login authentication.
 2. Create login screen for authentication.
-3. Create reset password process, allow user to enter old passcode, enter new passcode, and verify new passcode. Implemented with state pattern
+3. Create reset password process, allow user to enter old passcode, enter new passcode, and verify new passcode. Implemented with ```state``` pattern
 3. Design a keypad for login process. Include shaking effect when enter wrong passcode, and button may change color when pressed.
 4. Design drag effect for the drag effect for the chart screen. Allow to drag up and down, and list may slowly come back when bottom display area leaves empty.
 5. Design a line chart to show income, expense, and balance change in current year.
