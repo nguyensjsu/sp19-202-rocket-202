@@ -107,12 +107,12 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 
 ### Yijun Zhang
 
-1. Design and develop the Main Screen of Flows, which generally reads data from data record.csv, and displays them in time order with daily and monthly total value.
+1. Design and develop the Main Screen of Flows, which generally reads data from data records.csv, and displays them in hierarchical time order with daily and monthly total values.
 2. Use ```Decorator``` Pattern to add name to related flow icon of each income and expense record.
-3. Use ```Strategy```Pattern to show monthly and daily flow headers which displays same contents combination but different size and location for display.
-4. Use ```Builder```Pattern to build the month flows with all recorded day flows in this month（which contains several detailed daily flow records）with correct hearder showing total value.
-5. Develop a use case about using drags to see all flow records in flow screen with related sequence diagram.
-6. Develop the drag function for Flow Screen with special sign displayed in the end of month flows.
+3. Use ```Strategy```Pattern to show monthly and daily flow headers which display same contents combination but have different sizes and locations for displaying.
+4. Use ```Builder```Pattern to build the month flows with all recorded day flows in this month(which contains several detailed daily flow records）with hierarchical hearders showing hierarchical total values.
+5. Develop the drag function for Flow Screen with special sign displayed in the end of month flows.
+6. Develop a use case about using drags to see all flow records in flow screen with related sequence diagram.
 7. Produce the animations in presentation slides.
 8. Draw the activity diagram. 
-9. As a role of XP value "Respect", I keep the faith in every member in our team and keep showing them that they are improtant. I show respect to everyone and show belief in them during the whole project period. When anyone come up with any ideas about our project or finish any tasks, I always express respect to their thought and admire evey works they did.
+9. As a role of XP value "Respect", I keep the faith in every member in our team and keep showing them that they are improtant. I show respect to everyone and show belief in them during the whole project period. When anyone come up with any ideas about our project or finish any tasks, I always express respect to their thought and admire evey works they have done.
