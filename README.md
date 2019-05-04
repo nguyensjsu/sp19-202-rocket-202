@@ -117,10 +117,12 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 9. Draw the activity diagram.
 10. As a role of XP value "Respect", I keep the faith in every member in our team and keep showing them that they are improtant. I show respect to everyone and show belief in them during the whole project period. When anyone come up with any ideas about our project or finish any tasks, I always express respect to their thought and admire evey works they have done.
 
+**UI Wireframes**
+- See README in folder: https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UI%20Wireframes
 
 ### UML Analysis Models
 - **Use Case Specification & Class Diagram for Design Pattens**
-See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models
+- See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models
 
 - **Activity Diagram**
 ![](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/ActivityDiagram_Check%26AddRecord.png)
