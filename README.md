@@ -1,7 +1,7 @@
 # Team Project Repo
 https://github.com/nguyensjsu/sp19-202-rocket-202
 ## Team Name
-rocket202
+Rocket202
 ## Team Members & Journals
 * Han Wang [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Han%20Wang.md>)
 * Xingchen Kang [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Xingchen%20Kang.md>)
@@ -10,7 +10,7 @@ rocket202
 * Shiyan Cai [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Shiyan%20Cai.md>)
 
 ## Project Name
-### Poke Accounting
+### Poke Accounting ![](src/img/logo.jpg)
 
 ## Project Description
 Poke Accounting is an accounting software, allowing users to add and check personal expense and income records.
@@ -20,10 +20,10 @@ Poke Accounting has its own login authentication to guarantee your personal priv
 
 ## Presentation
 
-[Rocket 202 Presentation](https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/docs/Rocket202.ppt) 
+[Rocket 202 Presentation](https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/docs/Rocket202-Pre.pdf) 
 
 [Rocket 202 Presentation AD Video](https://www.youtube.com/watch?v=YM0X7sqA9sc&feature=youtu.be)
->>>>>
+
 ## Project Progress
 
 ### Burndown Map
@@ -113,17 +113,18 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 5. Use ```Observer```Pattern to ensure the month total value will change once the displayed flow changes.
 6. Develop the drag function for Flow Screen with special sign displayed in the end of month flows.
 7. Develop a use case about using drags to see all flow records in flow screen with related sequence diagram.
-8. Produce the animations in presentation slides.
+8. Produce animations in presentation slides and keep the slides updated.
 9. Draw the activity diagram.
 10. As a role of XP value "Respect", I keep the faith in every member in our team and keep showing them that they are improtant. I show respect to everyone and show belief in them during the whole project period. When anyone come up with any ideas about our project or finish any tasks, I always express respect to their thought and admire evey works they have done.
 
 **UI Wireframes**
 - See README in folder: https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UI%20Wireframes
 
-### UML Analysis Models
-- **Use Case Specification & Class Diagram for Design Pattens**
+**Use Case Specification & Class Diagrams for Design Pattens**
 - See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models
 
+
+### Some important UML Analysis Models
 - **Activity Diagram**
 ![](https://github.com/nguyensjsu/sp19-202-rocket-202/raw/master/UML%20Analysis%20Models/ActivityDiagram_Check%26AddRecord.png)
 
