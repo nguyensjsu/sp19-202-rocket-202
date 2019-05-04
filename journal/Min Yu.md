@@ -38,7 +38,7 @@ Unable to use Processing.
 
 ### XP core value -- Feedback
 
-- I do the test for our app, if I find some bugs, I told my team mates the bug and give them my suggestion.
+- I collect all team mates suggestion about the app, like what can we do better, and I put all suggestions in meeting to ask for my all team mates.
 
 ### Problems
 I used controlP5 lib for Chart screen, but I can not control the lib, I can not hide or show chart when I go to other menu. I think the problem because of controlP5 lib, so I am going to replace controlP5 to other staff.
@@ -65,7 +65,7 @@ I used controlP5 lib for Chart screen, but I can not control the lib, I can not 
 
 ### XP core value -- Feedback
 
-- I collect all team mates suggestion about the app, like what can we do better, and I put all suggestions in meeting to ask for my all team mates.
+- I told my team mates that they did a great job, they are on the right track, and collect feedback from all my team mates.
 
 ### Problems
 
@@ -88,7 +88,7 @@ I don't know how to use Processing to draw a beautiful line chart, so my team ma
 
 ### XP core value -- Feedback
 
-- 
+- I do the test for our app, if I find some bugs, I told my team mates the bug and give them my suggestion.
 
 ### Time Spend
 
