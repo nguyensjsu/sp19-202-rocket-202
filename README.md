@@ -20,7 +20,7 @@ Poke Accounting has its own login authentication to guarantee your personal priv
 
 ## Presentation
 
-[Rocket 202 Presentation Slide](https://docs.google.com/presentation/d/1OCnWug36wbcUUwsd9Lt7C_mQwn2OUnJkrA3UtGOr0ik/edit?usp=sharing)
+[Rocket 202 Presentation] 
 
 [Rocket 202 Presentation AD Video](https://www.youtube.com/watch?v=YM0X7sqA9sc&feature=youtu.be)
 >>>>>
