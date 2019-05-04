@@ -10,7 +10,7 @@ Rocket202
 * Shiyan Cai [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Shiyan%20Cai.md>)
 
 ## Project Name
-### Poke Accounting ![](src/img/logo.jpg)
+![](src/img/logo.jpg)  **Poke Accounting**
 
 ## Project Description
 Poke Accounting is an accounting software, allowing users to add and check personal expense and income records.
@@ -121,7 +121,7 @@ https://docs.google.com/spreadsheets/d/1RVyDYU9kWllowJlikY2BKtmSpdxpajvTHTAQleGj
 - See README in folder: https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UI%20Wireframes
 
 **Use Case Specification & Class Diagrams for Design Pattens**
-- See UML Analysis Models folder https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models
+- See README in folder: https://github.com/nguyensjsu/sp19-202-rocket-202/tree/master/UML%20Analysis%20Models
 
 
 ### Some important UML Analysis Models
