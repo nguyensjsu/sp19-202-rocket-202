@@ -10,7 +10,8 @@ Rocket202
 * Shiyan Cai [Journal](<https://github.com/nguyensjsu/sp19-202-rocket-202/blob/master/journal/Shiyan%20Cai.md>)
 
 ## Project Name
-![](src/img/logo.jpg)  **Poke Accounting**
+#### Poke Accounting
+![](src/img/logo.jpg)
 
 ## Project Description
 Poke Accounting is an accounting software, allowing users to add and check personal expense and income records.
